@@ -1,20 +1,14 @@
-# Bookmark Manager
-Manager for your ssh configs
-
-<p align="center">
-    <a href="https://appcenter.elementary.io/com.github.bartzaalberg.bookmark-manager">
-        <img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter">
-    </a>
-</p>
+# SnapCenter
+Manage your snap applications
 
 <p align="center">
     <img 
-    src="https://raw.githubusercontent.com/bartzaalberg/bookmark-manager/master/screenshot.png" />
+    src="https://raw.githubusercontent.com/bartzaalberg/snapcenter/master/screenshot.png" />
 </p>
 
 ### Simple App for elementary OS
 
-A Vala application to get your ssh bookmarks from your config file and use them in an interface kinda way
+A Vala application to get manage your snaps in a way everybody can understand
 
 ## Installation
 

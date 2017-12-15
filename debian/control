@@ -1,0 +1,17 @@
+Source: com.github.bartzaalberg.snapcenter
+Section: utils
+Priority: optional
+Maintainer: Bart Zaalberg <bartzaalberg@gmail.com>
+Build-Depends: cmake (>= 2.6),
+               cmake-elementary,
+               debhelper (>= 9),
+               libgranite-dev,
+               libgtk-3-dev,
+               valac (>= 0.26)
+
+Package: com.github.bartzaalberg.snapcenter
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Description: Bookmark Manager
+ Simpler Terminal Bookmarks
