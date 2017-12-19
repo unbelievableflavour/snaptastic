@@ -38,7 +38,7 @@ public class DeleteConfirm : Object {
         }
 
         stackManager.getStack().visible_child_name = "list-view"; 
-        listBox.getBookmarks("");  
+        listBox.getInstalledPackages();
     }
 }
 }

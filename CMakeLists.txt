@@ -51,6 +51,8 @@
         src/Application.vala
         src/MainWindow.vala
         src/ListBoxRow.vala
+        src/InstalledPackageRow.vala
+        src/SearchPackageRow.vala
         src/ListBox.vala
         src/ConfigFileReader.vala
         src/Constants.vala        
@@ -58,8 +60,7 @@
         src/StackManager.vala
         src/Dialogs/DeleteConfirm.vala
         src/Dialogs/Alert.vala
-        src/Views/ListBookmarks.vala
-        src/Views/EmptyView.vala
+        src/Views/ListView.vala
         src/Views/NotFoundView.vala
         src/Views/WelcomeView.vala
         src/Components/HeaderBar.vala

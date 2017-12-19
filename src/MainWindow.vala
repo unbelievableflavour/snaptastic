@@ -22,7 +22,6 @@ public class MainWindow : Gtk.Window{
 
         stackManager.loadViews(this);
 
-        listBox.getBookmarks("");
         stackManager.getStack().visible_child_name = "welcome-view";
 
         addShortcuts();

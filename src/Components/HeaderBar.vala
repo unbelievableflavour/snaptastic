@@ -5,11 +5,10 @@ public class HeaderBar : Gtk.HeaderBar {
     
     static HeaderBar? instance;
 
-    StackManager stackManager = StackManager.get_instance();
+    private StackManager stackManager = StackManager.get_instance();
     ListBox listBox = ListBox.get_instance();    
     public Gtk.SearchEntry searchEntry = new Gtk.SearchEntry ();
     public Gtk.Button return_button = new Gtk.Button ();
-    Gtk.MenuButton menu_button = new Gtk.MenuButton ();
     private Granite.Widgets.ModeButton view_mode;
 
     HeaderBar() {
@@ -19,7 +18,7 @@ public class HeaderBar : Gtk.HeaderBar {
         searchEntry.set_tooltip_text(_("Search for applications"));
         searchEntry.sensitive = true;
         searchEntry.search_changed.connect (() => {
-            showReturnButton(true);
+            view_mode.visible = false;
             listBox.getOnlinePackages(searchEntry.text);
         });
 
@@ -42,10 +41,9 @@ public class HeaderBar : Gtk.HeaderBar {
 	    view_mode.set_active(0);
         view_mode.margin = 1;
         view_mode.notify["selected"].connect (on_view_mode_changed);
-
-        this.add (view_mode);
     
         this.show_close_button = true;
+        this.pack_start (view_mode);
         this.pack_start (return_button);
         this.pack_end (searchEntry);
     }
@@ -64,8 +62,8 @@ public class HeaderBar : Gtk.HeaderBar {
         return_button.visible = false;
         return_button.clicked.connect (() => {
             showReturnButton(false);
-            stackManager.getStack().visible_child_name = "list-view";
-            listBox.getBookmarks("");
+            view_mode.visible = true;
+            stackManager.getStack().visible_child_name = "welcome-view";
         });
     }
 
@@ -83,7 +81,9 @@ public class HeaderBar : Gtk.HeaderBar {
             searchEntry.sensitive = true;
         }else{
             stackManager.getStack().visible_child_name = "list-view";
+            listBox.getInstalledPackages();
             searchEntry.sensitive = false;
+            searchEntry.set_text("");
         }
     }
 }

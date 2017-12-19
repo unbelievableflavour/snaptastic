@@ -24,7 +24,7 @@ public class ListBox : Gtk.ListBox{
         }); 
     }
 
-    public void getBookmarks(string searchWord = ""){
+    public void getInstalledPackages(){
         emptyList();
 
         HeaderBar.get_instance().searchEntry.sensitive = true;
@@ -35,14 +35,7 @@ public class ListBox : Gtk.ListBox{
         var bookmarks = configFileReader.getBookmarks();
 
         foreach (Bookmark bookmark in bookmarks) {
-            if(searchWord == ""){
-                add (new ListBoxRow (bookmark));
-                continue;
-            }
-
-            if(searchWord in bookmark.getName()){             
-                add (new ListBoxRow (bookmark));
-            }            
+            add (new InstalledPackageRow (bookmark, bookmarks));
         }
 
         show_all();
@@ -52,36 +45,19 @@ public class ListBox : Gtk.ListBox{
         emptyList();
 
         HeaderBar.get_instance().searchEntry.sensitive = true;
-        HeaderBar.get_instance().showReturnButton(false);
+        HeaderBar.get_instance().showReturnButton(true);
 
         stackManager.getStack().visible_child_name = "list-view";
 
         var bookmarks = configFileReader.getOnlinePackages(searchWord);
 
-        foreach (Bookmark bookmark in bookmarks) {             
-            add (new ListBoxRow (bookmark));
+        var installedBookmarks = configFileReader.getBookmarks();
+
+        foreach (Bookmark bookmark in bookmarks) {
+            add (new SearchPackageRow (bookmark, installedBookmarks));
         }
 
         show_all();
-    }
-
-    private bool listisEmpty(Bookmark[] bookmarks){
-        return bookmarks.length == 0;    
-    }
-
-    private bool searchWordDoesntMatchAnyInList(string searchWord, Bookmark[] bookmarks){
-        int matchCount = 0;
-        
-        if(searchWord == ""){
-            return false;
-        }
-
-        foreach (Bookmark bookmark in bookmarks) {
-            if(searchWord in bookmark.getName()){
-                matchCount++;                
-            }                
-        }
-        return matchCount == 0;    
     }
 }
 }
