@@ -3,20 +3,20 @@ public class ConfigFileReader : Object{
 
     private StackManager stackManager = StackManager.get_instance();
 
-    public Bookmark[] getBookmarks (){
-        Bookmark[] bookmarks = {};
+    public Package[] getInstalledPackages (){
+        Package[] packages = {};
         
         string result;
-	    string errorx;
+	    string error;
 	    int status;
 
         try {
             Process.spawn_command_line_sync ("snap list",
 								        out result,
-								        out errorx,
+								        out error,
 								        out status);
-            if(errorx != null && errorx != ""){
-                new Alert("An error occured",errorx);
+            if(error != null && error != ""){
+                new Alert("An error occured",error);
             }
         } catch (SpawnError e) {
             new Alert("An error occured", e.message);
@@ -34,34 +34,35 @@ public class ConfigFileReader : Object{
             if(name == null){continue;}
             if(name == "Name" && version == "Version"){continue;}
 
-            bookmarks += new Bookmark();
-            bookmarks[bookmarks.length - 1].setName(name);
-            bookmarks[bookmarks.length - 1].setVersion(version);
-            bookmarks[bookmarks.length - 1].setRevision(revision);
-            bookmarks[bookmarks.length - 1].setDeveloper(developer);
-            bookmarks[bookmarks.length - 1].setNotes(notes);
+            Package package = new Package();
+            package.setName(name);
+            package.setVersion(version);
+            package.setRevision(revision);
+            package.setDeveloper(developer);
+            package.setNotes(notes);
+            packages += package;
         }
-        return bookmarks;
+        return packages;
     }
 
-    public Bookmark[] getOnlinePackages (string searchWord){
-        Bookmark[] bookmarks = {};
+    public Package[] getOnlinePackages (string searchWord){
+        Package[] packages = {};
         
         string result;
-	    string errorx;
+	    string error;
 	    int status;
 
         try {
             Process.spawn_command_line_sync ("snap search " + searchWord,
 								        out result,
-								        out errorx,
+								        out error,
 								        out status);
 
-            if(errorx != null && errorx != ""){
-                if("returned 0 snaps" in errorx){
+            if(error != null && error != ""){
+                if("returned 0 snaps" in error){
                     stackManager.getStack().visible_child_name = "not-found-view";
                 }else{
-                    new Alert("An error occured",errorx);                
+                    new Alert("An error occured",error);                
                 }
                 
             }
@@ -82,14 +83,15 @@ public class ConfigFileReader : Object{
             if(name == null){continue;}
             if(name == "Name" && version == "Version"){continue;}
 
-            bookmarks += new Bookmark();
-            bookmarks[bookmarks.length - 1].setName(name);
-            bookmarks[bookmarks.length - 1].setVersion(version);
-            bookmarks[bookmarks.length - 1].setDeveloper(developer);
-            bookmarks[bookmarks.length - 1].setNotes(notes);
-            bookmarks[bookmarks.length - 1].setSummary(summary);
+            Package package = new Package();
+            package.setName(name);
+            package.setVersion(version);
+            package.setDeveloper(developer);
+            package.setNotes(notes);
+            package.setSummary(summary);
+            packages += package;
         }
-        return bookmarks;
+        return packages;
     }
 
     public string getPackageName(string[] splittedLine){

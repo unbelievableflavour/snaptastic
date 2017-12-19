@@ -9,23 +9,29 @@ public class HeaderBar : Gtk.HeaderBar {
     ListBox listBox = ListBox.get_instance();    
     public Gtk.SearchEntry searchEntry = new Gtk.SearchEntry ();
     public Gtk.Button return_button = new Gtk.Button ();
-    private Granite.Widgets.ModeButton view_mode;
+    private Granite.Widgets.ModeButton view_mode = new Granite.Widgets.ModeButton();
 
     HeaderBar() {
         Granite.Widgets.Utils.set_color_primary (this, Constants.BRAND_COLOR);
         
-        searchEntry.set_placeholder_text(_("Search Apps"));
-        searchEntry.set_tooltip_text(_("Search for applications"));
-        searchEntry.sensitive = true;
-        searchEntry.search_changed.connect (() => {
-            view_mode.visible = false;
-            listBox.getOnlinePackages(searchEntry.text);
-        });
-
+        generateSearchEntry();
         generateReturnButton();
+        generateViewMode();
+    
+        this.show_close_button = true;
+        this.pack_start (view_mode);
+        this.pack_start (return_button);
+        this.pack_end (searchEntry);
+    }
+ 
+    public static HeaderBar get_instance() {
+        if (instance == null) {
+            instance = new HeaderBar();
+        }
+        return instance;
+    }
 
-        view_mode = new Granite.Widgets.ModeButton();
-	
+    private void generateViewMode(){
 	    //Create two labels. Assign names for a check later on.
 	    var label1 = new Gtk.Label("Home");
 	    label1.name = "home";
@@ -41,18 +47,16 @@ public class HeaderBar : Gtk.HeaderBar {
 	    view_mode.set_active(0);
         view_mode.margin = 1;
         view_mode.notify["selected"].connect (on_view_mode_changed);
-    
-        this.show_close_button = true;
-        this.pack_start (view_mode);
-        this.pack_start (return_button);
-        this.pack_end (searchEntry);
     }
- 
-    public static HeaderBar get_instance() {
-        if (instance == null) {
-            instance = new HeaderBar();
-        }
-        return instance;
+
+    private void generateSearchEntry(){
+        searchEntry.set_placeholder_text(_("Search Apps"));
+        searchEntry.set_tooltip_text(_("Search for applications"));
+        searchEntry.sensitive = true;
+        searchEntry.search_changed.connect (() => {
+            view_mode.visible = false;
+            listBox.getOnlinePackages(searchEntry.text);
+        });
     }
 
     private void generateReturnButton(){
@@ -61,8 +65,9 @@ public class HeaderBar : Gtk.HeaderBar {
         return_button.get_style_context ().add_class ("back-button");
         return_button.visible = false;
         return_button.clicked.connect (() => {
+            searchEntry.set_text("");
             showReturnButton(false);
-            view_mode.visible = true;
+            showViewMode(true);
             stackManager.getStack().visible_child_name = "welcome-view";
         });
     }
@@ -75,6 +80,10 @@ public class HeaderBar : Gtk.HeaderBar {
         return_button.visible = answer;
     }
 
+    public void showViewMode(bool answer){
+        view_mode.visible = answer;
+    }
+
      private void on_view_mode_changed () {
         if (view_mode.selected == 0){
             stackManager.getStack().visible_child_name = "welcome-view";
@@ -83,7 +92,6 @@ public class HeaderBar : Gtk.HeaderBar {
             stackManager.getStack().visible_child_name = "list-view";
             listBox.getInstalledPackages();
             searchEntry.sensitive = false;
-            searchEntry.set_text("");
         }
     }
 }

@@ -15,6 +15,8 @@
     set (PKGDATADIR "${DATADIR}/com.github.bartzaalberg.snapcenter")
 
     set (EXEC_NAME "com.github.bartzaalberg.snapcenter")
+    set (EXEC_NAME2 "com.github.bartzaalberg.snapcenter-install")
+
     set (VERSION "0.1")
     set (VERSION_INFO "whats up world")
 
@@ -56,7 +58,7 @@
         src/ListBox.vala
         src/ConfigFileReader.vala
         src/Constants.vala        
-        src/Bookmark.vala
+        src/Package.vala
         src/StackManager.vala
         src/Dialogs/DeleteConfirm.vala
         src/Dialogs/Alert.vala
@@ -72,16 +74,31 @@
         granite
     )
 
-    # tell cmake what to call the executable we just made
+    # tell cmake what to call the executable we just made and install
     add_executable(${EXEC_NAME} ${VALA_C})
-
-    # install the binaries we just made
     install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
+
+    #------------------------------------------------------------------------------------------
+    
+    # files we want to compile
+    include(ValaPrecompile)
+    vala_precompile(VALA_C ${EXEC_NAME2}
+        src/InstallApplication/DesktopFileApplication.vala
+
+    # tell what libraries to use when compiling
+    PACKAGES
+        gtk+-3.0
+    )
+
+    # tell cmake what to call the executable we just made  and install
+    add_executable(${EXEC_NAME2} ${VALA_C})
+    install (TARGETS ${EXEC_NAME2} RUNTIME DESTINATION bin)
+
+    #------------------------------------------------------------------------------------------
 
     #add the data directory and activated the cmakelists in that folder
     add_subdirectory (data)
     
-    # add settings schema to pc and recomple all schemas
-    include (GSettings)
-    add_schema (data/com.github.bartzaalberg.snapcenter.gschema.xml)
-
+    # install the polkit action file
+    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snapcenter.pkexec.policy DESTINATION ${DATADIR}/applications/)
+    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snapcenter.pkexec.policy DESTINATION /usr/share/polkit-1/actions/)

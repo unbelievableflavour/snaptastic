@@ -1,5 +1,5 @@
 namespace Application {
-public class Bookmark : Object {
+public class Package : Object {
 
     private string nickname;
 

@@ -32,10 +32,10 @@ public class ListBox : Gtk.ListBox{
 
         stackManager.getStack().visible_child_name = "list-view";
 
-        var bookmarks = configFileReader.getBookmarks();
+        var installedPackages = configFileReader.getInstalledPackages();
 
-        foreach (Bookmark bookmark in bookmarks) {
-            add (new InstalledPackageRow (bookmark, bookmarks));
+        foreach (Package package in installedPackages) {
+            add (new InstalledPackageRow (package, installedPackages));
         }
 
         show_all();
@@ -49,12 +49,12 @@ public class ListBox : Gtk.ListBox{
 
         stackManager.getStack().visible_child_name = "list-view";
 
-        var bookmarks = configFileReader.getOnlinePackages(searchWord);
+        var packages = configFileReader.getOnlinePackages(searchWord);
 
-        var installedBookmarks = configFileReader.getBookmarks();
+        var installedPackages = configFileReader.getInstalledPackages();
 
-        foreach (Bookmark bookmark in bookmarks) {
-            add (new SearchPackageRow (bookmark, installedBookmarks));
+        foreach (Package package in packages) {
+            add (new SearchPackageRow (package, installedPackages));
         }
 
         show_all();

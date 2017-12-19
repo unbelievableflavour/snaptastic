@@ -5,70 +5,37 @@ public class SearchPackageRow : ListBoxRow {
 
     private Gtk.Image icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
     private Gtk.Box vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-    private Bookmark bookmark;
+    private Package package;
 
-    public SearchPackageRow (Bookmark bookmark,Bookmark[] installedBookmarks){
+    public SearchPackageRow (Package package,Package[] installedPackages){
 
-        this.bookmark = bookmark;
+            this.package = package;
 
-        var name_label = generateNameLabel(bookmark.getName() + " (" + bookmark.getDeveloper() + ")");
-        var summary_label = generateSummaryLabel(bookmark.getSummary());
-        var install_button = generateStartButton();
-        var delete_button = generateDeleteButton();
-        var update_button = generateUpdateButton();
+            var name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
+            var summary_label = generateSummaryLabel(package.getSummary());
+            var install_button = generateStartButton(package);
+            var delete_button = generateDeleteButton(package);
+            var update_button = generateUpdateButton(package);
 
-        vertical_box.add (name_label);
-        vertical_box.add (summary_label);
+            vertical_box.add (name_label);
+            vertical_box.add (summary_label);
 
-        var bookmark_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
-        bookmark_row.margin = 12;
-        bookmark_row.add(icon);
-        bookmark_row.add (vertical_box);
-        
-        if(isInstalled(bookmark, installedBookmarks)){
-            if(isLatestVersion(bookmark, installedBookmarks)){
-                bookmark_row.pack_end (delete_button, false, false);
-            }else{
-                bookmark_row.pack_end (update_button, false, false);
-            }
-        }else{
-            bookmark_row.pack_end (install_button, false, false);
-        }
-        
-        this.add (bookmark_row);
-    }
+            var package_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+            package_row.margin = 12;
+            package_row.add(icon);
+            package_row.add (vertical_box);
 
-    public Gtk.Button generateStartButton(){
-        var install_button = new Gtk.Button();
-        install_button.set_label(_("Install"));
-        install_button.set_tooltip_text(_("Install this application"));
-        install_button.button_press_event.connect (() => {
-            string result;
-	        string error;
-	        int status;
-
-            var classic = "";
-            if(bookmark.getNotes() == "classic"){
-                classic = " --classic";
-            }
-
-            try {
-                Process.spawn_command_line_sync ("snap install " + bookmark.getName() + classic,
-									        out result,
-									        out error,
-									        out status);
-
-                if(error != null && error != ""){
-                    new Alert("An error occured",error);
+            if(isInstalled(package, installedPackages)){
+                if(isLatestVersion(package, installedPackages)){
+                    package_row.pack_end (delete_button, false, false);
+                }else{
+                    package_row.pack_end (update_button, false, false);
                 }
-
-            } catch (SpawnError e) {
-	            new Alert("An error occured", e.message);
+            }else{
+                package_row.pack_end (install_button, false, false);
             }
-            return true;
-        });
 
-        return install_button;
-    }
+            this.add (package_row);
+        }
 }
 }
