@@ -15,12 +15,10 @@ public class HeaderBar : Gtk.HeaderBar {
         Granite.Widgets.Utils.set_color_primary (this, Constants.BRAND_COLOR);
         
         generateSearchEntry();
-        generateReturnButton();
         generateViewMode();
     
         this.show_close_button = true;
-        this.pack_start (view_mode);
-        this.pack_start (return_button);
+        this.set_custom_title(view_mode);
         this.pack_end (searchEntry);
     }
  
@@ -54,30 +52,18 @@ public class HeaderBar : Gtk.HeaderBar {
         searchEntry.set_tooltip_text(_("Search for applications"));
         searchEntry.sensitive = true;
         searchEntry.search_changed.connect (() => {
-            view_mode.visible = false;
-            listBox.getOnlinePackages(searchEntry.text);
-        });
-    }
-
-    private void generateReturnButton(){
-        return_button.label = _("Back");
-        return_button.no_show_all = true;
-        return_button.get_style_context ().add_class ("back-button");
-        return_button.visible = false;
-        return_button.clicked.connect (() => {
-            searchEntry.set_text("");
-            showReturnButton(false);
-            showViewMode(true);
-            stackManager.getStack().visible_child_name = "welcome-view";
+            if(searchEntry.text ==""){
+                view_mode.visible = true;
+                stackManager.getStack().visible_child_name = "welcome-view";
+            }else{
+                view_mode.visible = false;
+                listBox.getOnlinePackages(searchEntry.text);
+            }
         });
     }
 
     public void showSearchEntry(bool answer){
         searchEntry.visible = answer;
-    }
-
-    public void showReturnButton(bool answer){
-        return_button.visible = answer;
     }
 
     public void showViewMode(bool answer){

@@ -28,7 +28,6 @@ public class ListBox : Gtk.ListBox{
         emptyList();
 
         HeaderBar.get_instance().searchEntry.sensitive = true;
-        HeaderBar.get_instance().showReturnButton(false);
 
         stackManager.getStack().visible_child_name = "list-view";
 
@@ -45,7 +44,6 @@ public class ListBox : Gtk.ListBox{
         emptyList();
 
         HeaderBar.get_instance().searchEntry.sensitive = true;
-        HeaderBar.get_instance().showReturnButton(true);
 
         stackManager.getStack().visible_child_name = "list-view";
 
