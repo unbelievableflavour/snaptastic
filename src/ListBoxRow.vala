@@ -3,6 +3,10 @@ using Granite.Widgets;
 namespace Application {
 public class ListBoxRow : Gtk.ListBoxRow {
 
+    ListBox listBox = ListBox.get_instance();    
+    HeaderBar headerBar = HeaderBar.get_instance();
+    private Polkit polkit = new Polkit();
+
     public bool isInstalled(Package package, Package[] installedPackages){
         foreach (Package installedPackage in installedPackages) {
             if(package.getName() == installedPackage.getName()){
@@ -14,25 +18,27 @@ public class ListBoxRow : Gtk.ListBoxRow {
 
     public bool isLatestVersion(Package package, Package[] installedPackages){
         foreach (Package installedPackage in installedPackages) {
-            if(package.getName() == installedPackage.getName()){
-                if(package.getVersion() == installedPackage.getVersion()){
-                    return true;
-                }
+            if(package.getName() != installedPackage.getName()){
+                continue;
+            }
+            if(package.getVersion() == installedPackage.getVersion()){
+                return true;
             }
         }
         return false;
     }
 
     public Gtk.Label generateNameLabel(string name){
-        var name_label = new Gtk.Label ("<b>%s</b>".printf (name));
+        var name_label = new Gtk.Label ("<big><b>%s</b></big>".printf (name));
         name_label.use_markup = true;
         name_label.halign = Gtk.Align.START;
 
         return name_label;
     }
 
-    public Gtk.Label generateSummaryLabel(string developer){
-        var summary_label = new Gtk.Label (developer);
+    public Gtk.Label generateSummaryLabel(string summary){
+        var summary_label = new Gtk.Label ("%s".printf (summary));
+        summary_label.use_markup = true;
         summary_label.halign = Gtk.Align.START;
 
         return summary_label;
@@ -70,42 +76,9 @@ public class ListBoxRow : Gtk.ListBoxRow {
         var install_button = new Gtk.Button(); 
         install_button.set_label(_("Install")); 
         install_button.set_tooltip_text(_("Install this application")); 
-        install_button.button_press_event.connect (() => { 
-            string homeDir = Environment.get_home_dir ();
-            string notes = "";
-            if(package.getNotes() == "classic"){
-                notes = "--classic";            
-            }
-            // Create the variables for the process execution
-            string[] arguments = {
-                "pkexec", 
-                "env", 
-                "HOME=" + homeDir, 
-                "com.github.bartzaalberg.snapcenter-install", 
-                "snap", 
-                "install", 
-                package.getName(),
-                notes
-            };
-
-            string[] env = Environ.get ();
-            string output;
-            string error;
-            int status;
-
-            try {
-                // Spawn the process synchronizedly
-                // We do it synchronizedly because since we are just launching another process and such is the whole
-                // purpose of this program, we don't want to exit this, the caller, since that will cause our spawned process to become a zombie.
-                Process.spawn_sync ("/", arguments, env, SpawnFlags.SEARCH_PATH, null, out output, out error, out status);
-
-                new Alert("Output", output);
-                if(error != null && error != ""){
-                    new Alert("There was an error in the spawned process", error);
-                }
-            } catch (SpawnError e) {
-                new Alert("There was an error spawining the process. Details", e.message);
-            }
+        install_button.button_press_event.connect (() => {
+            polkit.installPackage(package);
+            listBox.getOnlinePackages(headerBar.searchEntry.text);
             return true;
         }); 
         return install_button;

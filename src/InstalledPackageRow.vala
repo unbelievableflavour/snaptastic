@@ -3,7 +3,7 @@ using Granite.Widgets;
 namespace Application {
 public class InstalledPackageRow : ListBoxRow {
 
-        private Gtk.Image icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
+    private Gtk.Image icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
     private Gtk.Box vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
     private Package package;
 

@@ -59,6 +59,7 @@
         src/ConfigFileReader.vala
         src/Constants.vala        
         src/Package.vala
+        src/Polkit.vala
         src/StackManager.vala
         src/Dialogs/DeleteConfirm.vala
         src/Dialogs/Alert.vala
