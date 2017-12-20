@@ -24,15 +24,15 @@ public class ConfigFileReader : Object{
 
         string[] linesx = result.split("\n");
         foreach (string line in linesx) {
-            var splittedLine = line.split(" ");
+            var splittedLine = line.split("  ");
             string name = getPackageName(splittedLine);
-            string version = getPackageVersion(splittedLine);
-            string revision = getPackageRevision(splittedLine);
-            string developer = getPackageDeveloper(splittedLine);
-            string notes = getPackageNotes(splittedLine);
+            string version = getStringByIndex(splittedLine, 1);
+            string revision = getStringByIndex(splittedLine, 2);
+            string developer = getStringByIndex(splittedLine, 3);
+            string notes = getStringByIndex(splittedLine, 1);
 
             if(name == null){continue;}
-            if(name == "Name" && version == "Version"){continue;}
+            if(name == "Name" && version == " Version"){continue;}
 
             Package package = new Package();
             package.setName(name);
@@ -63,25 +63,23 @@ public class ConfigFileReader : Object{
                     stackManager.getStack().visible_child_name = "not-found-view";
                 }else{
                     new Alert("An error occured",error);                
-                }
-                
+                }  
             }
-
         } catch (SpawnError e) {
             new Alert("An error occured", e.message);
         }
 
-        string[] linesx = result.split("\n");
-        foreach (string line in linesx) {
-            var splittedLine = line.split(" ");
+        string[] lines = result.split("\n");
+        foreach (string line in lines) {
+            var splittedLine = line.split("  ");
             string name = getPackageName(splittedLine);
-            string version = getPackageVersion(splittedLine);
-            string developer = getPackageRevision(splittedLine);
-            string notes = getPackageDeveloper(splittedLine);
-            string summary = getPackageSummary(splittedLine);
+            string version = getStringByIndex(splittedLine, 1);
+            string developer = getStringByIndex(splittedLine, 2);
+            string notes = getStringByIndex(splittedLine, 3);
+            string summary = getStringByIndex(splittedLine, 4);
 
             if(name == null){continue;}
-            if(name == "Name" && version == "Version"){continue;}
+            if(name == "Name" && version == " Version"){continue;}
 
             Package package = new Package();
             package.setName(name);
@@ -104,7 +102,7 @@ public class ConfigFileReader : Object{
         return splittedLine[0];
     }
 
-    public string getPackageVersion(string[] splittedLine){
+     public string getStringByIndex(string[] splittedLine, int index){
         var elementsCount = 0;
 
         foreach (string part in splittedLine) {
@@ -112,75 +110,7 @@ public class ConfigFileReader : Object{
                 continue;  
             }          
 
-            if(elementsCount == 1 ) {
-                return part;
-            }
-            elementsCount++;
-        }
-
-        return "bla";
-    }
-
-    public string getPackageDeveloper(string[] splittedLine){
-        var elementsCount = 0;
-
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;  
-            }          
-
-            if(elementsCount == 3 ) {
-                return part;
-            }
-            elementsCount++;
-        }
-
-        return "bla";
-    }
-
-    public string getPackageRevision(string[] splittedLine){
-        var elementsCount = 0;
-
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;  
-            }          
-
-            if(elementsCount == 2 ) {
-                return part;
-            }
-            elementsCount++;
-        }
-
-        return "bla";
-    }
-
-    public string getPackageNotes(string[] splittedLine){
-        var elementsCount = 0;
-
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;  
-            }          
-
-            if(elementsCount == 1 ) {
-                return part;
-            }
-            elementsCount++;
-        }
-
-        return "bla";
-    }
-
-    public string getPackageSummary(string[] splittedLine){
-        var elementsCount = 0;
-
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;  
-            }          
-
-            if(elementsCount == 4 ) {
+            if(elementsCount == index ) {
                 return part;
             }
             elementsCount++;
