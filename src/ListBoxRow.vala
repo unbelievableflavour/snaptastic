@@ -77,7 +77,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
                 notes = "--classic";            
             }
             // Create the variables for the process execution
-            string[] spawnArguments = {
+            string[] arguments = {
                 "pkexec", 
                 "env", 
                 "HOME=" + homeDir, 
@@ -88,22 +88,23 @@ public class ListBoxRow : Gtk.ListBoxRow {
                 notes
             };
 
-            string[] spawnEnvironment = Environ.get ();
-            string spawnStdOut;
-            string spawnStdError;
-            int spawnExitStatus;
+            string[] env = Environ.get ();
+            string output;
+            string error;
+            int status;
 
             try {
                 // Spawn the process synchronizedly
                 // We do it synchronizedly because since we are just launching another process and such is the whole
                 // purpose of this program, we don't want to exit this, the caller, since that will cause our spawned process to become a zombie.
-                Process.spawn_sync ("/", spawnArguments, spawnEnvironment, SpawnFlags.SEARCH_PATH, null, out spawnStdOut, out spawnStdError, out spawnExitStatus);
+                Process.spawn_sync ("/", arguments, env, SpawnFlags.SEARCH_PATH, null, out output, out error, out status);
 
-                new Alert("Output", spawnStdOut);
-                new Alert("There was an error in the spawned process", spawnStdError);
-                new Alert("Exit status was", (string) spawnExitStatus);
-            } catch (SpawnError spawnCaughtError) {
-                new Alert("There was an error spawining the process. Details", spawnCaughtError.message);
+                new Alert("Output", output);
+                if(error != null && error != ""){
+                    new Alert("There was an error in the spawned process", error);
+                }
+            } catch (SpawnError e) {
+                new Alert("There was an error spawining the process. Details", e.message);
             }
             return true;
         }); 
