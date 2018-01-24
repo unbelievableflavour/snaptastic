@@ -10,16 +10,15 @@
     <p>Manage snap applications in a simple manner</p>
     <p>Features:</p>
      <ul>
-       <li>Easily search through your SSH bookmarks</li>
-       <li>Simply start a session by clicking on a button</li>
-       <li>Add a default parameters for when the config file doesn't contain a variable</li>
-       <li>Add, remove, and update bookmarks</li>
+       <li>Install, update, and delete applications from the snap repository</li>
+       <li>Easily see all your installed snaps</li>
+       <li>Search through the online snap repository and install straight from the site!</li>
     </ul>
   </description>
   <releases>
-    <release version="1.0.0" date="2017-08-25">
+    <release version="0.0.1" date="2018-01-24">
       <description>
-        <p>1.0.0</p>
+        <p>0.0.1</p>
         <ul>
           <li>First release</li>
         </ul>
