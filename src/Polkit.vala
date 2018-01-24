@@ -36,7 +36,8 @@ public class Polkit : Object {
     public void installPackage(Package package) {
 
         string notes = "";
-        if(package.getNotes() == "classic"){
+
+        if(package.getNotes().strip() == "classic"){
             notes = "--classic";            
         }
 
@@ -64,6 +65,8 @@ public class Polkit : Object {
         } catch (SpawnError e) {
             new Alert("There was an error spawining the process. Details", e.message);
         }
+
+        stdout.printf(output);
     }
 
     public void updatePackage(Package package) {
