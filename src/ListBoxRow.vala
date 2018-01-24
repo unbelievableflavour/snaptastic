@@ -17,11 +17,12 @@ public class ListBoxRow : Gtk.ListBoxRow {
     }
 
     public bool isLatestVersion(Package package, Package[] installedPackages){
-        foreach (Package installedPackage in installedPackages) {
-            if(package.getName() != installedPackage.getName()){
+        foreach (Package installedPackage in installedPackages) {          
+            if(package.getName().strip() != installedPackage.getName().strip()){
                 continue;
             }
-            if(package.getVersion() == installedPackage.getVersion()){
+
+            if(package.getVersion().strip() == installedPackage.getVersion().strip()){
                 return true;
             }
         }
@@ -51,7 +52,8 @@ public class ListBoxRow : Gtk.ListBoxRow {
         update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_button.set_tooltip_text(_("Update this to latest version"));
         update_button.button_press_event.connect (() => {
-            new Alert("Updating!", "not really...yet..");
+            polkit.updatePackage(package);
+            listBox.getOnlinePackages(headerBar.searchEntry.text);
             return true;
         });
 

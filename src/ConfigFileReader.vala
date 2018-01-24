@@ -2,25 +2,11 @@ namespace Application {
 public class ConfigFileReader : Object{
 
     private StackManager stackManager = StackManager.get_instance();
-
+    private Polkit polkit = new Polkit();
     public Package[] getInstalledPackages (){
         Package[] packages = {};
-        
-        string result;
-	    string error;
-	    int status;
 
-        try {
-            Process.spawn_command_line_sync ("snap list",
-								        out result,
-								        out error,
-								        out status);
-            if(error != null && error != ""){
-                new Alert("An error occured",error);
-            }
-        } catch (SpawnError e) {
-            new Alert("An error occured", e.message);
-        }
+        string result = polkit.getInstalledPackages();
 
         string[] linesx = result.split("\n");
         foreach (string line in linesx) {
@@ -47,27 +33,8 @@ public class ConfigFileReader : Object{
 
     public Package[] getOnlinePackages (string searchWord){
         Package[] packages = {};
-        
-        string result;
-	    string error;
-	    int status;
 
-        try {
-            Process.spawn_command_line_sync ("snap search " + searchWord,
-								        out result,
-								        out error,
-								        out status);
-
-            if(error != null && error != ""){
-                if("returned 0 snaps" in error){
-                    stackManager.getStack().visible_child_name = "not-found-view";
-                }else{
-                    new Alert("An error occured",error);                
-                }  
-            }
-        } catch (SpawnError e) {
-            new Alert("An error occured", e.message);
-        }
+        string result = polkit.getOnlinePackages(searchWord);
 
         string[] lines = result.split("\n");
         foreach (string line in lines) {
