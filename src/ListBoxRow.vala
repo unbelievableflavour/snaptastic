@@ -5,6 +5,8 @@ public class ListBoxRow : Gtk.ListBoxRow {
 
     ListBox listBox = ListBox.get_instance();    
     HeaderBar headerBar = HeaderBar.get_instance();
+    private StackManager stackManager = StackManager.get_instance();
+
     private Polkit polkit = new Polkit();
 
     public bool isInstalled(Package package, Package[] installedPackages){
@@ -79,8 +81,8 @@ public class ListBoxRow : Gtk.ListBoxRow {
         install_button.set_label(_("Install")); 
         install_button.set_tooltip_text(_("Install this application")); 
         install_button.button_press_event.connect (() => {
+            stackManager.getStack().visible_child_name = "install-view";
             polkit.installPackage(package);
-            listBox.getOnlinePackages(headerBar.searchEntry.text);
             return true;
         }); 
         return install_button;
