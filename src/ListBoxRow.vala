@@ -54,8 +54,8 @@ public class ListBoxRow : Gtk.ListBoxRow {
         update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_button.set_tooltip_text(_("Update this to latest version"));
         update_button.button_press_event.connect (() => {
+            stackManager.getStack().visible_child_name = "progress-view";
             polkit.updatePackage(package);
-            listBox.getOnlinePackages(headerBar.searchEntry.text);
             return true;
         });
 
@@ -81,7 +81,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
         install_button.set_label(_("Install")); 
         install_button.set_tooltip_text(_("Install this application")); 
         install_button.button_press_event.connect (() => {
-            stackManager.getStack().visible_child_name = "install-view";
+            stackManager.getStack().visible_child_name = "progress-view";
             polkit.installPackage(package);
             return true;
         }); 

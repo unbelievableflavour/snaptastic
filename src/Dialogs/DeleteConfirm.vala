@@ -14,9 +14,8 @@ public class DeleteConfirm : Object {
 
         message_dialog.show_all ();
         if (message_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            stackManager.getStack().visible_child_name = "progress-view";
             polkit.deletePackage(deletedPackage);
-            stackManager.getStack().visible_child_name = "list-view"; 
-            listBox.getInstalledPackages();
         }
         message_dialog.destroy ();
     }

@@ -27,7 +27,7 @@ public class ListBox : Gtk.ListBox{
     public void getInstalledPackages(){
         emptyList();
 
-        HeaderBar.get_instance().searchEntry.sensitive = true;
+        HeaderBar.get_instance().searchEntry.sensitive = false;
 
         stackManager.getStack().visible_child_name = "list-view";
 

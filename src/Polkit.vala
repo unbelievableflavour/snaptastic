@@ -7,6 +7,8 @@ public class Polkit : Object {
 
     public void deletePackage(Package deletedPackage) {
 
+        MainLoop loop = new MainLoop ();
+
         string[] arguments = {
             "pkexec",
             "env",
@@ -17,16 +19,23 @@ public class Polkit : Object {
             deletedPackage.getName()
         };
 
-        string output;
-        string error;
-        int status;
+        Pid child_pid;
 
         try {
-            Process.spawn_sync ("/", arguments, env, SpawnFlags.SEARCH_PATH, null, out output, out error, out status);
+            Process.spawn_async ("/",
+    			arguments,
+    			env,
+    			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
+    			null,
+    			out child_pid);
 
-            if(error != null && error != ""){
-                new Alert("There was an error in the spawned process", error);
-            }
+            ChildWatch.add (child_pid, (pid, status) => {
+			    Process.close_pid (pid);
+			    loop.quit ();
+                ListBox listBox = ListBox.get_instance();
+                listBox.getInstalledPackages();
+		    });
+
         } catch (SpawnError e) {
             new Alert("There was an error spawining the process. Details", e.message);
         }
@@ -77,6 +86,8 @@ public class Polkit : Object {
 
     public void updatePackage(Package package) {
 
+        MainLoop loop = new MainLoop ();
+
         string notes = "";
         if(package.getNotes() == "classic"){
             notes = "--classic";            
@@ -93,16 +104,23 @@ public class Polkit : Object {
             notes
         };
 
-        string output;
-        string error;
-        int status;
+        Pid child_pid;
 
         try {
-            Process.spawn_sync ("/", arguments, env, SpawnFlags.SEARCH_PATH, null, out output, out error, out status);
+            Process.spawn_async ("/",
+    			arguments,
+    			env,
+    			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
+    			null,
+    			out child_pid);
 
-            if(error != null && error != ""){
-                new Alert("There was an error in the spawned process", error);
-            }
+            ChildWatch.add (child_pid, (pid, status) => {
+			    Process.close_pid (pid);
+			    loop.quit ();
+                ListBox listBox = ListBox.get_instance();
+                listBox.getInstalledPackages();
+		    });
+
         } catch (SpawnError e) {
             new Alert("There was an error spawining the process. Details", e.message);
         }

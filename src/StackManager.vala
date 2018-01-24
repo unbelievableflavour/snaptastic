@@ -8,7 +8,7 @@ public class StackManager : Object {
     private const string EMPTY_VIEW_ID = "empty-view";
     private const string NOT_FOUND_VIEW_ID = "not-found-view";
     private const string WELCOME_VIEW_ID = "welcome-view";
-    private const string INSTALL_VIEW_ID = "install-view";
+    private const string PROGRESS_VIEW_ID = "progress-view";
 
     // Private constructor
     StackManager() {
@@ -32,7 +32,7 @@ public class StackManager : Object {
         stack.add_named (new ListView(), LIST_VIEW_ID);
         stack.add_named (new NotFoundView(), NOT_FOUND_VIEW_ID);
         stack.add_named (new WelcomeView(), WELCOME_VIEW_ID);
-        stack.add_named (new InstallView(), INSTALL_VIEW_ID);
+        stack.add_named (new ProgressView(), PROGRESS_VIEW_ID);
 
         window.add(stack);
         window.show_all();
