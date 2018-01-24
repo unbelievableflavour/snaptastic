@@ -11,7 +11,7 @@ public class SearchPackageRow : ListBoxRow {
 
             this.package = package;
 
-            var name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
+            name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
             var summary_label = generateSummaryLabel(package.getSummary());
             var install_button = generateStartButton(package);
             var delete_button = generateDeleteButton(package);

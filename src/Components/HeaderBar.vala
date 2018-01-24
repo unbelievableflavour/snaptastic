@@ -16,7 +16,9 @@ public class HeaderBar : Gtk.HeaderBar {
         
         generateSearchEntry();
         generateViewMode();
-    
+        generateReturnButton();
+
+        this.pack_start (return_button);
         this.show_close_button = true;
         this.set_custom_title(view_mode);
         this.pack_end (searchEntry);
@@ -62,12 +64,28 @@ public class HeaderBar : Gtk.HeaderBar {
         });
     }
 
+    private void generateReturnButton(){
+        return_button.label = _("Back");
+        return_button.no_show_all = true;
+        return_button.get_style_context ().add_class ("back-button");
+        return_button.visible = false;
+        return_button.clicked.connect (() => {
+            showReturnButton(false);
+            showViewMode(true);
+            stackManager.getStack().visible_child_name = "list-view";
+        });
+    }
+
     public void showSearchEntry(bool answer){
         searchEntry.visible = answer;
     }
 
     public void showViewMode(bool answer){
         view_mode.visible = answer;
+    }
+
+    public void showReturnButton(bool answer){
+        return_button.visible = answer;
     }
 
      private void on_view_mode_changed () {

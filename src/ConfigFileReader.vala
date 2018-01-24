@@ -59,6 +59,12 @@ public class ConfigFileReader : Object{
         return packages;
     }
 
+    public string getPackageByName (string searchWord){
+        string result = polkit.getPackageByName(searchWord);
+
+        return result;
+    }
+
     public string getPackageName(string[] splittedLine){
         foreach (string part in splittedLine) {
             if(part == ""){

@@ -11,10 +11,11 @@ public class InstalledPackageRow : ListBoxRow {
 
             this.package = package;
 
-            var name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
+            name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
             var summary_label = generateSummaryLabel(package.getVersion());
             var delete_button = generateDeleteButton(package);
             var update_button = generateUpdateButton(package);
+
 
             vertical_box.add (name_label);
             vertical_box.add (summary_label);

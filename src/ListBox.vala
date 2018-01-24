@@ -37,6 +37,8 @@ public class ListBox : Gtk.ListBox{
             add (new InstalledPackageRow (package, installedPackages));
         }
 
+        row_activated.connect (on_row_activated);
+
         show_all();
     }
 
@@ -55,7 +57,21 @@ public class ListBox : Gtk.ListBox{
             add (new SearchPackageRow (package, installedPackages));
         }
 
+        row_activated.connect (on_row_activated);
+
         show_all();
+    }
+
+    private void on_row_activated (Gtk.ListBoxRow row) {
+
+        var headerBar = HeaderBar.get_instance();
+        headerBar.showViewMode(false);
+        headerBar.showReturnButton(true);
+
+        var activeRow = ((ListBoxRow)row).name_label;
+
+        stackManager.setDetailPackageByName(activeRow.get_text());
+        stackManager.getStack().visible_child_name = "detail-view";
     }
 }
 }

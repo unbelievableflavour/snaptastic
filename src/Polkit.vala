@@ -171,5 +171,30 @@ public class Polkit : Object {
 
         return result;
     }
+
+     public string getPackageByName(string searchWord = "") {
+        string result;
+	    string error;
+	    int status;
+
+        try {
+            Process.spawn_command_line_sync ("snap info " + searchWord,
+								        out result,
+								        out error,
+								        out status);
+
+            if(error != null && error != ""){
+                if("returned 0 snaps" in error){
+                    stackManager.getStack().visible_child_name = "not-found-view";
+                }else{
+                    new Alert("An error occured",error);                
+                }  
+            }
+        } catch (SpawnError e) {
+            new Alert("An error occured", e.message);
+        }
+
+        return result;
+    }
 }
 }

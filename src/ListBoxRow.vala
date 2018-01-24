@@ -6,6 +6,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
     ListBox listBox = ListBox.get_instance();    
     HeaderBar headerBar = HeaderBar.get_instance();
     private StackManager stackManager = StackManager.get_instance();
+    public Gtk.Label name_label;
 
     private Polkit polkit = new Polkit();
 

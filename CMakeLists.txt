@@ -67,6 +67,7 @@
         src/Views/NotFoundView.vala
         src/Views/WelcomeView.vala
         src/Views/ProgressView.vala
+        src/Views/DetailView.vala
         src/Components/HeaderBar.vala
         src/Components/HeaderLabel.vala
 
