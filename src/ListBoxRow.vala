@@ -7,8 +7,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
     HeaderBar headerBar = HeaderBar.get_instance();
     private StackManager stackManager = StackManager.get_instance();
     public Gtk.Label name_label;
-
-    private Polkit polkit = new Polkit();
+    private CommandHandler commandHandler = new CommandHandler();
 
     public bool isInstalled(Package package, Package[] installedPackages){
         foreach (Package installedPackage in installedPackages) {
@@ -56,7 +55,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
         update_button.set_tooltip_text(_("Update this to latest version"));
         update_button.button_press_event.connect (() => {
             stackManager.getStack().visible_child_name = "progress-view";
-            polkit.updatePackage(package);
+            commandHandler.updatePackage(package);
             return true;
         });
 
@@ -83,7 +82,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
         install_button.set_tooltip_text(_("Install this application")); 
         install_button.button_press_event.connect (() => {
             stackManager.getStack().visible_child_name = "progress-view";
-            polkit.installPackage(package);
+            commandHandler.installPackage(package);
             return true;
         }); 
         return install_button;
