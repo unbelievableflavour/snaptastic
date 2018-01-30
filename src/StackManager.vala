@@ -12,6 +12,8 @@ public class StackManager : Object {
     private const string DETAIL_VIEW_ID = "detail-view";
 
     DetailView detailView;
+    public Gtk.Window mainWindow;
+
 
     // Private constructor
     StackManager() {
@@ -33,6 +35,7 @@ public class StackManager : Object {
 
     public void loadViews(Gtk.Window window){
         detailView = new DetailView();
+        mainWindow = window;
 
         stack.add_named (new ListView(), LIST_VIEW_ID);
         stack.add_named (new NotFoundView(), NOT_FOUND_VIEW_ID);
