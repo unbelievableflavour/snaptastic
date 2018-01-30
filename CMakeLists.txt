@@ -17,7 +17,7 @@
     set (EXEC_NAME "com.github.bartzaalberg.snaptastic")
     set (EXEC_NAME2 "com.github.bartzaalberg.snaptastic-install")
 
-    set (VERSION "0.0.4")
+    set (VERSION "0.0.5")
     set (VERSION_INFO "whats up world")
 
     set (DEPS_PACKAGES

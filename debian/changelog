@@ -1,3 +1,11 @@
+com.github.bartzaalberg.snaptastic (0.0.5) UNSTABLE; urgency=low
+
+  * Changed alert cancel button to close button
+  * alert is now positioned to center of app
+  * Application now depends on snapd
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 30 Jan 2018 21:38:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.0.4) UNSTABLE; urgency=low
 
   * Fixed xml

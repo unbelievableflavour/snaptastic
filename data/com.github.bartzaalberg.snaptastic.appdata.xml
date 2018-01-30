@@ -15,6 +15,16 @@
     </ul>
   </description>
   <releases>
+    <release version="0.0.5" date="2018-01-30">
+      <description>
+        <p>Modified alert dialog and added snapd as dependency</p>
+        <ul>
+          <li>Changed alert cancel button to close button</li>
+          <li>alert is now positioned to center of app</li>
+          <li>Application now depends on snapd</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.0.4" date="2018-01-30">
       <description>
         <p>Fixed the appdata xml</p>
