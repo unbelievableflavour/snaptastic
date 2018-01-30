@@ -41,12 +41,3 @@ sudo make
 ### Installing
 `sudo make install`
 
-### Testing
-
-You can run the tests by going to the test dir:
-
-`/src/Tests/tests.sh`
-
-And then running the test script.
-
-`./tests.sh`

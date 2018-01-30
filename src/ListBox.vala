@@ -27,34 +27,12 @@ public class ListBox : Gtk.ListBox{
     public void getInstalledPackages(){
         emptyList();
 
-        HeaderBar.get_instance().searchEntry.sensitive = false;
-
         stackManager.getStack().visible_child_name = "list-view";
 
         var installedPackages = configFileReader.getInstalledPackages();
 
         foreach (Package package in installedPackages) {
             add (new InstalledPackageRow (package, installedPackages));
-        }
-
-        row_activated.connect (on_row_activated);
-
-        show_all();
-    }
-
-    public void getOnlinePackages(string searchWord = ""){
-        emptyList();
-
-        HeaderBar.get_instance().searchEntry.sensitive = true;
-
-        stackManager.getStack().visible_child_name = "list-view";
-
-        var packages = configFileReader.getOnlinePackages(searchWord);
-
-        var installedPackages = configFileReader.getInstalledPackages();
-
-        foreach (Package package in packages) {
-            add (new SearchPackageRow (package, installedPackages));
         }
 
         row_activated.connect (on_row_activated);

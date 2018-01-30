@@ -20,7 +20,6 @@ public class MainWindow : Gtk.Window{
         	stackManager.getStack().visible_child_name = "progress-view";
 			commandHandler.installPackageFromFile(fileManager.getFilePath().replace("file://", ""));
         }
-        headerBar.searchEntry.grab_focus();
     }
 }
 }

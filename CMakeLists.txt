@@ -54,7 +54,6 @@
         src/MainWindow.vala
         src/ListBoxRow.vala
         src/InstalledPackageRow.vala
-        src/SearchPackageRow.vala
         src/ListBox.vala
         src/ConfigFileReader.vala
         src/FileManager.vala
