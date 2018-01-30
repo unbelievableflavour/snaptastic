@@ -3,7 +3,7 @@ public class DeleteConfirm : Object {
       
     private ListBox listBox = ListBox.get_instance();
     private StackManager stackManager = StackManager.get_instance();
-    private Polkit polkit = new Polkit();
+    private CommandHandler commandHandler = new CommandHandler();
 
     public DeleteConfirm(Package deletedPackage){
         var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Delete this application?"), _("Are you sure you want to delete this application?"), "edit-delete", Gtk.ButtonsType.CANCEL);
@@ -15,7 +15,7 @@ public class DeleteConfirm : Object {
         message_dialog.show_all ();
         if (message_dialog.run () == Gtk.ResponseType.ACCEPT) {
             stackManager.getStack().visible_child_name = "progress-view";
-            polkit.deletePackage(deletedPackage);
+            commandHandler.deletePackage(deletedPackage);
         }
         message_dialog.destroy ();
     }

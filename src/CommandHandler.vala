@@ -1,5 +1,5 @@
 namespace Application {
-public class Polkit : Object {
+public class CommandHandler : Object {
 
     private StackManager stackManager = StackManager.get_instance(); 
     string[] env = Environ.get ();
@@ -63,6 +63,48 @@ public class Polkit : Object {
         };
 
         Pid child_pid;
+
+        try {
+            Process.spawn_async ("/",
+    			arguments,
+    			env,
+    			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
+    			null,
+    			out child_pid);
+
+            ChildWatch.add (child_pid, (pid, status) => {
+			    Process.close_pid (pid);
+			    loop.quit ();
+                ListBox listBox = ListBox.get_instance();
+                listBox.getInstalledPackages();
+		    });
+
+        } catch (SpawnError e) {
+            new Alert("There was an error spawining the process. Details", e.message);
+        }
+    }
+
+    public void installPackageFromFile(string packagePath) {
+
+        new Alert(packagePath, packagePath);
+
+        MainLoop loop = new MainLoop ();
+
+        string[] arguments = {
+            "pkexec", 
+            "env", 
+            "HOME=" + homeDir, 
+            "com.github.bartzaalberg.snapcenter-install", 
+            "snap", 
+            "install",
+            "--dangerous",
+            "--classic",
+            packagePath
+        };
+
+        Pid child_pid;
+
+
 
         try {
             Process.spawn_async ("/",

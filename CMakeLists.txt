@@ -57,9 +57,10 @@
         src/SearchPackageRow.vala
         src/ListBox.vala
         src/ConfigFileReader.vala
+        src/FileManager.vala
         src/Constants.vala        
         src/Package.vala
-        src/Polkit.vala
+        src/CommandHandler.vala
         src/StackManager.vala
         src/Dialogs/DeleteConfirm.vala
         src/Dialogs/Alert.vala

@@ -10,8 +10,8 @@ namespace Application.Constants {
     public const string VERSION_INFO = "Unstable";
     public const string APP_YEARS = "2017-2018";
 
-    public const int APPLICATION_HEIGHT = 820;
-    public const int APPLICATION_WIDTH = 1330;
+    public const int APPLICATION_HEIGHT = 700;
+    public const int APPLICATION_WIDTH = 890;
 
-    public const Gdk.RGBA BRAND_COLOR = { 250, 75, 32, 1.0 };
+    public const Gdk.RGBA BRAND_COLOR = { 2.50, 0.35, 0.22, 1 };
 }

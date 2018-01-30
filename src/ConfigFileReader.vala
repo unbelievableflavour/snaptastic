@@ -2,11 +2,11 @@ namespace Application {
 public class ConfigFileReader : Object{
 
     private StackManager stackManager = StackManager.get_instance();
-    private Polkit polkit = new Polkit();
+    private CommandHandler commandHandler = new CommandHandler();
     public Package[] getInstalledPackages (){
         Package[] packages = {};
 
-        string result = polkit.getInstalledPackages();
+        string result = commandHandler.getInstalledPackages();
 
         string[] linesx = result.split("\n");
         foreach (string line in linesx) {
@@ -34,7 +34,7 @@ public class ConfigFileReader : Object{
     public Package[] getOnlinePackages (string searchWord){
         Package[] packages = {};
 
-        string result = polkit.getOnlinePackages(searchWord);
+        string result = commandHandler.getOnlinePackages(searchWord);
 
         string[] lines = result.split("\n");
         foreach (string line in lines) {
@@ -60,7 +60,7 @@ public class ConfigFileReader : Object{
     }
 
     public string getPackageByName (string searchWord){
-        string result = polkit.getPackageByName(searchWord);
+        string result = commandHandler.getPackageByName(searchWord);
 
         return result;
     }
