@@ -64,6 +64,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
 
     public Gtk.Button generateDeleteButton(Package package){
         var delete_button = new Gtk.Button();
+        delete_button.valign = Gtk.Align.CENTER;
         delete_button.set_label(_("Uninstall"));
         delete_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         delete_button.set_tooltip_text(_("Uninstall this application"));
