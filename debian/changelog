@@ -1,3 +1,9 @@
+com.github.bartzaalberg.snaptastic (0.0.4) UNSTABLE; urgency=low
+
+  * Fixed xml
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 30 Jan 2018 11:48:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.0.3) UNSTABLE; urgency=low
 
   * Fixed polkit calls

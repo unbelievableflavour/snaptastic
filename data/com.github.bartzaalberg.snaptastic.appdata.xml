@@ -15,6 +15,14 @@
     </ul>
   </description>
   <releases>
+    <release version="0.0.4" date="2018-01-30">
+      <description>
+        <p>Fixed the appdata xml</p>
+        <ul>
+          <li>Fixed xml</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.0.3" date="2018-01-30">
       <description>
         <p>Removed alert and fixed polkit calls</p>
