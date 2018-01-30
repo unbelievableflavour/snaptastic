@@ -1,4 +1,4 @@
-Source: com.github.bartzaalberg.snapcenter
+Source: com.github.bartzaalberg.snaptastic
 Section: utils
 Priority: optional
 Maintainer: Bart Zaalberg <bartzaalberg@gmail.com>
@@ -9,9 +9,9 @@ Build-Depends: cmake (>= 2.6),
                libgtk-3-dev,
                valac (>= 0.26)
 
-Package: com.github.bartzaalberg.snapcenter
+Package: com.github.bartzaalberg.snaptastic
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
-Description: Bookmark Manager
- Simpler Terminal Bookmarks
+Description: Snaptastic
+ Manage your snap files

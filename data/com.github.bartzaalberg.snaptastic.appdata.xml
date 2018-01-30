@@ -10,9 +10,8 @@
     <p>Manage snap applications in a simple manner</p>
     <p>Features:</p>
      <ul>
-       <li>Install, update, and delete applications from the snap repository</li>
-       <li>Easily see all your installed snaps</li>
-       <li>Search through the online snap repository and install straight from the site!</li>
+       <li>Install snap files
+       <li>Update, and delete installed snaps</li>
     </ul>
   </description>
   <releases>
