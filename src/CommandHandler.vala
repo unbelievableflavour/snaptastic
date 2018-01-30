@@ -13,7 +13,7 @@ public class CommandHandler : Object {
             "pkexec",
             "env",
             "HOME=" + homeDir,
-            "com.github.bartzaalberg.snapcenter-install",
+            "com.github.bartzaalberg.snaptastic-install",
             "snap",
             "remove",
             deletedPackage.getName()
@@ -55,7 +55,7 @@ public class CommandHandler : Object {
             "pkexec", 
             "env", 
             "HOME=" + homeDir, 
-            "com.github.bartzaalberg.snapcenter-install", 
+            "com.github.bartzaalberg.snaptastic-install", 
             "snap", 
             "install", 
             package.getName(),
@@ -86,15 +86,13 @@ public class CommandHandler : Object {
 
     public void installPackageFromFile(string packagePath) {
 
-        new Alert(packagePath, packagePath);
-
         MainLoop loop = new MainLoop ();
 
         string[] arguments = {
             "pkexec", 
             "env", 
             "HOME=" + homeDir, 
-            "com.github.bartzaalberg.snapcenter-install", 
+            "com.github.bartzaalberg.snaptastic-install", 
             "snap", 
             "install",
             "--dangerous",
@@ -139,7 +137,7 @@ public class CommandHandler : Object {
             "pkexec", 
             "env", 
             "HOME=" + homeDir, 
-            "com.github.bartzaalberg.snapcenter-install", 
+            "com.github.bartzaalberg.snaptastic-install", 
             "snap", 
             "refresh", 
             package.getName(),
