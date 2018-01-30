@@ -1,9 +1,9 @@
-# SnapCenter
+# Snaptastic
 Manage your snap applications
 
 <p align="center">
     <img 
-    src="https://raw.githubusercontent.com/bartzaalberg/snapcenter/master/screenshot.png" />
+    src="https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot.png" />
 </p>
 
 ### Simple App for elementary OS

@@ -1,5 +1,5 @@
  # project name
-    project (com.github.bartzaalberg.snapcenter)
+    project (com.github.bartzaalberg.snaptastic)
 
     # the oldest stable cmake version we support
     cmake_minimum_required (VERSION 2.6)
@@ -12,10 +12,10 @@
     set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 
     # what to call that directory where we install data too
-    set (PKGDATADIR "${DATADIR}/com.github.bartzaalberg.snapcenter")
+    set (PKGDATADIR "${DATADIR}/com.github.bartzaalberg.snaptastic")
 
-    set (EXEC_NAME "com.github.bartzaalberg.snapcenter")
-    set (EXEC_NAME2 "com.github.bartzaalberg.snapcenter-install")
+    set (EXEC_NAME "com.github.bartzaalberg.snaptastic")
+    set (EXEC_NAME2 "com.github.bartzaalberg.snaptastic-install")
 
     set (VERSION "0.1")
     set (VERSION_INFO "whats up world")
@@ -104,5 +104,5 @@
     add_subdirectory (data)
     
     # install the polkit action file
-    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snapcenter.pkexec.policy DESTINATION ${DATADIR}/applications/)
-    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snapcenter.pkexec.policy DESTINATION /usr/share/polkit-1/actions/)
+    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION ${DATADIR}/applications/)
+    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION /usr/share/polkit-1/actions/)

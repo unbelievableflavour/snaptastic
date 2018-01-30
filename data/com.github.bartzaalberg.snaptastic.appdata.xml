@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2017 Your Name <you@email.com> -->
 <component type="desktop">
-  <id>com.github.bartzaalberg.snapcenter.desktop</id>
+  <id>com.github.bartzaalberg.snaptastic.desktop</id>
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>SnapCenter</name>
+  <name>Snaptastic</name>
   <summary>Manage snap applications</summary>
   <description>
     <p>Manage snap applications in a simple manner</p>
@@ -27,7 +27,7 @@
   </releases>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/bartzaalberg/snapcenter/master/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot.png</image>
     </screenshot>
   </screenshots>
   <developer_name>Bart Zaalberg</developer_name>
@@ -35,7 +35,7 @@
     <value key="x-appcenter-color-primary">rgb(224,247,255)</value>
     <value key="x-appcenter-color-primary-text">#000</value>
   </custom>
-  <url type="homepage">https://github.com/bartzaalberg/snapcenter</url>
-  <url type="bugtracker">https://github.com/bartzaalberg/snapcenter/issues</url>
-  <url type="help">https://github.com/bartzaalberg/snapcenter/issues</url>
+  <url type="homepage">https://github.com/bartzaalberg/snaptastic</url>
+  <url type="bugtracker">https://github.com/bartzaalberg/snaptastic/issues</url>
+  <url type="help">https://github.com/bartzaalberg/snaptastic/issues</url>
 </component>

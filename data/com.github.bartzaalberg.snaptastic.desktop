@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=SnapCenter
-GenericName=SnapCenter
+Name=Snaptastic
+GenericName=Snaptastic
 Comment=Application to manage snaps
 Categories=Utility;Network;Development;
-Exec=com.github.bartzaalberg.snapcenter %U
-Icon=com.github.bartzaalberg.snapcenter
+Exec=com.github.bartzaalberg.snaptastic %U
+Icon=com.github.bartzaalberg.snaptastic
 Terminal=false
 MimeType=application/vnd.snap;
 Type=Application
-X-GNOME-Gettext-Domain=snapcenter
+X-GNOME-Gettext-Domain=snaptastic
 Keywords=GUI;Snaps;

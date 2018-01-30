@@ -4,15 +4,15 @@
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 <policyconfig>
   <vendor>GreyOk</vendor>
-  <action id="com.github.bartzaalberg.snapcenter-install.polkit">
-    <message gettext-domain="com.github.bartzaalberg.snapcenter-install">Authentication is required to install the application.</message>
-    <icon_name>com.github.bartzaalberg.snapcenter</icon_name>
+  <action id="com.github.bartzaalberg.snaptastic-install.polkit">
+    <message gettext-domain="com.github.bartzaalberg.snaptastic-install">Authentication is required to install the application.</message>
+    <icon_name>com.github.bartzaalberg.snaptastic</icon_name>
     <defaults>
       <allow_any>auth_admin</allow_any>
       <allow_inactive>auth_admin</allow_inactive>
       <allow_active>auth_admin</allow_active>
     </defaults>
-    <annotate key="org.freedesktop.policykit.exec.path">/usr/local/bin/com.github.bartzaalberg.snapcenter-install</annotate>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/local/bin/com.github.bartzaalberg.snaptastic-install</annotate>
     <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
   </action>
 </policyconfig>
