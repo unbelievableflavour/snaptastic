@@ -2,6 +2,12 @@
 Manage your snap applications
 
 <p align="center">
+    <a href="https://appcenter.elementary.io/com.github.bartzaalberg.snaptastic">
+        <img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter">
+    </a>
+</p>
+
+<p align="center">
     <img 
     src="https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot.png" />
 </p>
