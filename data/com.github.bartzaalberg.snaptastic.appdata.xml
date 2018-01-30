@@ -15,9 +15,18 @@
     </ul>
   </description>
   <releases>
-    <release version="0.0.1" date="2018-01-24">
+    <release version="0.0.2" date="2018-01-30">
       <description>
-        <p>0.0.1</p>
+        <p>Updated readme and debian/control file</p>
+        <ul>
+          <li>Updated readme, removed lines which dont apply</li>
+          <li>Updated debian/control file</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.0.1" date="2018-01-30">
+      <description>
+        <p>First release</p>
         <ul>
           <li>First release</li>
         </ul>

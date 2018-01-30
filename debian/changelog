@@ -1,5 +1,12 @@
-com.github.bartzaalberg.snapcenter (0.0.1) UNSTABLE; urgency=low
+com.github.bartzaalberg.snaptastic (0.0.2) UNSTABLE; urgency=low
+
+  * Updated readme
+  * Updated debian/control file
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 30 Jan 2018 11:28:00 +0200
+
+com.github.bartzaalberg.snaptastic (0.0.1) UNSTABLE; urgency=low
 
   * First release
 
- -- Bart Zaalberg <bartzaalberg@gmail.com>  Wed, 24 Jan 2018 17:23:00 +0200
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 30 Jan 2018 11:26:00 +0200
