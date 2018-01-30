@@ -8,7 +8,7 @@ Manage your snap applications
 
 ### Simple App for elementary OS
 
-A Vala application to get manage your snaps in a way everybody can understand
+A Vala application to manage your snaps in a way everybody can understand
 
 ## Installation
 
