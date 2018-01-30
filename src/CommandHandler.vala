@@ -178,32 +178,11 @@ public class CommandHandler : Object {
 								        out error,
 								        out status);
             if(error != null && error != ""){
-                new Alert("An error occured",error);
-            }
-        } catch (SpawnError e) {
-            new Alert("An error occured", e.message);
-        }
-
-        return result;
-    }
-
-    public string getOnlinePackages(string searchWord = "") {
-        string result;
-	    string error;
-	    int status;
-
-        try {
-            Process.spawn_command_line_sync ("snap search " + searchWord,
-								        out result,
-								        out error,
-								        out status);
-
-            if(error != null && error != ""){
-                if("returned 0 snaps" in error){
+                if("No snaps are installed yet." in error){
                     stackManager.getStack().visible_child_name = "not-found-view";
                 }else{
-                    new Alert("An error occured",error);                
-                }  
+                    new Alert("An error occured",error);
+                }                
             }
         } catch (SpawnError e) {
             new Alert("An error occured", e.message);

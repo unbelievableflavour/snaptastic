@@ -31,34 +31,6 @@ public class ConfigFileReader : Object{
         return packages;
     }
 
-    public Package[] getOnlinePackages (string searchWord){
-        Package[] packages = {};
-
-        string result = commandHandler.getOnlinePackages(searchWord);
-
-        string[] lines = result.split("\n");
-        foreach (string line in lines) {
-            var splittedLine = line.split("  ");
-            string name = getPackageName(splittedLine);
-            string version = getStringByIndex(splittedLine, 1);
-            string developer = getStringByIndex(splittedLine, 2);
-            string notes = getStringByIndex(splittedLine, 3);
-            string summary = getStringByIndex(splittedLine, 4);
-
-            if(name == null){continue;}
-            if(name == "Name" && version == " Version"){continue;}
-
-            Package package = new Package();
-            package.setName(name);
-            package.setVersion(version);
-            package.setDeveloper(developer);
-            package.setNotes(notes);
-            package.setSummary(summary);
-            packages += package;
-        }
-        return packages;
-    }
-
     public string getPackageByName (string searchWord){
         string result = commandHandler.getPackageByName(searchWord);
 
