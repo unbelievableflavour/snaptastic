@@ -15,6 +15,15 @@
     </ul>
   </description>
   <releases>
+    <release version="0.0.6" date="2018-01-30">
+      <description>
+        <p>A nicer not-found view!</p>
+        <ul>
+          <li>Vertical aligned delete dialog buttons</li>
+          <li>Added a nicer view for no results</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.0.5" date="2018-01-30">
       <description>
         <p>Modified alert dialog and added snapd as dependency</p>

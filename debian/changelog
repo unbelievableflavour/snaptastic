@@ -1,3 +1,10 @@
+com.github.bartzaalberg.snaptastic (0.0.6) UNSTABLE; urgency=low
+
+  * Vertical aligned delete dialog buttons
+  * Added a nicer view for no results
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 30 Jan 2018 22:12:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.0.5) UNSTABLE; urgency=low
 
   * Changed alert cancel button to close button
