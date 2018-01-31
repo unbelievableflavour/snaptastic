@@ -2,7 +2,7 @@
 Name=Snaptastic
 GenericName=Snaptastic
 Comment=Application to manage snaps
-Categories=Utility;Network;Development;
+Categories=Utility;System;Network;Development;
 Exec=com.github.bartzaalberg.snaptastic %U
 Icon=com.github.bartzaalberg.snaptastic
 Terminal=false
