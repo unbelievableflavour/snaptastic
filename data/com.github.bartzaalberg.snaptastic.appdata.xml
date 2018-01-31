@@ -81,7 +81,7 @@
   <developer_name>Bart Zaalberg</developer_name>
   <custom>
     <value key="x-appcenter-color-primary">rgb(233, 84, 32)</value>
-    <value key="x-appcenter-color-primary-text">#000</value>
+    <value key="x-appcenter-color-primary-text">#fff</value>
   </custom>
   <url type="homepage">https://github.com/bartzaalberg/snaptastic</url>
   <url type="bugtracker">https://github.com/bartzaalberg/snaptastic/issues</url>
