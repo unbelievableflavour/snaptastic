@@ -37,7 +37,7 @@ public class CommandHandler : Object {
 		    });
 
         } catch (SpawnError e) {
-            new Alert("There was an error spawining the process. Details", e.message);
+            new Alert("There was an error spawning the process. Details", e.message);
         }
     }
 
@@ -80,7 +80,7 @@ public class CommandHandler : Object {
 		    });
 
         } catch (SpawnError e) {
-            new Alert("There was an error spawining the process. Details", e.message);
+            new Alert("There was an error spawning the process. Details", e.message);
         }
     }
 
@@ -120,7 +120,7 @@ public class CommandHandler : Object {
 		    });
 
         } catch (SpawnError e) {
-            new Alert("There was an error spawining the process. Details", e.message);
+            new Alert("There was an error spawning the process. Details", e.message);
         }
     }
 
@@ -162,7 +162,7 @@ public class CommandHandler : Object {
 		    });
 
         } catch (SpawnError e) {
-            new Alert("There was an error spawining the process. Details", e.message);
+            new Alert("There was an error spawning the process. Details", e.message);
         }
     }
 
