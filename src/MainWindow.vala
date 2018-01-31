@@ -9,6 +9,10 @@ public class MainWindow : Gtk.Window{
     private CommandHandler commandHandler = new CommandHandler();
 
     construct {
+        var style_context = get_style_context ();
+        style_context.add_class (Gtk.STYLE_CLASS_VIEW);
+        style_context.add_class ("rounded");
+
         set_default_size(Constants.APPLICATION_WIDTH, Constants.APPLICATION_HEIGHT);
         set_titlebar (headerBar);
 
