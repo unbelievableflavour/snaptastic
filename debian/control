@@ -11,7 +11,7 @@ Build-Depends: cmake (>= 2.6),
 
 Package: com.github.bartzaalberg.snaptastic
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, snapd
+Depends: ${misc:Depends}, ${shlibs:Depends}, snapd, ttf-ubuntu-font-family
 Pre-Depends: dpkg (>= 1.15.6)
 Description: Snaptastic
  Manage your snap files
