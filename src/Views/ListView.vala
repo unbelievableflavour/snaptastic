@@ -10,9 +10,6 @@ public class ListView : Gtk.ScrolledWindow {
 
         this.hscrollbar_policy = Gtk.PolicyType.NEVER;
         this.add (box);
-
-        Gdk.RGBA color = {1,1,1,1};
-        this.override_background_color(Gtk.StateFlags.NORMAL,color);
     }
 }
 }
