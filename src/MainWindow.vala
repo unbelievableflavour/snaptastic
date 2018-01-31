@@ -20,8 +20,10 @@ public class MainWindow : Gtk.Window{
 .h2 {
     color: @colorPrimary;
 }
-.view-mode-button{
+
+.view-mode-button {
     color: @fff;
+    text-shadow: 0 1px @textColorPrimaryShadow;
 }
     """;
 
