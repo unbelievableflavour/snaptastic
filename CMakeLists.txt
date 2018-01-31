@@ -105,3 +105,6 @@
     # install the polkit action file
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION ${DATADIR}/applications/)
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION /usr/share/polkit-1/actions/)
+
+    #add custom document-open to pixmap folder
+    install (FILES data/icons/snaptastic.open.ubuntu.svg DESTINATION /usr/share/pixmaps/)
