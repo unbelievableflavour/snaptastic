@@ -15,7 +15,7 @@
     set (PKGDATADIR "${DATADIR}/com.github.bartzaalberg.snaptastic")
 
     set (EXEC_NAME "com.github.bartzaalberg.snaptastic")
-    set (EXEC_NAME2 "com.github.bartzaalberg.snaptastic-install")
+    set (EXEC_NAME2 "com.github.bartzaalberg.snaptastic-wizard")
 
     set (VERSION "0.1.0")
     set (VERSION_INFO "whats up world")
