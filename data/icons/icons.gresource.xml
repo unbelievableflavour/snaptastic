@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/com/github/bartzaalberg/snaptastic">
     <file alias="ubuntu-open.svg" compressed="true" preprocess="xml-stripblanks">ubuntu-open.svg</file>
+    <file alias="ubuntu-web-browser.svg" compressed="true" preprocess="xml-stripblanks">ubuntu-web-browser.svg</file>
     <file alias="application.css" compressed="true">../application.css</file>
   </gresource>
 </gresources>
