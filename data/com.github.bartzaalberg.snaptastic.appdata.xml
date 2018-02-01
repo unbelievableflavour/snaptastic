@@ -5,13 +5,15 @@
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Snaptastic</name>
-  <summary>Manage snap applications</summary>
+  <summary>Install and manage snaps</summary>
   <description>
-    <p>Manage snap applications in a simple manner</p>
+    <p>A snap manager for Elementary OS</p>
     <p>Features:</p>
      <ul>
-       <li>Install snap files</li>
-       <li>Update, and delete installed snaps</li>
+       <li>Install snap files
+       <li>Update, remove, and view information about your installed snaps</li>
+       <li>Search through your installed snaps</li>
+       <li>Install snaps from web a uri</li>
     </ul>
   </description>
   <releases>

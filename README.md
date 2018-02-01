@@ -1,5 +1,5 @@
 # Snaptastic
-Manage your snap applications
+A snap manager for Elementary OS
 
 <p align="center">
     <a href="https://appcenter.elementary.io/com.github.bartzaalberg.snaptastic">
@@ -12,13 +12,11 @@ Manage your snap applications
     src="https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot.png" />
 </p>
 
-### Simple App for elementary OS
-
-A Vala application to manage your snaps in a way everybody can understand
+Install, update, remove, and view information about your installed snaps. z
 
 ## Installation
 
-As first you need elementary SDK
+first you will need to install elementary SDK
 
  `sudo apt install elementary-sdk`
 
