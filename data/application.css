@@ -1,0 +1,16 @@
+@define-color textColorPrimary #fff;
+@define-color textColorPrimaryShadow shade(@colorPrimary, 0.85);
+
+.h1,
+.h2 {
+    font-family: Ubuntu;
+}
+
+.h2 {
+    color: @colorPrimary;
+}
+
+.view-mode-button {
+    color: @fff;
+    text-shadow: 0 1px @textColorPrimaryShadow;
+}

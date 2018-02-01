@@ -24,6 +24,13 @@ public class App:Granite.Application{
    }
    
     public override void activate() {
+        weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
+        default_theme.add_resource_path ("/com/github/bartzaalberg/snaptastic");
+
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("/com/github/bartzaalberg/snaptastic/application.css");
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+       
         var window = new MainWindow ();
         window.destroy.connect (Gtk.main_quit);
         window.show_all();

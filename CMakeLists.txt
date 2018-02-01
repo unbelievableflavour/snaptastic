@@ -77,8 +77,11 @@
         granite
     )
 
+    include (GResource)
+    glib_compile_resources (GLIB_RESOURCES_ICONS SOURCE /data/icons/icons.gresource.xml)
+
     # tell cmake what to call the executable we just made and install
-    add_executable(${EXEC_NAME} ${VALA_C})
+    add_executable(${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_ICONS})
     install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 
     #------------------------------------------------------------------------------------------
@@ -105,6 +108,3 @@
     # install the polkit action file
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION ${DATADIR}/applications/)
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION /usr/share/polkit-1/actions/)
-
-    #add custom document-open to pixmap folder
-    install (FILES data/icons/snaptastic.open.ubuntu.svg DESTINATION /usr/share/pixmaps/)
