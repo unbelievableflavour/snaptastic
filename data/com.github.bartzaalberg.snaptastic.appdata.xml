@@ -15,6 +15,19 @@
     </ul>
   </description>
   <releases>
+    <release version="0.1.0" date="2018-02-01">
+      <description>
+        <p>The app is now Ubuntu styled</p>
+        <ul>
+          <li>Made welcome text Title Case</li>
+          <li>Set rounded bottom corners on window</li>
+          <li>Added ubuntu styling through whole app</li>
+          <li>Fixed some error typos</li>
+          <li>Fixed appcenter text color</li>
+          <li>Added application to system category for appcenter</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.0.6" date="2018-01-30">
       <description>
         <p>A nicer not-found view!</p>

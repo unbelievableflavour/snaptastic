@@ -1,3 +1,14 @@
+com.github.bartzaalberg.snaptastic (0.1.0) UNSTABLE; urgency=low
+
+  * Made welcome text Title Case
+  * Set rounded bottom corners on window
+  * Added ubuntu styling through whole app
+  * Fixed some error typos
+  * Fixed appcenter text color
+  * Added application to system category for appcenter
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 1 Feb 2018 12:54:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.0.6) UNSTABLE; urgency=low
 
   * Vertical aligned delete dialog buttons
