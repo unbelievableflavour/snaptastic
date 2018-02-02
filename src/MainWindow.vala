@@ -21,8 +21,21 @@ public class MainWindow : Gtk.Window{
         stackManager.getStack().visible_child_name = "welcome-view";
 
         if(fileManager.getFilePath() != ""){
-        	stackManager.getStack().visible_child_name = "progress-view";
-			commandHandler.installPackageFromFile(fileManager.getFilePath().replace("file://", ""));
+//            if (file.has_uri_scheme ("snap")) {
+            if("snap" in fileManager.getFilePath()){
+                var link = fileManager.getFilePath().replace ("snap://", "");
+                if (link.has_suffix ("/")) {
+                    link = link.substring (0, link.last_index_of_char ('/'));
+                }
+        	    stackManager.getStack().visible_child_name = "progress-view";
+                Package package = new Package();
+                package.setName(link);
+                package.setNotes("classic");
+			    commandHandler.installPackage(package);
+            }else{
+        	    stackManager.getStack().visible_child_name = "progress-view";
+			    commandHandler.installPackageFromFile(fileManager.getFilePath().replace("file://", ""));
+            }
         }
     }
 }
