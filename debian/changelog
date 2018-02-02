@@ -1,10 +1,17 @@
+com.github.bartzaalberg.snaptastic (0.1.2) UNSTABLE; urgency=low
+
+  * Application will now open on snap links from the browser
+  * You can now launch your apps from the installed view
+  * Fixed appdata file
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 2 Feb 2018 20:03:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.1.1) UNSTABLE; urgency=low
 
   * Application will now open on snap links from the browser
   * You can now launch your apps from the installed view
 
  -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 2 Feb 2018 19:46:00 +0200
-
 
 com.github.bartzaalberg.snaptastic (0.1.0) UNSTABLE; urgency=low
 

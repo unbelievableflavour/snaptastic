@@ -10,13 +10,23 @@
     <p>A snap manager for Elementary OS</p>
     <p>Features:</p>
      <ul>
-       <li>Install snap files
+       <li>Install snap files</li>
        <li>Update, remove, and view information about your installed snaps</li>
        <li>Search through your installed snaps</li>
        <li>Install snaps from web a uri</li>
     </ul>
   </description>
   <releases>
+    <release version="0.1.2" date="2018-02-02">
+      <description>
+        <p>Install straight from snapcraft.io!</p>
+        <ul>
+          <li>Application will now open on snap:// links</li>
+          <li>You can now launch your apps from the installed view</li>
+          <li>Fixed appdata file</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.1" date="2018-02-02">
       <description>
         <p>Install straight from snapcraft.io!</p>
