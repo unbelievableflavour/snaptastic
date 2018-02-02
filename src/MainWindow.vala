@@ -20,23 +20,36 @@ public class MainWindow : Gtk.Window{
 
         stackManager.getStack().visible_child_name = "welcome-view";
 
-        if(fileManager.getFilePath() != ""){
-//            if (file.has_uri_scheme ("snap")) {
-            if("snap" in fileManager.getFilePath()){
-                var link = fileManager.getFilePath().replace ("snap://", "");
-                if (link.has_suffix ("/")) {
-                    link = link.substring (0, link.last_index_of_char ('/'));
-                }
-        	    stackManager.getStack().visible_child_name = "progress-view";
-                Package package = new Package();
-                package.setName(link);
-                package.setNotes("classic");
-			    commandHandler.installPackage(package);
-            }else{
-        	    stackManager.getStack().visible_child_name = "progress-view";
-			    commandHandler.installPackageFromFile(fileManager.getFilePath().replace("file://", ""));
+        if(fileManager.getFile() != null){
+            if (fileManager.getFile().has_uri_scheme ("snap")) {
+                installByName();
+            }
+
+            if (fileManager.getFile().has_uri_scheme ("file")) {
+                installFromUrl();
             }
         }
+    }
+
+    public void installFromUrl(){
+        var name = fileManager.getFile().get_uri().replace ("snap://", "");
+
+        if (name.has_suffix ("/")) {
+            name = name.substring (0, name.last_index_of_char ('/'));
+        }
+
+	    stackManager.getStack().visible_child_name = "progress-view";
+        Package package = new Package();
+        package.setName(name);
+        package.setNotes("classic");
+	    commandHandler.installPackage(package);
+    }
+
+    public void installByName(){
+        var link = fileManager.getFile().get_uri().replace ("file://", "");
+
+	    stackManager.getStack().visible_child_name = "progress-view";
+        commandHandler.installPackageFromFile(link);
     }
 }
 }

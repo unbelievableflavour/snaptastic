@@ -50,10 +50,9 @@ public class App:Granite.Application{
         if (file == null) {
             return;
         }
-        string uri = file.get_uri ();
 
-        fileManager.setFilePath(uri);
-        activate ();
+        fileManager.setFile(file);
+        activate();
 	}
 
     public static void main(string[] args) {

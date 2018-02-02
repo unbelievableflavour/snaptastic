@@ -3,7 +3,7 @@ public class FileManager : Object {
 
     static FileManager? instance;
 
-    string filePath = "";
+    File file = null;
 
     // Private constructor
     FileManager() {
@@ -17,12 +17,12 @@ public class FileManager : Object {
         return instance;
     }
 
-    public string getFilePath() {
-        return this.filePath;
+    public File getFile() {
+        return this.file;
     }
 
-   public void setFilePath(string path){
-        this.filePath = (path);
+    public void setFile(File newFile){
+        this.file = newFile;
     }
 }
 }
