@@ -48,8 +48,8 @@ public class StackManager : Object {
         window.show_all();
    }
 
-   public void setDetailPackageByName(string name) {
-        detailView.loadPackage(name);
+   public void setDetailPackage(Package package) {
+        detailView.loadPackage(package);
    }
 }
 }

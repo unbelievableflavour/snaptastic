@@ -4,6 +4,7 @@ public class DetailView : Gtk.Grid{
     private ConfigFileReader configFileReader = new ConfigFileReader ();
 
     Gtk.Label packageInformation = new Gtk.Label ("Name Information");
+    DetailViewBanner packageRow;
 
     public DetailView(){
         column_spacing = 12;
@@ -13,13 +14,12 @@ public class DetailView : Gtk.Grid{
         package.setName("name");
         package.setVersion("1.0.0");
         var installedPackages = configFileReader.getInstalledPackages();
-        var packageRow = new DetailViewBanner (package, installedPackages);
+        packageRow = new DetailViewBanner (package, installedPackages);
 
         var content_grid = new Gtk.Grid ();
-            content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
-            content_grid.margin = 48;
-            content_grid.row_spacing = 24;
+            content_grid.margin = 30;
+            content_grid.row_spacing = 20;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
             content_grid.add (packageInformation);
 
@@ -34,11 +34,11 @@ public class DetailView : Gtk.Grid{
         attach (scrolled, 0, 1, 1, 1);
     }
 
-    public void loadPackage(string packageName){
+    public void loadPackage(Package package){
         packageInformation.set_label("");
         
-        if(packageName != null){
-            string packageString = configFileReader.getPackageByName(packageName);
+        if(package.getName() != null){
+            string packageString = configFileReader.getPackageByName(package.getName());
             packageInformation.set_label(packageString);
         }
     }

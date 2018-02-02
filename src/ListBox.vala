@@ -46,9 +46,9 @@ public class ListBox : Gtk.ListBox{
         headerBar.showViewMode(false);
         headerBar.showReturnButton(true);
 
-        var activeRow = ((ListBoxRow)row).name_label;
+        var activePackage = ((ListBoxRow)row).package;
 
-        stackManager.setDetailPackageByName(activeRow.get_text());
+        stackManager.setDetailPackage(activePackage);
         stackManager.getStack().visible_child_name = "detail-view";
     }
 }

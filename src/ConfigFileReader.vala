@@ -32,9 +32,7 @@ public class ConfigFileReader : Object{
     }
 
     public string getPackageByName (string searchWord){
-        string result = commandHandler.getPackageByName(searchWord);
-
-        return result;
+        return commandHandler.getPackageByName(searchWord);
     }
 
     public string getPackageName(string[] splittedLine){

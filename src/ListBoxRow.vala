@@ -7,6 +7,8 @@ public class ListBoxRow : Gtk.ListBoxRow {
     HeaderBar headerBar = HeaderBar.get_instance();
     private StackManager stackManager = StackManager.get_instance();
     public Gtk.Label name_label;
+    public Package package;
+
     private CommandHandler commandHandler = new CommandHandler();
 
     public bool isInstalled(Package package, Package[] installedPackages){
