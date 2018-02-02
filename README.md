@@ -45,3 +45,5 @@ sudo make
 ### Installing
 `sudo make install`
 
+Run the following command to use snaps from browsers
+`sudo update-desktop-database /usr/share/applications`

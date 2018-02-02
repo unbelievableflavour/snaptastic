@@ -6,6 +6,7 @@ public class App:Granite.Application{
     public static string[] supported_mimetypes;
 
     private FileManager fileManager = FileManager.get_instance();
+    private static string? link = null;
 
     construct {
         flags |= ApplicationFlags.HANDLES_OPEN;
@@ -20,7 +21,15 @@ public class App:Granite.Application{
         bug_url = Constants.BUG_URL;
 
         var app_info = new DesktopAppInfo (Constants.DESKTOP_NAME);
-        app_info.set_as_default_for_type ("application/vnd.snap");
+        try {
+            app_info.set_as_default_for_type ("application/vnd.snap");
+
+            if (AppInfo.get_default_for_uri_scheme ("snap") == null) {
+                app_info.set_as_default_for_type ("x-scheme-handler/snap");
+            }
+        } catch (Error e) {
+            critical ("Unable to set default for the settings scheme: %s", e.message);
+        }
    }
    
     public override void activate() {
@@ -37,10 +46,13 @@ public class App:Granite.Application{
     }
 
     public override void open (File[] files, string hint) {
-		foreach (File file in files) {
-			string uri = file.get_uri ();
-            fileManager.setFilePath(uri);
-		}
+        var file = files[0];
+        if (file == null) {
+            return;
+        }
+        string uri = file.get_uri ();
+
+        fileManager.setFilePath(uri);
         activate ();
 	}
 
