@@ -22,11 +22,11 @@ public class MainWindow : Gtk.Window{
 
         if(fileManager.getFile() != null){
             if (fileManager.getFile().has_uri_scheme ("snap")) {
-                installByName();
+                installFromUrl();
             }
 
             if (fileManager.getFile().has_uri_scheme ("file")) {
-                installFromUrl();
+                installFromFile();
             }
         }
     }
@@ -45,7 +45,7 @@ public class MainWindow : Gtk.Window{
 	    commandHandler.installPackage(package);
     }
 
-    public void installByName(){
+    public void installFromFile(){
         var link = fileManager.getFile().get_uri().replace ("file://", "");
 
 	    stackManager.getStack().visible_child_name = "progress-view";
