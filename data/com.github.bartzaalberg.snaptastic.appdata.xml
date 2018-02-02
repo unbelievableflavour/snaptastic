@@ -17,6 +17,15 @@
     </ul>
   </description>
   <releases>
+    <release version="0.1.1" date="2018-02-02">
+      <description>
+        <p>Install straight from snapcraft.io!</p>
+        <ul>
+          <li>Application will now open on snap:// links</li>
+          <li>You can now launch your apps from the installed view</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.0" date="2018-02-01">
       <description>
         <p>The app is now Ubuntu styled</p>
