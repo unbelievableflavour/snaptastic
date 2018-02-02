@@ -14,3 +14,7 @@
     color: @fff;
     text-shadow: 0 1px @textColorPrimaryShadow;
 }
+
+.detail-view-banner {
+    background-color: #F5F5F5;
+}

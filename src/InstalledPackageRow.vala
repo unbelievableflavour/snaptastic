@@ -25,14 +25,6 @@ public class InstalledPackageRow : ListBoxRow {
             package_row.add(icon);
             package_row.add (vertical_box);
 
-            if(isLatestVersion(package, installedPackages)){
-                package_row.pack_end (delete_button, false, false);
-            }else{
-                package_row.pack_end (update_button, false, false);
-            }
-
-            package_row.pack_end (open_button, false, false);
-
             this.add (package_row);
         }
 }

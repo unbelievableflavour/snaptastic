@@ -51,8 +51,9 @@ public class ListBoxRow : Gtk.ListBoxRow {
      
     var update_button = new Gtk.Button();
         update_button.set_label(_("Update"));
-        update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        update_button.valign = Gtk.Align.CENTER;
         update_button.set_tooltip_text(_("Update this to latest version"));
+        update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_button.button_press_event.connect (() => {
             stackManager.getStack().visible_child_name = "progress-view";
             commandHandler.updatePackage(package);
@@ -80,7 +81,9 @@ public class ListBoxRow : Gtk.ListBoxRow {
 
         var install_button = new Gtk.Button(); 
         install_button.set_label(_("Install")); 
+        install_button.valign = Gtk.Align.CENTER;
         install_button.set_tooltip_text(_("Install this application")); 
+        install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         install_button.button_press_event.connect (() => {
             stackManager.getStack().visible_child_name = "progress-view";
             commandHandler.installPackage(package);
