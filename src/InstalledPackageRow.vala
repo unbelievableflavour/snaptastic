@@ -15,7 +15,7 @@ public class InstalledPackageRow : ListBoxRow {
             var summary_label = generateSummaryLabel(package.getVersion());
             var delete_button = generateDeleteButton(package);
             var update_button = generateUpdateButton(package);
-
+            var open_button = generateOpenButton(package);
 
             vertical_box.add (name_label);
             vertical_box.add (summary_label);
@@ -30,6 +30,8 @@ public class InstalledPackageRow : ListBoxRow {
             }else{
                 package_row.pack_end (update_button, false, false);
             }
+
+            package_row.pack_end (open_button, false, false);
 
             this.add (package_row);
         }

@@ -124,6 +124,31 @@ public class CommandHandler : Object {
         }
     }
 
+    public void runPackage(string packageName) {
+
+         MainLoop loop = new MainLoop ();
+
+        string[] arguments = {
+            "snap", 
+            "run",
+            packageName
+        };
+
+        Pid child_pid;
+
+        try {
+            Process.spawn_async ("/",
+    			arguments,
+    			env,
+    			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
+    			null,
+    			out child_pid);
+
+        } catch (SpawnError e) {
+            new Alert("There was an error spawning the process. Details", e.message);
+        }
+    }
+
     public void updatePackage(Package package) {
 
         MainLoop loop = new MainLoop ();

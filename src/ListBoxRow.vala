@@ -76,7 +76,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
         return delete_button;
     }
 
-    public Gtk.Button generateStartButton(Package package){
+    public Gtk.Button generateInstallButton(Package package){
 
         var install_button = new Gtk.Button(); 
         install_button.set_label(_("Install")); 
@@ -87,6 +87,20 @@ public class ListBoxRow : Gtk.ListBoxRow {
             return true;
         }); 
         return install_button;
+    }
+
+    public Gtk.Button generateOpenButton(Package package){
+
+        var open_button = new Gtk.Button(); 
+        open_button.valign = Gtk.Align.CENTER;
+        open_button.set_label(_("Open")); 
+        open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        open_button.set_tooltip_text(_("Run the application")); 
+        open_button.button_press_event.connect (() => {
+            commandHandler.runPackage(package.getName());
+            return true;
+        }); 
+        return open_button;
     }
 }
 }
