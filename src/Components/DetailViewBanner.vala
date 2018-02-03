@@ -35,12 +35,16 @@ public class DetailViewBanner : ListBoxRow {
         package_row.add(icon);
 
         package_row.add (vertical_box);
+        if(package.getName() != "core" && package.getDeveloper() != "conanical"){
             package_row.pack_end (open_button, false, false);
+        }
 
         if(!isLatestVersion(package, installedPackages)){
             package_row.pack_end (update_button, false, false);
         }
+        if(package.getName() != "core" && package.getDeveloper() != "conanical"){
             package_row.pack_end (delete_button, false, false);
+        }
 
         add (package_row);
     }
