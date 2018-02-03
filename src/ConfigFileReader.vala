@@ -18,7 +18,7 @@ public class ConfigFileReader : Object{
             string notes = getStringByIndex(splittedLine, 1);
 
             if(name == null){continue;}
-            if(name == "Name" && version == " Version"){continue;}
+            if(name.strip() == "Name" && version.strip() == "Version"){continue;}
 
             Package package = new Package();
             package.setName(name);

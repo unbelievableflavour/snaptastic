@@ -13,6 +13,8 @@ public class DetailView : Gtk.Grid{
         var package = new Package();
         package.setName("name");
         package.setVersion("1.0.0");
+        package.setDeveloper("Developer");
+
         var installedPackages = configFileReader.getInstalledPackages();
         packageRow = new DetailViewBanner (package, installedPackages);
 
@@ -40,6 +42,8 @@ public class DetailView : Gtk.Grid{
         if(package.getName() != null){
             string packageString = configFileReader.getPackageByName(package.getName());
             packageInformation.set_label(packageString);
+            var installedPackages = configFileReader.getInstalledPackages();
+            packageRow.loadPackage(package, installedPackages);
         }
     }
 }}
