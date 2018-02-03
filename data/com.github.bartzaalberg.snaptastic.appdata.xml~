@@ -7,7 +7,7 @@
   <name>Snaptastic</name>
   <summary>Install and manage snaps</summary>
   <description>
-    <p>A manager for snaps</p>
+    <p>A snap manager for Elementary OS</p>
     <p>Features:</p>
      <ul>
        <li>Install snap files</li>
