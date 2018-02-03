@@ -34,7 +34,7 @@ public class StackManager : Object {
         return this.stack;
     }
 
-    public void loadViews(Gtk.Window window){
+    public void loadViews(Gtk.Window window) {
         detailView = new DetailView();
         mainWindow = window;
 
@@ -48,8 +48,8 @@ public class StackManager : Object {
         window.show_all();
    }
 
-   public void setDetailPackageByName(string name){
-        detailView.loadPackage(name);
-    }
+   public void setDetailPackage(Package package) {
+        detailView.loadPackage(package);
+   }
 }
 }

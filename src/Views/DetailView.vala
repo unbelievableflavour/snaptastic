@@ -1,20 +1,49 @@
 namespace Application {
-public class DetailView : Gtk.ScrolledWindow{
+public class DetailView : Gtk.Grid{
 
     private ConfigFileReader configFileReader = new ConfigFileReader ();
 
     Gtk.Label packageInformation = new Gtk.Label ("Name Information");
+    DetailViewBanner packageRow;
 
     public DetailView(){
-        add(packageInformation);
+        column_spacing = 12;
+        hexpand = true;
+
+        var package = new Package();
+        package.setName("name");
+        package.setVersion("1.0.0");
+        package.setDeveloper("Developer");
+
+        var installedPackages = configFileReader.getInstalledPackages();
+        packageRow = new DetailViewBanner (package, installedPackages);
+
+        var content_grid = new Gtk.Grid ();
+            content_grid.halign = Gtk.Align.CENTER;
+            content_grid.margin = 30;
+            content_grid.row_spacing = 20;
+            content_grid.orientation = Gtk.Orientation.VERTICAL;
+            content_grid.add (packageInformation);
+
+        var scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+            scrolled.expand = true;
+            scrolled.add (content_grid);
+
+        packageRow.get_style_context().add_class("detail-view-banner");
+
+        attach (packageRow, 0, 0, 1, 1);
+        attach (scrolled, 0, 1, 1, 1);
     }
 
-    public void loadPackage(string packageName){
+    public void loadPackage(Package package){
         packageInformation.set_label("");
         
-        if(packageName != null){
-            string packageString = configFileReader.getPackageByName(packageName);
+        if(package.getName() != null){
+            string packageString = configFileReader.getPackageByName(package.getName());
             packageInformation.set_label(packageString);
+            var installedPackages = configFileReader.getInstalledPackages();
+            packageRow.loadPackage(package, installedPackages);
         }
     }
 }}

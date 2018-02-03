@@ -70,6 +70,7 @@
         src/Views/DetailView.vala
         src/Components/HeaderBar.vala
         src/Components/HeaderLabel.vala
+        src/Components/DetailViewBanner.vala
 
     # tell what libraries to use when compiling
     PACKAGES

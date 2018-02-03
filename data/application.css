@@ -14,3 +14,13 @@
     color: @fff;
     text-shadow: 0 1px @textColorPrimaryShadow;
 }
+
+.detail-view-banner {
+    background-color: #F5F5F5;
+}
+
+.detail-view-banner-title {
+    font-family: Ubuntu;
+    font-size:30px;
+}
+
