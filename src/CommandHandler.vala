@@ -216,23 +216,6 @@ public class CommandHandler : Object {
         return result;
     }
 
-    public void openStore() {
-              
-        string result;
-	    string error;
-	    int status;
-        
-        try {
-            Process.spawn_command_line_sync ("xdg-open https://snapcraft.io/store",
-								        out result,
-								        out error,
-								        out status);
-
-        } catch (SpawnError e) {
-            new Alert("An error occured", e.message);
-        }
-    }
-
      public string getPackageByName(string searchWord = "") {
         string result;
 	    string error;
