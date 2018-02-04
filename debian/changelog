@@ -1,3 +1,9 @@
+com.github.bartzaalberg.snaptastic (0.2.1) UNSTABLE; urgency=low
+
+  * Removed the link to snapcraft
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Sat, 4 Feb 2018 20:46:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.2.0) UNSTABLE; urgency=low
 
   * Updated the detail view

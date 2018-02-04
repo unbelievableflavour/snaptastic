@@ -17,6 +17,16 @@
     </ul>
   </description>
   <releases>
+   <release version="0.2.1" date="2018-02-04">
+      <description>
+        <p>List view overhaul</p>
+        <ul>
+          <li>Updated the detail view</li>
+          <li>Removed the buttons from the list view</li>
+          <li>Removed delete and install button for the snap core</li>
+        </ul>
+      </description>
+    </release>
    <release version="0.2.0" date="2018-02-03">
       <description>
         <p>List view overhaul, and a link to snapcraft</p>
