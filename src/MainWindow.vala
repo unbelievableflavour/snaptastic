@@ -37,19 +37,34 @@ public class MainWindow : Gtk.Window{
         if (name.has_suffix ("/")) {
             name = name.substring (0, name.last_index_of_char ('/'));
         }
-
-	    stackManager.getStack().visible_child_name = "progress-view";
+	    
         Package package = new Package();
         package.setName(name);
         package.setNotes("classic");
-	    commandHandler.installPackage(package);
+        stackManager.setDetailPackage(package);
+        stackManager.getStack().visible_child_name = "detail-view";
     }
 
     public void installFromFile(){
-        var link = fileManager.getFile().get_uri().replace ("file://", "");
+        string link = fileManager.getFile().get_uri().replace ("file://", "");
 
-	    stackManager.getStack().visible_child_name = "progress-view";
-        commandHandler.installPackageFromFile(link);
+        string result = commandHandler.getPackageByName(link);
+
+        string[] lines = result.split("\n");
+	    string name = "";
+        foreach (string line in lines) {
+		    if("name:" in line){
+			    string []resultString = line.split(":");
+			    name = resultString[1].strip();
+			    break;
+		    }
+	    }
+
+        Package package = new Package();
+        package.setName(name);
+        package.setNotes("classic");
+        stackManager.setDetailPackage(package);
+        stackManager.getStack().visible_child_name = "detail-view";
     }
 }
 }

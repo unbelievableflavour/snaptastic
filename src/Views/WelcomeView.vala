@@ -16,8 +16,23 @@ public class WelcomeView : Gtk.ScrolledWindow {
                 case 0:
 					var path = getFilePath();
 					if(path != ""){
-						stackManager.getStack().visible_child_name = "progress-view";
-						commandHandler.installPackageFromFile(path);
+						string result = commandHandler.getPackageByName(path);
+
+                        string[] lines = result.split("\n");
+						string name = "";
+                        foreach (string line in lines) {
+							if("name:" in line){
+								string []resultString = line.split(":");
+								name = resultString[1].strip();
+								break;
+							}
+                		}
+
+				        Package package = new Package();
+						package.setName(name);
+						package.setNotes("classic");
+						stackManager.setDetailPackage(package);
+						stackManager.getStack().visible_child_name = "detail-view";
 					}
                     break;
             }

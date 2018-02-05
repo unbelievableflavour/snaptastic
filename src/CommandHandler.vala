@@ -84,46 +84,6 @@ public class CommandHandler : Object {
         }
     }
 
-    public void installPackageFromFile(string packagePath) {
-
-        MainLoop loop = new MainLoop ();
-
-        string[] arguments = {
-            "pkexec", 
-            "env", 
-            "HOME=" + homeDir, 
-            "com.github.bartzaalberg.snaptastic-wizard", 
-            "snap", 
-            "install",
-            "--dangerous",
-            "--classic",
-            packagePath
-        };
-
-        Pid child_pid;
-
-
-
-        try {
-            Process.spawn_async ("/",
-    			arguments,
-    			env,
-    			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
-    			null,
-    			out child_pid);
-
-            ChildWatch.add (child_pid, (pid, status) => {
-			    Process.close_pid (pid);
-			    loop.quit ();
-                ListBox listBox = ListBox.get_instance();
-                listBox.getInstalledPackages();
-		    });
-
-        } catch (SpawnError e) {
-            new Alert("There was an error spawning the process. Details", e.message);
-        }
-    }
-
     public void runPackage(string packageName) {
 
          MainLoop loop = new MainLoop ();
