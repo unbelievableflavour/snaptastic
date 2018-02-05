@@ -17,6 +17,16 @@
     </ul>
   </description>
   <releases>
+   <release version="0.3.0" date="2018-02-05">
+      <description>
+        <p>Added view for not yet installed packages </p>
+        <ul>
+          <li>Added view for not yet installed packages</li>
+          <li>Added extra screenshot for appcenter</li>
+          <li>Switched background-color and text color for appcenter</li>
+        </ul>
+      </description>
+    </release>
    <release version="0.2.1" date="2018-02-04">
       <description>
         <p>List view overhaul</p>

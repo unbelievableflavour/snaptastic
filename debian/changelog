@@ -1,8 +1,16 @@
+com.github.bartzaalberg.snaptastic (0.3.0) UNSTABLE; urgency=low
+
+  * Added detail-view for uninstalled packages
+  * Added extra screenshot for appcenter
+  * Switched background-color and text color for appcenter
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Mon, 5 Feb 2018 17:32:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.2.1) UNSTABLE; urgency=low
 
   * Removed the link to snapcraft
 
- -- Bart Zaalberg <bartzaalberg@gmail.com>  Sat, 4 Feb 2018 20:46:00 +0200
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Sun, 4 Feb 2018 20:46:00 +0200
 
 com.github.bartzaalberg.snaptastic (0.2.0) UNSTABLE; urgency=low
 
