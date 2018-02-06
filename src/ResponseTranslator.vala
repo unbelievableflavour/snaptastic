@@ -1,8 +1,8 @@
 namespace Application {
-public class ConfigFileReader : Object{
+public class ResponseTranslator : Object{
 
-    private StackManager stackManager = StackManager.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
+
     public Package[] getInstalledPackages (){
         Package[] packages = {};
 
@@ -31,10 +31,6 @@ public class ConfigFileReader : Object{
         return packages;
     }
 
-    public string getPackageByName (string searchWord){
-        return commandHandler.getPackageByName(searchWord);
-    }
-
     public string getPackageName(string[] splittedLine){
         foreach (string part in splittedLine) {
             if(part == ""){
@@ -45,7 +41,7 @@ public class ConfigFileReader : Object{
         return splittedLine[0];
     }
 
-     public string getStringByIndex(string[] splittedLine, int index){
+    public string getStringByIndex(string[] splittedLine, int index){
         var elementsCount = 0;
 
         foreach (string part in splittedLine) {
