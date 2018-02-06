@@ -41,8 +41,8 @@ public class HeaderBar : Gtk.HeaderBar {
 	    //Add each label to the Mode Button.
 	    view_mode.append(label1);
 	    view_mode.append(label2);
-
-	    //Specify which button is active on initialization
+        view_mode.no_show_all = true;
+        view_mode.visible = false;
         view_mode.margin = 1;
         view_mode.notify["selected"].connect (on_view_mode_changed);
     }
@@ -50,8 +50,8 @@ public class HeaderBar : Gtk.HeaderBar {
     private void generateReturnButton(){
         return_button.label = _("Back");
         return_button.no_show_all = true;
-        return_button.get_style_context ().add_class ("back-button");
         return_button.visible = false;
+        return_button.get_style_context ().add_class ("back-button");
         return_button.clicked.connect (() => {
             stackManager.getStack().visible_child_name = "list-view";
         });
