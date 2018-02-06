@@ -42,10 +42,6 @@ public class ListBox : Gtk.ListBox{
 
     private void on_row_activated (Gtk.ListBoxRow row) {
 
-        var headerBar = HeaderBar.get_instance();
-        headerBar.showViewMode(false);
-        headerBar.showReturnButton(true);
-
         var activePackage = ((ListBoxRow)row).package;
 
         stackManager.setDetailPackage(activePackage);

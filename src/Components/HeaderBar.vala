@@ -54,8 +54,6 @@ public class HeaderBar : Gtk.HeaderBar {
         return_button.get_style_context ().add_class ("back-button");
         return_button.visible = false;
         return_button.clicked.connect (() => {
-            showReturnButton(false);
-            showViewMode(true);
             stackManager.getStack().visible_child_name = "list-view";
         });
     }
@@ -66,6 +64,10 @@ public class HeaderBar : Gtk.HeaderBar {
 
     public void showReturnButton(bool answer){
         return_button.visible = answer;
+    }
+
+    public void setSelectedViewMode(int answer){
+        view_mode.selected = answer;
     }
 
      private void on_view_mode_changed () {

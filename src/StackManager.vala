@@ -44,6 +44,32 @@ public class StackManager : Object {
         stack.add_named (new ProgressView(), PROGRESS_VIEW_ID);
         stack.add_named (detailView, DETAIL_VIEW_ID);
 
+        stack.notify["visible-child"].connect (() => {
+            var headerBar = HeaderBar.get_instance();
+
+            if(stack.get_visible_child_name() == WELCOME_VIEW_ID){
+                headerBar.showViewMode(true);
+                headerBar.setSelectedViewMode(0);
+                headerBar.showReturnButton(false);
+            }
+
+            if(stack.get_visible_child_name() == DETAIL_VIEW_ID){
+                headerBar.showViewMode(false);
+                headerBar.showReturnButton(true);
+            }
+
+            if(stack.get_visible_child_name() == PROGRESS_VIEW_ID){
+                headerBar.showViewMode(false);
+                headerBar.showReturnButton(false);
+            }
+
+            if(stack.get_visible_child_name() == LIST_VIEW_ID){
+                headerBar.showViewMode(true);
+                headerBar.setSelectedViewMode(1);
+                headerBar.showReturnButton(false);
+            }
+        });
+
         window.add(stack);
         window.show_all();
    }
