@@ -43,7 +43,6 @@ public class HeaderBar : Gtk.HeaderBar {
 	    view_mode.append(label2);
 
 	    //Specify which button is active on initialization
-	    view_mode.set_active(0);
         view_mode.margin = 1;
         view_mode.notify["selected"].connect (on_view_mode_changed);
     }
