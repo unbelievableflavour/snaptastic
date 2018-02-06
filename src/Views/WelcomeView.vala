@@ -51,9 +51,9 @@ public class WelcomeView : Gtk.ScrolledWindow {
 				Gtk.ResponseType.ACCEPT);
 
 		// Multiple files can be selected:
-		chooser.select_multiple = true;
+		chooser.select_multiple = false;
 
-		// We are only interested in jpegs:
+		// We are only interested in .snap files:
 		Gtk.FileFilter filter = new Gtk.FileFilter ();
 		chooser.set_filter (filter);
 		filter.add_mime_type ("application/vnd.snap");
