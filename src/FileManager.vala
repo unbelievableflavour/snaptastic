@@ -5,11 +5,9 @@ public class FileManager : Object {
 
     File file = null;
 
-    // Private constructor
     FileManager() {
     }
  
-    // Public constructor
     public static FileManager get_instance() {
         if (instance == null) {
             instance = new FileManager();

@@ -6,7 +6,6 @@ public class App:Granite.Application{
     public static string[] supported_mimetypes;
 
     private FileManager fileManager = FileManager.get_instance();
-    private static string? link = null;
 
     construct {
         flags |= ApplicationFlags.HANDLES_OPEN;

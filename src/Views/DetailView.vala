@@ -1,9 +1,10 @@
 namespace Application {
 public class DetailView : Gtk.Grid{
 
-    private ConfigFileReader configFileReader = new ConfigFileReader ();
+    private ResponseTranslator responseTranslator = new ResponseTranslator ();
+    private CommandHandler commandHandler = new CommandHandler();
 
-    Gtk.Label packageInformation = new Gtk.Label ("Name Information");
+    Gtk.Label packageInformation = new Gtk.Label (_("Name Information"));
     DetailViewBanner packageRow;
 
     public DetailView(){
@@ -15,7 +16,7 @@ public class DetailView : Gtk.Grid{
         package.setVersion("1.0.0");
         package.setDeveloper("Developer");
 
-        var installedPackages = configFileReader.getInstalledPackages();
+        var installedPackages = responseTranslator.getInstalledPackages();
         packageRow = new DetailViewBanner (package, installedPackages);
 
         var content_grid = new Gtk.Grid ();
@@ -40,9 +41,9 @@ public class DetailView : Gtk.Grid{
         packageInformation.set_label("");
         
         if(package.getName() != null){
-            string packageString = configFileReader.getPackageByName(package.getName());
+            string packageString = commandHandler.getPackageByName(package.getName());
             packageInformation.set_label(packageString);
-            var installedPackages = configFileReader.getInstalledPackages();
+            var installedPackages = responseTranslator.getInstalledPackages();
             packageRow.loadPackage(package, installedPackages);
         }
     }

@@ -55,7 +55,7 @@
         src/ListBoxRow.vala
         src/InstalledPackageRow.vala
         src/ListBox.vala
-        src/ConfigFileReader.vala
+        src/ResponseTranslator.vala
         src/FileManager.vala
         src/Constants.vala        
         src/Package.vala

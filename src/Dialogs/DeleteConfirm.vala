@@ -1,7 +1,6 @@
 namespace Application {
 public class DeleteConfirm : Object {
-      
-    private ListBox listBox = ListBox.get_instance();
+
     private StackManager stackManager = StackManager.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
 

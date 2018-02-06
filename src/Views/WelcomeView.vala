@@ -4,7 +4,6 @@ namespace Application {
 public class WelcomeView : Gtk.ScrolledWindow {
 
     private StackManager stackManager = StackManager.get_instance();
-    ListBox listBox = ListBox.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
 
     public WelcomeView(){

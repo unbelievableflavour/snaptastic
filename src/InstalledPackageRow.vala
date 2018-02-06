@@ -13,9 +13,6 @@ public class InstalledPackageRow : ListBoxRow {
             name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
 
             var summary_label = generateSummaryLabel(package.getVersion());
-            var delete_button = generateDeleteButton(package);
-            var update_button = generateUpdateButton(package);
-            var open_button = generateOpenButton(package);
 
             vertical_box.add (name_label);
             vertical_box.add (summary_label);

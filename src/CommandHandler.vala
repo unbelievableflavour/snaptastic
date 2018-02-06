@@ -86,8 +86,6 @@ public class CommandHandler : Object {
 
     public void runPackage(string packageName) {
 
-         MainLoop loop = new MainLoop ();
-
         string[] arguments = {
             "snap", 
             "run",
@@ -176,7 +174,8 @@ public class CommandHandler : Object {
         return result;
     }
 
-     public string getPackageByName(string searchWord = "") {
+    public string getPackageByName(string searchWord = "") {
+
         string result;
 	    string error;
 	    int status;
@@ -192,7 +191,7 @@ public class CommandHandler : Object {
                     stackManager.getStack().visible_child_name = "not-found-view";
                 }else{
                     new Alert("An error occured",error);                
-                }  
+                }
             }
         } catch (SpawnError e) {
             new Alert("An error occured", e.message);

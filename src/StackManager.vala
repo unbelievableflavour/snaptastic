@@ -14,15 +14,12 @@ public class StackManager : Object {
     DetailView detailView;
     public Gtk.Window mainWindow;
 
-
-    // Private constructor
     StackManager() {
         stack = new Gtk.Stack ();
         stack.margin_bottom = 4;
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
     }
  
-    // Public constructor
     public static StackManager get_instance() {
         if (instance == null) {
             instance = new StackManager();

@@ -5,7 +5,7 @@ public class ListBox : Gtk.ListBox{
 
     static ListBox? instance;
 
-    private ConfigFileReader configFileReader = new ConfigFileReader ();
+    private ResponseTranslator responseTranslator = new ResponseTranslator ();
     private StackManager stackManager = StackManager.get_instance();
 
     ListBox() {
@@ -29,7 +29,7 @@ public class ListBox : Gtk.ListBox{
 
         stackManager.getStack().visible_child_name = "list-view";
 
-        var installedPackages = configFileReader.getInstalledPackages();
+        var installedPackages = responseTranslator.getInstalledPackages();
 
         foreach (Package package in installedPackages) {
             add (new InstalledPackageRow (package, installedPackages));
