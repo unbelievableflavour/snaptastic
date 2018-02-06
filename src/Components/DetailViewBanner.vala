@@ -20,12 +20,17 @@ public class DetailViewBanner : ListBoxRow {
     }
 
     public void reloadView(Package package,Package[] installedPackages){
-        name_label = new Gtk.Label(package.getName());
+        name_label = new Gtk.Label(package.getName().strip());
         name_label.get_style_context ().add_class ("detail-view-banner-title");
 
-        summary_label = generateSummaryLabel(package.getDeveloper());
-
-        version_label = generateSummaryLabel(package.getVersion());
+        summary_label = new Gtk.Label("");
+        if(package.getDeveloper() != null){
+            summary_label = generateSummaryLabel(package.getDeveloper());        
+        }
+        version_label = new Gtk.Label("");
+        if(package.getVersion() != null){
+            version_label = generateSummaryLabel(package.getVersion());
+        }
 
         var delete_button = generateDeleteButton(package);
         var update_button = generateUpdateButton(package);
@@ -46,7 +51,7 @@ public class DetailViewBanner : ListBoxRow {
         package_row.add(vertical_box_second);
 
         if(!isInstalled(package, installedPackages)){
-            summary_label = generateSummaryLabel("This snap is not installed yet");
+            summary_label.set_label("This snap is not installed yet");
             package_row.pack_end (install_button, false, false);
             add (package_row);
             return;
