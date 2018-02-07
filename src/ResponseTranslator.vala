@@ -60,32 +60,5 @@ public class ResponseTranslator : Object{
         
         return package;
     }
-
-    public string getPackageName(string[] splittedLine){
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;
-            }
-            return part;
-        }
-        return splittedLine[0];
-    }
-
-    public string getStringByIndex(string[] splittedLine, int index){
-        var elementsCount = 0;
-
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;  
-            }          
-
-            if(elementsCount == index ) {
-                return part;
-            }
-            elementsCount++;
-        }
-
-        return "";
-    }
 }
 }

@@ -56,21 +56,13 @@ public class CommandHandler : Object {
 
     public void runPackage(string packageName) {
 
-        string[] arguments = {
-            "snap", 
-            "run",
-            packageName
-        };
-
-        Pid child_pid;
-
         try {
             Process.spawn_async ("/",
-    			arguments,
+    			{packageName},
     			env,
     			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
     			null,
-    			out child_pid);
+    			null);
 
         } catch (SpawnError e) {
             new Alert("There was an error spawning the process. Details", e.message);
