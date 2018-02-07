@@ -1,8 +1,6 @@
 namespace Application {
 public class DetailView : Gtk.Grid{
 
-    private ResponseTranslator responseTranslator = new ResponseTranslator ();
-
     Gtk.Label packageInformation = new Gtk.Label (_("Package Information"));
     Gtk.Label packageContact = new Gtk.Label (_("Developer"));
     DetailViewBanner packageRow;
@@ -19,8 +17,7 @@ public class DetailView : Gtk.Grid{
         package.setVersion("1.0.0");
         package.setDeveloper("Developer");
 
-        var installedPackages = responseTranslator.getInstalledPackages();
-        packageRow = new DetailViewBanner (package, installedPackages);
+        packageRow = new DetailViewBanner (package);
 
         var content_grid = new Gtk.Grid ();
 
@@ -48,8 +45,7 @@ public class DetailView : Gtk.Grid{
         if(package.getName() != null){
             packageInformation.set_label(package.getDescription());
             packageContact.set_label(package.getContact());
-            var installedPackages = responseTranslator.getInstalledPackages();
-            packageRow.loadPackage(package, installedPackages);
+            packageRow.loadPackage(package);
         }
     }
 }}

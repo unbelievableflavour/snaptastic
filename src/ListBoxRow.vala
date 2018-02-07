@@ -18,13 +18,9 @@ public class ListBoxRow : Gtk.ListBoxRow {
         return false;
     }
 
-    public bool isLatestVersion(Package package, Package[] installedPackages){
-        foreach (Package installedPackage in installedPackages) {          
-            if(package.getName() != installedPackage.getName()){
-                continue;
-            }
-
-            if(package.getVersion() == installedPackage.getVersion()){
+    public bool isLatestVersion(Package package, Package[] refreshablePackages){
+        foreach (Package refreshablePackage in refreshablePackages) {          
+            if(package.getName() == refreshablePackage.getName()){
                 return true;
             }
         }

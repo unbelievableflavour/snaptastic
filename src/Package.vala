@@ -7,7 +7,6 @@ public class Package : Object {
     private string version;
     private string developer;
     private string revision;
-    private string notes;
     private string summary;
     private string description;
     private string contact;
@@ -50,14 +49,6 @@ public class Package : Object {
 
     public void setDeveloper(string developer){
         this.developer = developer;
-    }
-
-    public string getNotes(){
-        return this.notes;
-    }
-
-    public void setNotes(string notes){
-        this.notes = notes;
     }
 
     public string getSummary(){

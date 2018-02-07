@@ -3,23 +3,28 @@ using Granite.Widgets;
 namespace Application {
 public class DetailViewBanner : ListBoxRow {
 
+    private ResponseTranslator responseTranslator = new ResponseTranslator ();
     private Gtk.Image icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
     Gtk.Box package_row;
 
     Gtk.Label summary_label;
     Gtk.Label version_label;
 
-    public DetailViewBanner (Package package,Package[] installedPackages){
-        reloadView(package, installedPackages);
+    public DetailViewBanner (Package package){
+        reloadView(package);
     }
 
-    public void loadPackage(Package newPackage,Package[] installedPackages){
+    public void loadPackage(Package newPackage){
         remove(package_row);
-        reloadView(newPackage, installedPackages);
+        reloadView(newPackage);
         show_all();
     }
 
-    public void reloadView(Package package,Package[] installedPackages){
+    public void reloadView(Package package){
+        
+        var installedPackages = responseTranslator.getInstalledPackages();
+        var refreshablePackages = responseTranslator.getRefreshablePackages();
+
         name_label = new Gtk.Label(package.getName().strip());
         name_label.get_style_context ().add_class ("detail-view-banner-title");
 
@@ -61,7 +66,7 @@ public class DetailViewBanner : ListBoxRow {
             package_row.pack_end (open_button, false, false);
         }
 
-        if(!isLatestVersion(package, installedPackages)){
+        if(!isLatestVersion(package, refreshablePackages)){
             package_row.pack_end (update_button, false, false);
         }
         if(package.getName() != "core" && package.getDeveloper() != "conanical"){
