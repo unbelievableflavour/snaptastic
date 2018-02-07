@@ -46,7 +46,7 @@ public class ListBoxRow : Gtk.ListBoxRow {
     public Gtk.Button generateUpdateButton(Package package){
      
     var update_button = new Gtk.Button();
-        update_button.set_label(_("Update"));
+        update_button.set_label(_("Refresh"));
         update_button.valign = Gtk.Align.CENTER;
         update_button.set_tooltip_text(_("Update this to latest version"));
         update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
