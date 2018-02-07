@@ -39,8 +39,8 @@ public class SnapdHandler : Object {
 
     public Snapd.Snap getPackageByName(string searchWord = "") {
 
-        GLib.GenericArray<weak Snapd.Snap> snaps = client.list_sync (null);
-
+        GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
+        
         return snaps[0];
     }
 }
