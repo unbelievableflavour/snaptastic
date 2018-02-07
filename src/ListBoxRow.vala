@@ -20,11 +20,11 @@ public class ListBoxRow : Gtk.ListBoxRow {
 
     public bool isLatestVersion(Package package, Package[] installedPackages){
         foreach (Package installedPackage in installedPackages) {          
-            if(package.getName().strip() != installedPackage.getName().strip()){
+            if(package.getName() != installedPackage.getName()){
                 continue;
             }
 
-            if(package.getVersion().strip() == installedPackage.getVersion().strip()){
+            if(package.getVersion() == installedPackage.getVersion()){
                 return true;
             }
         }

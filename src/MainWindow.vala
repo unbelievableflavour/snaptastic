@@ -46,23 +46,10 @@ public class MainWindow : Gtk.Window{
     }
 
     public void installFromFile(){
-        string link = fileManager.getFile().get_uri().replace ("file://", "");
+        string path = fileManager.getFile().get_uri().replace ("file://", "");
 
-        string result = commandHandler.getPackageByName(link);
-
-        string[] lines = result.split("\n");
-	    string name = "";
-        foreach (string line in lines) {
-		    if("name:" in line){
-			    string []resultString = line.split(":");
-			    name = resultString[1].strip();
-			    break;
-		    }
-	    }
-
-        Package package = new Package();
-        package.setName(name);
-        package.setNotes("classic");
+        string name = commandHandler.getPackageNameByFilePath(path);
+		var package = responseTranslator.getPackageByName(name);
 
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";

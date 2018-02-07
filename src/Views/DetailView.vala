@@ -2,7 +2,6 @@ namespace Application {
 public class DetailView : Gtk.Grid{
 
     private ResponseTranslator responseTranslator = new ResponseTranslator ();
-    private CommandHandler commandHandler = new CommandHandler();
 
     Gtk.Label packageInformation = new Gtk.Label (_("Package Information"));
     Gtk.Label packageContact = new Gtk.Label (_("Developer"));
@@ -13,7 +12,7 @@ public class DetailView : Gtk.Grid{
         hexpand = true;
 
         packageInformation.set_line_wrap(true);
-        packageInformation.set_max_width_chars(50);
+        packageInformation.set_max_width_chars(60);
 
         var package = new Package();
         package.setName("name");
