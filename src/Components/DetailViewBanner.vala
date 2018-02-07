@@ -22,6 +22,8 @@ public class DetailViewBanner : ListBoxRow {
 
     public void reloadView(Package package){
         
+        var icon = new Gtk.Image.from_icon_name (package.getIcon(), Gtk.IconSize.DND);
+
         var installedPackages = responseTranslator.getInstalledPackages();
         var refreshablePackages = responseTranslator.getRefreshablePackages();
 

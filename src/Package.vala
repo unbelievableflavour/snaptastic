@@ -10,6 +10,7 @@ public class Package : Object {
     private string summary;
     private string description;
     private string contact;
+    private string icon;
 
     public string getNickname(){
         return this.nickname;
@@ -73,6 +74,14 @@ public class Package : Object {
 
     public void setContact(string contact){
         this.contact = contact;
+    }
+
+    public string getIcon(){
+        return this.icon;
+    }
+
+    public void setIcon(string icon){
+        this.icon = icon;
     }
 }
 }

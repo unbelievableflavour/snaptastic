@@ -17,6 +17,7 @@ public class ResponseTranslator : Object{
             package.setSummary(Snap.summary);
             package.setDescription(Snap.description);
             package.setContact(Snap.contact);
+            package.setIcon(Snap.icon);
 
             packages += package;
     	});
@@ -38,6 +39,7 @@ public class ResponseTranslator : Object{
             package.setSummary(Snap.summary);
             package.setDescription(Snap.description);
             package.setContact(Snap.contact);
+            package.setIcon(Snap.icon);
 
             packages += package;
     	});
@@ -57,7 +59,7 @@ public class ResponseTranslator : Object{
         package.setSummary(snap.summary);
         package.setDescription(snap.description);
         package.setContact(snap.contact);
-        
+        package.setIcon(snap.icon);
         return package;
     }
 
