@@ -2,32 +2,24 @@ namespace Application {
 public class ResponseTranslator : Object{
 
     private CommandHandler commandHandler = new CommandHandler();
+    private SnapdHandler snapdHandler = new SnapdHandler();
 
     public Package[] getInstalledPackages (){
         Package[] packages = {};
 
-        string result = commandHandler.getInstalledPackages();
+        GLib.GenericArray<weak Snapd.Snap> snaps = snapdHandler.getInstalledPackages();
 
-        string[] linesx = result.split("\n");
-        foreach (string line in linesx) {
-            var splittedLine = line.split("  ");
-            string name = getPackageName(splittedLine);
-            string version = getStringByIndex(splittedLine, 1);
-            string revision = getStringByIndex(splittedLine, 2);
-            string developer = getStringByIndex(splittedLine, 3);
-            string notes = getStringByIndex(splittedLine, 1);
-
-            if(name == null){continue;}
-            if(name.strip() == "Name" && version.strip() == "Version"){continue;}
-
+        snaps.foreach ((Snap) => {
             Package package = new Package();
-            package.setName(name);
-            package.setVersion(version);
-            package.setRevision(revision);
-            package.setDeveloper(developer);
-            package.setNotes(notes);
+            package.setName(Snap.name);
+            package.setVersion(Snap.get_version());
+            package.setRevision(Snap.revision);
+            package.setDeveloper(Snap.get_developer());
+            package.setSummary(Snap.summary);
+            package.setNotes("classic");
             packages += package;
-        }
+    	});
+
         return packages;
     }
 

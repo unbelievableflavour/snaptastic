@@ -22,7 +22,8 @@
 
     set (DEPS_PACKAGES
         gtk+-3.0
-        granite
+        granite 	   
+        snapd-glib
     )
 
     find_package (PkgConfig)
@@ -60,6 +61,7 @@
         src/Constants.vala        
         src/Package.vala
         src/CommandHandler.vala
+        src/SnapdHandler.vala
         src/StackManager.vala
         src/Dialogs/DeleteConfirm.vala
         src/Dialogs/Alert.vala
@@ -75,7 +77,8 @@
     # tell what libraries to use when compiling
     PACKAGES
         gtk+-3.0
-        granite
+        granite   
+        snapd-glib
     )
 
     include (GResource)

@@ -1,3 +1,5 @@
+using Snapd;
+
 namespace Application {
 public class CommandHandler : Object {
 
@@ -147,31 +149,6 @@ public class CommandHandler : Object {
         } catch (SpawnError e) {
             new Alert("There was an error spawning the process. Details", e.message);
         }
-    }
-
-    public string getInstalledPackages() {
-              
-        string result;
-	    string error;
-	    int status;
-        
-        try {
-            Process.spawn_command_line_sync ("snap list",
-								        out result,
-								        out error,
-								        out status);
-            if(error != null && error != ""){
-                if("No snaps are installed yet." in error){
-                    stackManager.getStack().visible_child_name = "not-found-view";
-                }else{
-                    new Alert("An error occured",error);
-                }                
-            }
-        } catch (SpawnError e) {
-            new Alert("An error occured", e.message);
-        }
-
-        return result;
     }
 
     public string getPackageByName(string searchWord = "") {
