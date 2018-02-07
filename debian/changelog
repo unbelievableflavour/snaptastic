@@ -1,6 +1,16 @@
+com.github.bartzaalberg.snaptastic (0.3.1) UNSTABLE; urgency=low
+
+  * Removed option to select multiple snaps
+  * Fixed bug where sometimes wrong buttons would show up in header
+  * Cleaned up alot of code
+  * Updated language files
+  * Updated app description
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Wed, 7 Feb 2018 17:36:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.3.0) UNSTABLE; urgency=low
 
-  * Added detail-view for uninstalled packages
+  * Added detail-view for not yet installed packages
   * Added extra screenshot for appcenter
   * Switched background-color and text color for appcenter
 
