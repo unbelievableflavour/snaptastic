@@ -5,9 +5,9 @@
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Snaptastic</name>
-  <summary>Install and manage snaps</summary>
+  <summary>A manager for snaps</summary>
   <description>
-    <p>A manager for snaps</p>
+    <p>Install your snaps, both downloaded and from online stores like snapcraft.io (right from the browser!). Update with one click in the app, and more! Do everything you need to do without the necessity of opening the terminal. </p>
     <p>Features:</p>
      <ul>
        <li>Install snap files</li>
