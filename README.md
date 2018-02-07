@@ -12,7 +12,7 @@ A snap manager for Elementary OS
     src="https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot.png" />
 </p>
 
-Install, update, remove, and view information about your installed snaps. z
+Install, update, remove, and view information about your installed snaps.
 
 ## Installation
 
