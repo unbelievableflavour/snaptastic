@@ -7,7 +7,7 @@ public class CommandHandler : Object {
     string[] env = Environ.get ();
     string homeDir = Environment.get_home_dir ();
 
-    public void deletePackage(Package deletedPackage) {
+    public void deletePackage(Package package) {
 
         MainLoop loop = new MainLoop ();
 
@@ -16,9 +16,8 @@ public class CommandHandler : Object {
             "env",
             "HOME=" + homeDir,
             "com.github.bartzaalberg.snaptastic-wizard",
-            "snap",
             "remove",
-            deletedPackage.getName()
+            package.getName()
         };
 
         Pid child_pid;
@@ -47,21 +46,13 @@ public class CommandHandler : Object {
 
         MainLoop loop = new MainLoop ();
 
-        string notes = "";
-
-        if(package.getNotes().strip() == "classic"){
-            notes = "--classic";            
-        }
-
         string[] arguments = {
             "pkexec", 
             "env", 
             "HOME=" + homeDir, 
             "com.github.bartzaalberg.snaptastic-wizard", 
-            "snap", 
-            "install", 
-            package.getName(),
-            notes
+            "install",
+            package.getName()
         };
 
         Pid child_pid;

@@ -98,6 +98,7 @@
     # tell what libraries to use when compiling
     PACKAGES
         gtk+-3.0
+        snapd-glib
     )
 
     # tell cmake what to call the executable we just made  and install

@@ -3,10 +3,6 @@ using Snapd;
 namespace Application {
 public class SnapdHandler : Object {
 
-    private StackManager stackManager = StackManager.get_instance(); 
-    string[] env = Environ.get ();
-    string homeDir = Environment.get_home_dir ();
-
     public GLib.GenericArray<weak Snapd.Snap> getInstalledPackages() {
 
         var client = new Snapd.Client();
@@ -25,7 +21,7 @@ public class SnapdHandler : Object {
         return snaps;
     }
 
-    public void getPackageByName() {
+    public Snapd.Snap getPackageByName(string searchWord = "") {
 
         var client = new Snapd.Client();
         
@@ -33,11 +29,9 @@ public class SnapdHandler : Object {
             new Alert("An error occured","could not connect to snapd");
         }
 
-        GLib.GenericArray<weak Snapd.Snap> array = client.find_sync ( FindFlags.NONE, "vlc", null, null);
+        GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
 
-        array.foreach ((Snap) => {
-    		stdout.printf ("%s\n", Snap.name);
-    	});
+        return snaps[0];
     }
 }
 }

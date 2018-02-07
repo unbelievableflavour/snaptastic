@@ -9,6 +9,8 @@ public class Package : Object {
     private string revision;
     private string notes;
     private string summary;
+    private string description;
+    private string contact;
 
     public string getNickname(){
         return this.nickname;
@@ -58,12 +60,28 @@ public class Package : Object {
         this.notes = notes;
     }
 
-     public string getSummary(){
+    public string getSummary(){
         return this.summary;
     }
 
     public void setSummary(string summary){
         this.summary = summary;
+    }
+
+    public string getDescription(){
+        return this.description;
+    }
+
+    public void setDescription(string description){
+        this.description = description;
+    }
+
+    public string getContact(){
+        return this.contact;
+    }
+
+    public void setContact(string contact){
+        this.contact = contact;
     }
 }
 }

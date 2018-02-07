@@ -7,6 +7,7 @@ public class MainWindow : Gtk.Window{
     private FileManager fileManager = FileManager.get_instance();
     private HeaderBar headerBar = HeaderBar.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
+    private ResponseTranslator responseTranslator = new ResponseTranslator();
 
     construct {
         var style_context = get_style_context ();
@@ -38,9 +39,7 @@ public class MainWindow : Gtk.Window{
             name = name.substring (0, name.last_index_of_char ('/'));
         }
 	    
-        Package package = new Package();
-        package.setName(name);
-        package.setNotes("classic");
+        Package package = responseTranslator.getPackageByName(name);
 
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";

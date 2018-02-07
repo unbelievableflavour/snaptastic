@@ -29,7 +29,7 @@ public class WelcomeView : Gtk.ScrolledWindow {
 
 				        Package package = new Package();
 						package.setName(name);
-						package.setNotes("classic");
+
 						stackManager.setDetailPackage(package);
 						stackManager.getStack().visible_child_name = "detail-view";
 					}

@@ -1,7 +1,6 @@
 namespace Application {
 public class ResponseTranslator : Object{
 
-    private CommandHandler commandHandler = new CommandHandler();
     private SnapdHandler snapdHandler = new SnapdHandler();
 
     public Package[] getInstalledPackages (){
@@ -16,11 +15,29 @@ public class ResponseTranslator : Object{
             package.setRevision(Snap.revision);
             package.setDeveloper(Snap.get_developer());
             package.setSummary(Snap.summary);
-            package.setNotes("classic");
+            package.setDescription(Snap.description);
+            package.setContact(Snap.contact);
+
             packages += package;
     	});
 
         return packages;
+    }
+
+    public Package getPackageByName (string searchWord = ""){
+
+        Snapd.Snap snap = snapdHandler.getPackageByName(searchWord);
+
+        Package package = new Package();
+        package.setName(snap.name);
+        package.setVersion(snap.get_version());
+        package.setRevision(snap.revision);
+        package.setDeveloper(snap.get_developer());
+        package.setSummary(snap.summary);
+        package.setDescription(snap.description);
+        package.setContact(snap.contact);
+        
+        return package;
     }
 
     public string getPackageName(string[] splittedLine){
@@ -47,7 +64,7 @@ public class ResponseTranslator : Object{
             elementsCount++;
         }
 
-        return "bla";
+        return "";
     }
 }
 }
