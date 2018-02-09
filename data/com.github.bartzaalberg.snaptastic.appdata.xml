@@ -172,6 +172,7 @@
   <custom>
     <value key="x-appcenter-color-primary">#fff</value>
     <value key="x-appcenter-color-primary-text">rgb(233, 84, 32)</value>
+    <value key="x-appcenter-suggested-price">3</value>
   </custom>
   <url type="homepage">https://github.com/bartzaalberg/snaptastic</url>
   <url type="bugtracker">https://github.com/bartzaalberg/snaptastic/issues</url>
