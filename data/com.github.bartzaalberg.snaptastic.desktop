@@ -10,3 +10,8 @@ MimeType=application/vnd.snap;x-scheme-handler/snap;
 Type=Application
 X-GNOME-Gettext-Domain=snaptastic
 Keywords=GUI;Snaps;
+
+[Desktop Action AboutDialog]
+Exec=xdg-open appstream://com.github.bartzaalberg.snaptastic.desktop
+Name=About Snaptastic
+
