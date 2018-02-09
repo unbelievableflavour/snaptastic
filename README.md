@@ -16,7 +16,7 @@ Install, update, remove, and view information about your installed snaps.
 
 ## Installation
 
-first you will need to install elementary SDK
+First you will need to install elementary SDK
 
  `sudo apt install elementary-sdk`
 
