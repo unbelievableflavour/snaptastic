@@ -25,12 +25,12 @@ public class ListBox : Gtk.ListBox{
     }
 
     public void getInstalledPackages(){
-        emptyList();
 
         stackManager.getStack().visible_child_name = "list-view";
 
         var installedPackages = responseTranslator.getInstalledPackages();
 
+        emptyList();
         foreach (Package package in installedPackages) {
             add (new InstalledPackageRow (package, installedPackages));
         }

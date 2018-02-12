@@ -16,7 +16,7 @@ Install, update, remove, and view information about your installed snaps.
 
 ## Installation
 
-first you will need to install elementary SDK
+First you will need to install elementary SDK
 
  `sudo apt install elementary-sdk`
 
@@ -26,10 +26,11 @@ These dependencies must be present before building
  - `valac`
  - `gtk+-3.0`
  - `granite`
+ - `libsnapd-glib-dev`
 
  You can install these on a Ubuntu-based system by executing this command:
  
- `sudo apt install valac libgtk-3-dev libgranite-dev`
+ `sudo apt install valac libgtk-3-dev libgranite-dev libsnapd-glib-dev`
 
 
 ### Building

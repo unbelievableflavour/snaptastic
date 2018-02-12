@@ -7,6 +7,7 @@ public class MainWindow : Gtk.Window{
     private FileManager fileManager = FileManager.get_instance();
     private HeaderBar headerBar = HeaderBar.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
+    private ResponseTranslator responseTranslator = new ResponseTranslator();
 
     construct {
         var style_context = get_style_context ();
@@ -38,32 +39,25 @@ public class MainWindow : Gtk.Window{
             name = name.substring (0, name.last_index_of_char ('/'));
         }
 	    
-        Package package = new Package();
-        package.setName(name);
-        package.setNotes("classic");
+        Package package = responseTranslator.getPackageByName(name);
+
+        if(package == null){
+            return;
+        }
 
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";
     }
 
     public void installFromFile(){
-        string link = fileManager.getFile().get_uri().replace ("file://", "");
+        string path = fileManager.getFile().get_uri().replace ("file://", "");
 
-        string result = commandHandler.getPackageByName(link);
-
-        string[] lines = result.split("\n");
-	    string name = "";
-        foreach (string line in lines) {
-		    if("name:" in line){
-			    string []resultString = line.split(":");
-			    name = resultString[1].strip();
-			    break;
-		    }
-	    }
-
-        Package package = new Package();
-        package.setName(name);
-        package.setNotes("classic");
+        string name = commandHandler.getPackageNameByFilePath(path);
+		var package = responseTranslator.getPackageByName(name);
+        
+        if(package == null){
+            return;
+        }
 
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";

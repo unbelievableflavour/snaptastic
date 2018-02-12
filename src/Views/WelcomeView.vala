@@ -5,6 +5,7 @@ public class WelcomeView : Gtk.ScrolledWindow {
 
     private StackManager stackManager = StackManager.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
+    private ResponseTranslator responseTranslator = new ResponseTranslator();
 
     public WelcomeView(){
         var welcome_view = new Welcome(_("Install Some Snaps"), _("Click open to select a downloaded snap file"));
@@ -14,26 +15,21 @@ public class WelcomeView : Gtk.ScrolledWindow {
             switch (option) {		
                 case 0:
 					var path = getFilePath();
-					if(path != ""){
-						string result = commandHandler.getPackageByName(path);
-
-                        string[] lines = result.split("\n");
-						string name = "";
-                        foreach (string line in lines) {
-							if("name:" in line){
-								string []resultString = line.split(":");
-								name = resultString[1].strip();
-								break;
-							}
-                		}
-
-				        Package package = new Package();
-						package.setName(name);
-						package.setNotes("classic");
-						stackManager.setDetailPackage(package);
-						stackManager.getStack().visible_child_name = "detail-view";
+					if(path == ""){
+                    	break;
 					}
-                    break;
+
+					string name = commandHandler.getPackageNameByFilePath(path);
+					var package = responseTranslator.getPackageByName(name);
+
+					if(package != null){
+						break;
+					}
+
+					stackManager.setDetailPackage(package);
+					stackManager.getStack().visible_child_name = "detail-view";
+
+					break;
             }
         });
         this.add(welcome_view);

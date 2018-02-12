@@ -1,61 +1,64 @@
 namespace Application {
 public class ResponseTranslator : Object{
 
-    private CommandHandler commandHandler = new CommandHandler();
+    private SnapdHandler snapdHandler = new SnapdHandler();
 
     public Package[] getInstalledPackages (){
         Package[] packages = {};
 
-        string result = commandHandler.getInstalledPackages();
+        GLib.GenericArray<weak Snapd.Snap> snaps = snapdHandler.getInstalledPackages();
 
-        string[] linesx = result.split("\n");
-        foreach (string line in linesx) {
-            var splittedLine = line.split("  ");
-            string name = getPackageName(splittedLine);
-            string version = getStringByIndex(splittedLine, 1);
-            string revision = getStringByIndex(splittedLine, 2);
-            string developer = getStringByIndex(splittedLine, 3);
-            string notes = getStringByIndex(splittedLine, 1);
-
-            if(name == null){continue;}
-            if(name.strip() == "Name" && version.strip() == "Version"){continue;}
-
+        snaps.foreach ((Snap) => {
             Package package = new Package();
-            package.setName(name);
-            package.setVersion(version);
-            package.setRevision(revision);
-            package.setDeveloper(developer);
-            package.setNotes(notes);
+            package.setName(Snap.name);
+            package.setVersion(Snap.get_version());
+            package.setRevision(Snap.revision);
+            package.setDeveloper(Snap.get_developer());
+            package.setSummary(Snap.summary);
+            package.setDescription(Snap.description);
+            package.setContact(Snap.contact);
+
             packages += package;
-        }
+    	});
+
         return packages;
     }
 
-    public string getPackageName(string[] splittedLine){
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;
-            }
-            return part;
-        }
-        return splittedLine[0];
+    public Package[] getRefreshablePackages (){
+        Package[] packages = {};
+
+        GLib.GenericArray<weak Snapd.Snap> snaps = snapdHandler.getRefreshablePackages();
+
+        snaps.foreach ((Snap) => {
+            Package package = new Package();
+            package.setName(Snap.name);
+            package.setVersion(Snap.get_version());
+            package.setRevision(Snap.revision);
+            package.setDeveloper(Snap.get_developer());
+            package.setSummary(Snap.summary);
+            package.setDescription(Snap.description);
+            package.setContact(Snap.contact);
+
+            packages += package;
+    	});
+
+        return packages;
     }
 
-    public string getStringByIndex(string[] splittedLine, int index){
-        var elementsCount = 0;
+    public Package getPackageByName (string searchWord = ""){
 
-        foreach (string part in splittedLine) {
-            if(part == ""){
-                continue;  
-            }          
+        Snapd.Snap snap = snapdHandler.getPackageByName(searchWord);
 
-            if(elementsCount == index ) {
-                return part;
-            }
-            elementsCount++;
-        }
-
-        return "bla";
+        Package package = new Package();
+        package.setName(snap.name);
+        package.setVersion(snap.get_version());
+        package.setRevision(snap.revision);
+        package.setDeveloper(snap.get_developer());
+        package.setSummary(snap.summary);
+        package.setDescription(snap.description);
+        package.setContact(snap.contact);
+        
+        return package;
     }
 }
 }
