@@ -39,9 +39,14 @@ public class SnapdHandler : Object {
 
     public Snapd.Snap getPackageByName(string searchWord = "") {
 
-        GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
-        
-        return snaps[0];
+        try{
+             GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
+            return snaps[0];
+        } catch (Snapd.Error e) {
+            new Alert("There was an error spawning the process. Details", e.message);
+        }
+
+        return null;
     }
 }
 }

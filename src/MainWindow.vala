@@ -41,6 +41,10 @@ public class MainWindow : Gtk.Window{
 	    
         Package package = responseTranslator.getPackageByName(name);
 
+        if(package == null){
+            return;
+        }
+
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";
     }
@@ -50,6 +54,10 @@ public class MainWindow : Gtk.Window{
 
         string name = commandHandler.getPackageNameByFilePath(path);
 		var package = responseTranslator.getPackageByName(name);
+        
+        if(package == null){
+            return;
+        }
 
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";

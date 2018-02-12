@@ -15,14 +15,21 @@ public class WelcomeView : Gtk.ScrolledWindow {
             switch (option) {		
                 case 0:
 					var path = getFilePath();
-					if(path != ""){
-						string name = commandHandler.getPackageNameByFilePath(path);
-						var package = responseTranslator.getPackageByName(name);
-
-						stackManager.setDetailPackage(package);
-						stackManager.getStack().visible_child_name = "detail-view";
+					if(path == ""){
+                    	break;
 					}
-                    break;
+
+					string name = commandHandler.getPackageNameByFilePath(path);
+					var package = responseTranslator.getPackageByName(name);
+
+					if(package != null){
+						break;
+					}
+
+					stackManager.setDetailPackage(package);
+					stackManager.getStack().visible_child_name = "detail-view";
+
+					break;
             }
         });
         this.add(welcome_view);
