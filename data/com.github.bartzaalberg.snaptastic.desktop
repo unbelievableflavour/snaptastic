@@ -3,6 +3,7 @@ Name=Snaptastic
 GenericName=Snaptastic
 Comment=Application to manage snaps
 Comment[lt]=Programa, skirta tvarkyti snap paketus
+Comment[nl]=Applicatie om uw snaps te beheren
 Categories=Utility;System;Network;Development;
 Exec=com.github.bartzaalberg.snaptastic %U
 Icon=com.github.bartzaalberg.snaptastic
@@ -17,4 +18,5 @@ Actions=AboutDialog;
 Exec=xdg-open appstream://com.github.bartzaalberg.snaptastic.desktop
 Name=About Snaptastic
 Name[lt]=Apie Snaptastic
+Name[nl]=Over Snaptastic
 
