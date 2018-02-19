@@ -30,6 +30,14 @@ msgstr "Wachten A.u.b."
 msgid "Operation is in progress..."
 msgstr "Handeling wordt momenteel verricht..."
 
+#: ../src/Views/DetailView.vala:4 
+msgid "Package Information" 
+msgstr "Pakket informatie"
+ 
+#: ../src/Views/DetailView.vala:5 
+msgid "Developer" 
+msgstr "Ontwikkelaar" 
+
 #: ../src/Views/NotFoundView.vala:7
 msgid "No snaps where found"
 msgstr "Er zijn geen snaps gevonden"
