@@ -9,6 +9,9 @@ public class ListBox : Gtk.ListBox{
     private StackManager stackManager = StackManager.get_instance();
 
     ListBox() {
+
+        row_activated.connect (on_row_activated);
+
     }
  
     public static ListBox get_instance() {
@@ -35,16 +38,16 @@ public class ListBox : Gtk.ListBox{
             add (new InstalledPackageRow (package, installedPackages));
         }
 
-        row_activated.connect (on_row_activated);
-
         show_all();
     }
 
     private void on_row_activated (Gtk.ListBoxRow row) {
+        stackManager.getStack().visible_child_name = "progress-view";
 
         var activePackage = ((ListBoxRow)row).package;
 
         stackManager.setDetailPackage(activePackage);
+
         stackManager.getStack().visible_child_name = "detail-view";
     }
 }
