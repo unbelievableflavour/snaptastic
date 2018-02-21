@@ -1,3 +1,10 @@
+com.github.bartzaalberg.snaptastic (0.4.2) UNSTABLE; urgency=low
+
+  * Added dutch translation
+  * Added a fix for the navigation bug
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Wed, 21 Feb 2018 23:44:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.4.1) UNSTABLE; urgency=low
 
   * Fixed aboutdialog

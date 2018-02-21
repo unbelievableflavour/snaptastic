@@ -17,6 +17,15 @@
     </ul>
   </description>
   <releases>
+   <release version="0.4.2" date="2018-02-21">
+      <description>
+        <p>Dutch translation and navigation bugfix</p>
+        <ul>
+          <li>Added dutch translation</li>
+          <li>Added a fix for the navigation bug</li>
+        </ul>
+      </description>
+    </release>
    <release version="0.4.1" date="2018-02-12">
       <description>
         <p>Moved to glib</p>
