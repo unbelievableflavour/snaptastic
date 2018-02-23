@@ -45,7 +45,20 @@ public class App {
 
     public static void installPackage(string name) {
         try{
-            client.install2_sync (InstallFlags.CLASSIC, name, null, null, null, null);
+            ProgressCallback progress;
+
+            client.install2_sync (InstallFlags.CLASSIC, name, null, null, (client, change) => {
+            //GLib.GenericArray<weak Snapd.Task> array = change.get_tasks();
+
+            //array.foreach ((Task) => {
+                //stdout.printf(Task.id);
+            //});
+
+            //stdout.printf(array.length/2).to_string() + "\n");
+            //stdout.printf(change.get_status() +"status\n");            
+            stdout.printf(change.get_status() +"status\n");
+            //stdout.printf(change.get_summary() +"summary\n");
+		});
         } catch (SpawnError e) {
             stdout.printf(e.message);
         }
