@@ -1,3 +1,10 @@
+com.github.bartzaalberg.snaptastic (0.4.3) UNSTABLE; urgency=low
+
+  * Updated lithuanian translation
+  * Added japanese translation
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Sun, 27 May 2018 10:31:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.4.2) UNSTABLE; urgency=low
 
   * Added dutch translation

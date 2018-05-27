@@ -17,6 +17,15 @@
     </ul>
   </description>
   <releases>
+   <release version="0.4.3" date="2018-05-27">
+      <description>
+        <p>Japanese translation and Lithuanian translation fix</p>
+        <ul>
+          <li>Added Japanese translation</li>
+          <li>Added a fix for the Lithuanian translation</li>
+        </ul>
+      </description>
+    </release>
    <release version="0.4.2" date="2018-02-21">
       <description>
         <p>Dutch translation and navigation bugfix</p>
