@@ -9,8 +9,8 @@ public class WelcomeView : Gtk.ScrolledWindow {
 
     public WelcomeView(){
         var welcome_view = new Welcome(_("Install Some Snaps"), _("Click open to select a downloaded snap file"));
-        welcome_view.append("ubuntu-open", _("Open"), _("Browse to open a single snap file"));
-        welcome_view.append("web-browser", _("Browse"), _("Browse the Snapcraft store for a snap"));
+        welcome_view.append("ubuntu-open", _("Open Snap"), _("Browse to open a single snap file"));
+        welcome_view.append("web-browser", _("Browse the Store"), _("Browse the Snapcraft store for a snap"));
 
         welcome_view.activated.connect ((option) => {
             switch (option) {		
