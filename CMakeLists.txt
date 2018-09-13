@@ -22,7 +22,7 @@
 
     set (DEPS_PACKAGES
         gtk+-3.0
-        granite 	   
+        granite
         snapd-glib
     )
 
@@ -58,7 +58,7 @@
         src/ListBox.vala
         src/ResponseTranslator.vala
         src/FileManager.vala
-        src/Constants.vala        
+        src/Constants.vala
         src/Package.vala
         src/CommandHandler.vala
         src/SnapdHandler.vala
@@ -77,7 +77,7 @@
     # tell what libraries to use when compiling
     PACKAGES
         gtk+-3.0
-        granite   
+        granite
         snapd-glib
     )
 
@@ -89,7 +89,7 @@
     install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 
     #------------------------------------------------------------------------------------------
-    
+
     # files we want to compile
     include(ValaPrecompile)
     vala_precompile(VALA_C ${EXEC_NAME2}
@@ -109,7 +109,6 @@
 
     #add the data directory and activated the cmakelists in that folder
     add_subdirectory (data)
-    
+
     # install the polkit action file
-    install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION ${DATADIR}/applications/)
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bartzaalberg.snaptastic.pkexec.policy DESTINATION /usr/share/polkit-1/actions/)
