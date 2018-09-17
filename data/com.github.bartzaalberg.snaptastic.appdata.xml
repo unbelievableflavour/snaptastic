@@ -17,6 +17,14 @@
     </ul>
   </description>
   <releases>
+   <release version="0.4.4" date="2018-09-17">
+      <description>
+        <p>Houston CI</p>
+        <ul>
+            <li>Added Houston Ci and necessary changes</li>
+        </ul>
+      </description>
+   </release>
    <release version="0.4.3" date="2018-05-27">
       <description>
         <p>Japanese translation and Lithuanian translation fix</p>
