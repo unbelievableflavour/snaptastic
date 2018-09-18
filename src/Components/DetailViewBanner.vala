@@ -30,7 +30,7 @@ public class DetailViewBanner : ListBoxRow {
 
         summary_label = new Gtk.Label("");
         if(package.getDeveloper() != null){
-            summary_label = generateSummaryLabel(package.getDeveloper());        
+            summary_label = generateSummaryLabel(package.getDeveloper());
         }
         version_label = new Gtk.Label("");
         if(package.getVersion() != null){
@@ -41,19 +41,19 @@ public class DetailViewBanner : ListBoxRow {
         var update_button = generateUpdateButton(package);
         var open_button = generateOpenButton(package);
         var install_button = generateInstallButton(package);
-
-        var vertical_box_first = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
-        vertical_box_first.add (name_label);
-        vertical_box_first.add (summary_label);
-
-        var vertical_box_second = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        vertical_box_second.add (version_label);
+        
+        var horizontal_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 10);
+        horizontal_box.add (name_label);
+        horizontal_box.add (version_label);
+        
+        var vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+        vertical_box.add (horizontal_box);
+        vertical_box.add (summary_label);
         
         package_row = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
         package_row.margin = 12;
         package_row.add(icon);
-        package_row.add (vertical_box_first);
-        package_row.add(vertical_box_second);
+        package_row.add (vertical_box);
 
         if(!isInstalled(package, installedPackages)){
             summary_label.set_label("This snap is not installed yet");
