@@ -17,6 +17,15 @@
     </ul>
   </description>
   <releases>
+   <release version="0.4.5" date="2018-09-20">
+       <description>
+          <p>Juno Fixes and more translations</p>
+          <ul>
+             <li>Added Catalan and spanish translations</li>
+             <li>Aligned DetailViewBanner for Juno</li>
+          </ul>
+        </description>
+   </release>
    <release version="0.4.4" date="2018-09-17">
       <description>
         <p>Houston CI</p>
