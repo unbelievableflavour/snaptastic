@@ -32,19 +32,15 @@ These dependencies must be present before building
  
  `sudo apt install valac libgtk-3-dev libgranite-dev libsnapd-glib-dev`
 
-
 ### Building
 ```
-mkdir build
+meson build --prefix=/usr
 cd build
-sudo cmake -DCMAKE_INSTALL_PREFIX=/usr ../
-make pot
-sudo make
+ninja
 ```
 
-
 ### Installing
-`sudo make install`
+`sudo ninja install`
 
 Run the following command to use snaps from browsers
 `sudo update-desktop-database /usr/share/applications`
