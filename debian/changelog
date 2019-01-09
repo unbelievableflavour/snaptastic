@@ -1,3 +1,13 @@
+com.github.bartzaalberg.snaptastic (0.5.0) UNSTABLE; urgency=low
+
+  * Moved to Meson
+  * Fixed the About link
+  * Added French translation
+  * Corrected some spelling
+  * Fixed opening apps
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Web, 09 Jan 2019 19:07:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.4.5) UNSTABLE; urgency=low
 
   * Added Catalan and spanish translations

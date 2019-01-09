@@ -17,6 +17,18 @@
     </ul>
   </description>
   <releases>
+   <release version="0.5.0" date="2019-01-09">
+       <description>
+           <p>Moved to meson, apps can be opened from snaptastic again</p>
+           <ul>
+               <li>Moved to Meson</li>
+               <li>Fixed the About link</li>
+               <li>Added French translation</li>
+               <li>Corrected some spelling</li>
+               <li>Fixed opening apps</li>
+           </ul>
+       </description>
+   </release>
    <release version="0.4.5" date="2018-09-20">
        <description>
           <p>Juno Fixes and more translations</p>
