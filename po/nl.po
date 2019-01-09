@@ -39,7 +39,7 @@ msgid "Developer"
 msgstr "Ontwikkelaar" 
 
 #: ../src/Views/NotFoundView.vala:7
-msgid "No snaps where found"
+msgid "No snaps were found"
 msgstr "Er zijn geen snaps gevonden"
 
 #: ../src/Views/NotFoundView.vala:7

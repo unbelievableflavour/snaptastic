@@ -56,7 +56,7 @@ msgid "Developer"
 msgstr "Kūrėjas"
 
 #: ../src/Views/NotFoundView.vala:7
-msgid "No snaps where found"
+msgid "No snaps were found"
 msgstr "Nebuvo rasta jokių snap paketų"
 
 #: ../src/Views/NotFoundView.vala:7
