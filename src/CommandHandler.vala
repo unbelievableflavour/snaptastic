@@ -55,10 +55,15 @@ public class CommandHandler : Object {
     }
 
     public void runPackage(string packageName) {
+        string[] arguments = {
+            "snap",
+            "run",
+            packageName
+        };
 
         try {
             Process.spawn_async ("/",
-    			{packageName},
+    			arguments,
     			env,
     			SpawnFlags.SEARCH_PATH | SpawnFlags.DO_NOT_REAP_CHILD,
     			null,
