@@ -6,7 +6,7 @@ namespace Application.Constants {
     public const string ICON = "com.github.bartzaalberg.snaptastic";
     public const string MAIN_URL = "https://github.com/bartzaalberg/snaptastic";
     public const string BUG_URL = MAIN_URL + "/issues";
-    public const string VERSION = "0.5.0";
+    public const string VERSION = "0.6.0";
     public const string VERSION_INFO = "Unstable";
     public const string APP_YEARS = "2017-2019";
 

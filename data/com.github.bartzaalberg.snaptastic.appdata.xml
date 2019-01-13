@@ -17,6 +17,17 @@
     </ul>
   </description>
   <releases>
+    <release version="0.6.0" date="2019-01-13">
+       <description>
+           <p>Fixed local snap installing, added channel support, added some shortcuts</p>
+           <ul>
+               <li>Fixed opening local snap files</li>
+               <li>Added ability to install from other channels</li>
+               <li>Channels are now shown on list and detail pages</li>
+               <li>Added application shortcuts</li>
+           </ul>
+       </description>
+   </release>   
    <release version="0.5.0" date="2019-01-09">
        <description>
            <p>Moved to meson, apps can be opened from snaptastic again</p>

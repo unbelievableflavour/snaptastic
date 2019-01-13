@@ -1,3 +1,12 @@
+com.github.bartzaalberg.snaptastic (0.6.0) UNSTABLE; urgency=low
+
+  * Fixed opening local snap files
+  * Added ability to install from other channels
+  * Channels are now shown on list and detail pages
+  * Added application shortcuts
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Sun, 13 Jan 2019 16:21:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.5.0) UNSTABLE; urgency=low
 
   * Moved to Meson
