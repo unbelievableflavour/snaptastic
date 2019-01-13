@@ -7,9 +7,13 @@ public class SnapdHandler : Object {
 
     public SnapdHandler(){
         client = new Snapd.Client();
-          
-        if (!client.connect_sync (null)){
-            new Alert("An error occured","could not connect to snapd");
+
+        try {
+            if (!client.connect_sync (null)){
+                new Alert("An error occured","could not connect to snapd");
+            }
+        } catch(GLib.Error e){
+            new Alert("An error occured",e.message);
         }
     }
 
@@ -40,7 +44,7 @@ public class SnapdHandler : Object {
     public Snapd.Snap getPackageByName(string searchWord = "") {
 
         try{
-             GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
+            GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
             return snaps[0];
         } catch (Snapd.Error e) {
             new Alert("There was an error spawning the process. Details", e.message);
