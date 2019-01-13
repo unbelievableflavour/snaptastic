@@ -4,7 +4,7 @@ public class Package : Object {
     private string nickname;
 
     private string name;
-    private string channel;
+    private string channel = "";
     private string version;
     private string developer;
     private string revision;

@@ -12,7 +12,11 @@ public class CommandHandler : Object {
     }
 
     public void installPackage(Package package) {
-        spawnAsync("install", package.getName());
+        if(package.getChannel() != "") {
+            spawnAsync("install", package.getName() + "/?channel=" + package.getChannel());
+        } else{
+            spawnAsync("install", package.getName());
+        }
     }
 
     public void updatePackage(Package package) {

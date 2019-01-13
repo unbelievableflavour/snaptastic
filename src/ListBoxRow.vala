@@ -75,8 +75,14 @@ public class ListBoxRow : Gtk.ListBoxRow {
 
     public Gtk.Button generateInstallButton(Package package){
 
-        var install_button = new Gtk.Button(); 
-        install_button.set_label(_("Install")); 
+        var install_button = new Gtk.Button();
+
+        if( package.getChannel() != "") {
+            install_button.set_label(_("Install") + " "+ package.getChannel());
+        } else {
+            install_button.set_label(_("Install"));
+        }
+ 
         install_button.valign = Gtk.Align.CENTER;
         install_button.set_tooltip_text(_("Install this application")); 
         install_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);

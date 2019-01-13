@@ -15,7 +15,18 @@ public class App {
         }
         
         string option = args[1];
-        string name = args[2];
+
+	    string[] nameAndChannel = args[2].split ("/?");
+
+        string name = nameAndChannel[0];
+        string channel = nameAndChannel[1];
+
+        if(channel != null) {
+            string[] urlParameters = channel.split ("=");
+            channel = urlParameters[1];
+        } else {
+            channel = "";
+        }
 
         if(option == "remove"){
            deletePackage(name);
@@ -23,7 +34,7 @@ public class App {
         }
 
         if(option == "install"){
-           installPackage(name);
+           installPackage(name, channel);
            return 0;
         }
 
@@ -43,9 +54,13 @@ public class App {
         }
     }
 
-    public static void installPackage(string name) {
+    public static void installPackage(string name, string channel) {
         try{
-            client.install2_sync (InstallFlags.CLASSIC, name, null, null, null, null);
+            client.install2_sync (
+                InstallFlags.CLASSIC,
+                name, 
+                channel != "" ? channel : null,
+                null, null, null);
         } catch (SpawnError e) {
             stdout.printf(e.message);
         }

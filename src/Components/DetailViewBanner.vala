@@ -33,8 +33,11 @@ public class DetailViewBanner : ListBoxRow {
             summary_label = generateSummaryLabel(package.getDeveloper());
         }
         version_label = new Gtk.Label("");
-        if(package.getVersion() != null){
-            version_label = generateSummaryLabel("(" + package.getChannel() + ")" + package.getVersion());
+        if(package.getVersion() != null) {
+            var label = package.getChannel() != "" 
+                ? "(" + package.getChannel() + ")" + package.getVersion()
+                : package.getVersion();
+            version_label = generateSummaryLabel(label);
         }
 
         var delete_button = generateDeleteButton(package);

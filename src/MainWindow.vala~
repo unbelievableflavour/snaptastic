@@ -72,7 +72,7 @@ public class MainWindow : Gtk.Window{
 
         string name = commandHandler.getPackageNameByFilePath(path);
 		var package = responseTranslator.getPackageByName(name);
-
+        
         if(package == null){
             return;
         }
