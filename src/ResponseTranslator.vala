@@ -11,6 +11,7 @@ public class ResponseTranslator : Object{
         snaps.foreach ((Snap) => {
             Package package = new Package();
             package.setName(Snap.name);
+            package.setChannel(Snap.get_channel());
             package.setVersion(Snap.get_version());
             package.setRevision(Snap.revision);
             package.setDeveloper(Snap.get_developer());

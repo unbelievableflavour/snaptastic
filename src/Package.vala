@@ -4,6 +4,7 @@ public class Package : Object {
     private string nickname;
 
     private string name;
+    private string channel;
     private string version;
     private string developer;
     private string revision;
@@ -25,6 +26,14 @@ public class Package : Object {
 
     public void setName(string name){
         this.name = name;    
+    }
+
+    public string getChannel(){
+        return this.channel;
+    }
+
+    public void setChannel(string channel){
+        this.channel = channel;
     }
 
     public string getVersion(){

@@ -12,7 +12,7 @@ public class InstalledPackageRow : ListBoxRow {
 
             name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
 
-            var summary_label = generateSummaryLabel(package.getVersion());
+            var summary_label = generateSummaryLabel("("+ package.getChannel() + ") " + package.getVersion());
 
             vertical_box.add (name_label);
             vertical_box.add (summary_label);
