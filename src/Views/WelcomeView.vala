@@ -22,7 +22,7 @@ public class WelcomeView : Gtk.ScrolledWindow {
 					string name = commandHandler.getPackageNameByFilePath(path);
 					var package = responseTranslator.getPackageByName(name);
 
-					if(package != null){
+					if(package == null){
 						break;
 					}
 
