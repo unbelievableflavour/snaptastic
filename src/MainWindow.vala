@@ -30,6 +30,8 @@ public class MainWindow : Gtk.Window{
                 installFromFile();
             }
         }
+
+        addShortcuts();
     }
 
     public void installFromUrl(){
@@ -61,6 +63,30 @@ public class MainWindow : Gtk.Window{
 
         stackManager.setDetailPackage(package);
         stackManager.getStack().visible_child_name = "detail-view";
+    }
+
+    private void addShortcuts(){
+        key_press_event.connect ((e) => { 
+            switch (e.keyval) {
+                case Gdk.Key.u:    
+                  if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {  
+                    stackManager.getStack().visible_child_name = "list-view";
+                  }
+                  break;
+                case Gdk.Key.h:
+                  if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {  
+                    stackManager.getStack().visible_child_name = "welcome-view";
+                  }
+                  break;
+                case Gdk.Key.q:
+                  if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {  
+                    Gtk.main_quit();
+                  }
+                  break;
+            }
+
+            return false; 
+        });
     }
 }
 }
