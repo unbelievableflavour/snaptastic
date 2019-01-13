@@ -13,33 +13,23 @@ public class App {
             stdout.printf("Could not connect to snapd");
             return 0;
         }
-        
+
         string option = args[1];
-
-	    string[] nameAndChannel = args[2].split ("/?");
-
-        string name = nameAndChannel[0];
-        string channel = nameAndChannel[1];
-
-        if(channel != null) {
-            string[] urlParameters = channel.split ("=");
-            channel = urlParameters[1];
-        } else {
-            channel = "";
-        }
+        var snapdURIHandler = new SnapdURIHandler();
+        snapdURIHandler.setParametersFromURI(args[2]);
 
         if(option == "remove"){
-           deletePackage(name);
+           deletePackage(snapdURIHandler.getURIName());
            return 0;
         }
 
         if(option == "install"){
-           installPackage(name, channel);
+           installPackage(snapdURIHandler.getURIName(), snapdURIHandler.getURIChannel());
            return 0;
         }
 
         if(option == "update"){
-           updatePackage(name);
+           updatePackage(snapdURIHandler.getURIName());
            return 0;
         }
 

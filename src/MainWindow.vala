@@ -8,6 +8,7 @@ public class MainWindow : Gtk.Window{
     private HeaderBar headerBar = HeaderBar.get_instance();
     private CommandHandler commandHandler = new CommandHandler();
     private ResponseTranslator responseTranslator = new ResponseTranslator();
+    private SnapdURIHandler snapdURIHandler = new SnapdURIHandler();
 
     construct {
         var style_context = get_style_context ();
@@ -41,26 +42,17 @@ public class MainWindow : Gtk.Window{
             nameAndChannel = nameAndChannel.substring (0, nameAndChannel.last_index_of_char ('/'));
         }
 
-	    string[] nameAndChannelArray = nameAndChannel.split ("/?");
-        string name = nameAndChannelArray[0];
-        string channel = nameAndChannelArray[1];
+	    snapdURIHandler.setParametersFromURI(nameAndChannel);
 
-        if(channel != null) {
-            string[] urlParameters = channel.split ("=");
-            channel = urlParameters[1];
-        } else {
-            channel = "";
-        }
-
-        Package package = responseTranslator.getPackageByName(name);
+        Package package = responseTranslator.getPackageByName(snapdURIHandler.getURIName());
 
         if(package == null){
             return;
         }
 
-        if(channel != "") {
+        if(snapdURIHandler.getURIChannel() != "") {
             package.setVersion("");
-            package.setChannel(channel);
+            package.setChannel(snapdURIHandler.getURIChannel());
         }
 
         stackManager.setDetailPackage(package);

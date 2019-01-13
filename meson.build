@@ -24,6 +24,7 @@ executable(
     'src/Package.vala',
     'src/CommandHandler.vala',
     'src/SnapdHandler.vala',
+    'src/SnapdURIHandler.vala',
     'src/StackManager.vala',
     'src/Dialogs/DeleteConfirm.vala',
     'src/Dialogs/Alert.vala',
@@ -47,6 +48,7 @@ executable(
 executable(
     'com.github.bartzaalberg.snaptastic-wizard',
     'src/InstallApplication/DesktopFileApplication.vala',
+    'src/SnapdURIHandler.vala',
     asresources,
     dependencies: [
         dependency('gtk+-3.0'),
