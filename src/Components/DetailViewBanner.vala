@@ -4,12 +4,6 @@ namespace Application {
 public class DetailViewBanner : ListBoxRow {
 
     private ResponseTranslator responseTranslator = new ResponseTranslator ();
-    private Gtk.Image icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
-    private Gtk.Image backup_icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
-
-        private File                    file_photo;
-        private Granite.AsyncImage      image;
-
 
     Gtk.Box package_row;
 
@@ -26,35 +20,11 @@ public class DetailViewBanner : ListBoxRow {
         show_all();
     }
 
-    public Gtk.Image getIconFromString(Package package) {
-        if( package.getIcon().substring(0,4) == "http") {
-            file_photo = File.new_for_uri (package.getIcon());
-            image = new Granite.AsyncImage(true, true);
-            image.get_style_context ().add_class ("backimg");
-            image.set_from_file_async.begin(file_photo, 50, 50, false);
-            return image;
-        } else {
-            try {
-                var pixbuf =  new Gdk.Pixbuf.from_file_at_size ("/snap/" + package.getName() + "/current/" + package.getName() +".png", 50, 50);
-
-                var localImage = new Gtk.Image();
-                localImage.set_from_pixbuf(pixbuf);
-                return localImage;
-
-            } catch (Error e) {
-                error ("%s", e.message);
-            }
-            return backup_icon;
-        }
-    }
-
     public void reloadView(Package package){
 
-        if( package.getIcon() != "" && package.getIcon() != null) {
-            icon = getIconFromString(package);
-        } else{
-            icon = backup_icon;
-        }
+        IconHandler iconHandler = new IconHandler();
+        iconHandler.set_icon_size(50);
+        var icon = iconHandler.get_icon_from_string(package);
 
         var installedPackages = responseTranslator.getInstalledPackages();
         var refreshablePackages = responseTranslator.getRefreshablePackages();

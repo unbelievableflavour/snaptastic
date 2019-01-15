@@ -3,12 +3,14 @@ using Granite.Widgets;
 namespace Application {
 public class InstalledPackageRow : ListBoxRow {
 
-    private Gtk.Image icon = new Gtk.Image.from_icon_name ("package", Gtk.IconSize.DND);
     private Gtk.Box vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
 
     public InstalledPackageRow (Package package,Package[] installedPackages){
 
             this.package = package;
+
+            IconHandler iconHandler = new IconHandler();
+            var icon = iconHandler.get_icon_from_string(package);
 
             name_label = generateNameLabel(package.getName() + " (" + package.getDeveloper() + ")");
 

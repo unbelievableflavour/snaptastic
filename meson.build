@@ -17,6 +17,7 @@ executable(
     'src/MainWindow.vala',
     'src/ListBoxRow.vala',
     'src/InstalledPackageRow.vala',
+    'src/IconHandler.vala',
     'src/ListBox.vala',
     'src/ResponseTranslator.vala',
     'src/FileManager.vala',
