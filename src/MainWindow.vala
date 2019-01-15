@@ -10,18 +10,14 @@ public class MainWindow : Gtk.Window{
     private ResponseTranslator responseTranslator = new ResponseTranslator();
     private SnapdURIHandler snapdURIHandler = new SnapdURIHandler();
 
-    construct {
-        var style_context = get_style_context ();
-        style_context.add_class (Gtk.STYLE_CLASS_VIEW);
-        style_context.add_class ("rounded");
+    public MainWindow (Gtk.Application application) {
+        Object (application: application,
+                resizable: true,
+                height_request: Constants.APPLICATION_HEIGHT,
+                width_request: Constants.APPLICATION_WIDTH);
+    }
 
-        set_default_size(Constants.APPLICATION_WIDTH, Constants.APPLICATION_HEIGHT);
-        set_titlebar (headerBar);
-
-        stackManager.loadViews(this);
-
-        stackManager.getStack().visible_child_name = "welcome-view";
-
+    public void recheck() {
         if(fileManager.getFile() != null){
             if (fileManager.getFile().has_uri_scheme ("snap")) {
                 installFromUrl();
@@ -31,7 +27,19 @@ public class MainWindow : Gtk.Window{
                 installFromFile();
             }
         }
+    }
 
+    construct {
+        var style_context = get_style_context ();
+        style_context.add_class (Gtk.STYLE_CLASS_VIEW);
+        style_context.add_class ("rounded");
+
+        set_titlebar (headerBar);
+
+        stackManager.loadViews(this);
+
+        stackManager.getStack().visible_child_name = "welcome-view";
+        recheck();
         addShortcuts();
     }
 
@@ -88,7 +96,7 @@ public class MainWindow : Gtk.Window{
                   break;
                 case Gdk.Key.q:
                   if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {  
-                    Gtk.main_quit();
+                    this.destroy ();
                   }
                   break;
             }
