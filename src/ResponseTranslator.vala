@@ -23,6 +23,10 @@ public class ResponseTranslator : Object{
             if( snap.get_icon() != "" && snap.get_icon() != null) {
                 package.setIcon(snap.get_icon());
             }
+
+            if( snap.get_screenshots().length != 0) {
+                package.setScreenshots(snap.get_screenshots());
+            }
             packages += package;
     	});
 
@@ -34,17 +38,20 @@ public class ResponseTranslator : Object{
 
         GLib.GenericArray<weak Snapd.Snap> snaps = snapdHandler.getRefreshablePackages();
 
-        snaps.foreach ((Snap) => {
+        snaps.foreach ((snap) => {
             Package package = new Package();
-            package.setName(Snap.name);
-            package.setVersion(Snap.get_version());
-            package.setRevision(Snap.revision);
-            package.setDeveloper(Snap.get_developer());
-            package.setSummary(Snap.summary);
-            package.setDescription(Snap.description);
-            package.setContact(Snap.contact);
-            if( Snap.get_icon() != "" && Snap.get_icon() != null) {
-                package.setIcon(Snap.get_icon());
+            package.setName(snap.name);
+            package.setVersion(snap.get_version());
+            package.setRevision(snap.revision);
+            package.setDeveloper(snap.get_developer());
+            package.setSummary(snap.summary);
+            package.setDescription(snap.description);
+            package.setContact(snap.contact);
+            if( snap.get_icon() != "" && snap.get_icon() != null) {
+                package.setIcon(snap.get_icon());
+            }
+            if( snap.get_screenshots().length != 0) {
+                package.setScreenshots(snap.get_screenshots());
             }
             packages += package;
     	});
@@ -66,6 +73,9 @@ public class ResponseTranslator : Object{
         package.setContact(snap.contact);
         if(snap.get_icon() != "" || snap.get_icon() != null) {
             package.setIcon(snap.get_icon());
+        }
+        if( snap.get_screenshots().length != 0) {
+            package.setScreenshots(snap.get_screenshots());
         }
         return package;
     }

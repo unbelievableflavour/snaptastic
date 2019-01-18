@@ -1,3 +1,5 @@
+using Snapd;
+
 namespace Application {
 public class Package : Object {
 
@@ -12,6 +14,7 @@ public class Package : Object {
     private string description;
     private string contact;
     private string icon;
+    Array<string> screenshots = new Array<string> ();
 
     public string getNickname(){
         return this.nickname;
@@ -26,7 +29,7 @@ public class Package : Object {
     }
 
     public void setName(string name){
-        this.name = name;    
+        this.name = name;
     }
 
     public string getChannel(){
@@ -91,6 +94,20 @@ public class Package : Object {
 
     public void setIcon(string icon){
         this.icon = icon;
+    }
+
+    public Array<string> getScreenshots(){
+        return this.screenshots;
+    }
+
+    public void setScreenshots(GLib.GenericArray<Snapd.Screenshot> screenshots){
+        Array<string> screenshots_array = new Array<string> ();
+
+        screenshots.foreach ((screenshot) => {
+	        screenshots_array.append_val (screenshot.get_url ());
+        });
+
+        this.screenshots = screenshots_array;
     }
 }
 }
