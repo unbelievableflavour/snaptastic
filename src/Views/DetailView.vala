@@ -76,15 +76,12 @@ public class DetailView : Gtk.Grid{
     }
 
 
-    public Gtk.Image get_screenshot_from_string(string url) {
-        try {
-                var file_photo = File.new_for_uri (url);
-                var image = new Granite.AsyncImage(true, true);
-                image.get_style_context ().add_class ("backimg");
-                image.set_from_file_async.begin(file_photo, 300, 200, false);
-                return image;
-        } catch (Error e) {
-            error ("%s", e.message);
-        }
+    public Gtk.Image get_screenshot_from_string (string url) {
+        var file_photo = File.new_for_uri (url);
+        var image = new Granite.AsyncImage (true, true);
+        image.get_style_context ().add_class ("backimg");
+        image.set_from_file_async.begin (file_photo, 300, 200, false);
+        return image;
+
     }
 }}

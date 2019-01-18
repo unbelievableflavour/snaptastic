@@ -3,7 +3,7 @@ using Snapd;
 namespace Application {
 public class SnapdHandler : Object {
 
-    private Client client; 
+    private Client client;
 
     public SnapdHandler(){
         client = new Snapd.Client();
@@ -18,39 +18,50 @@ public class SnapdHandler : Object {
     }
 
     public GLib.GenericArray<weak Snapd.Snap> getInstalledPackages() {
+        GLib.GenericArray<weak Snapd.Snap> snaps = new GLib.GenericArray<weak Snapd.Snap>();
 
-        GLib.GenericArray<weak Snapd.Snap> snaps = client.list_sync (null);
+        try {
 
-        bool asc = true;
-	    snaps.sort_with_data (( a, b) => {
-		    return (asc)? strcmp (a.name, b.name) : strcmp (b.name, a.name);
-	    });
+            snaps = client.get_snaps_sync (Snapd.GetSnapsFlags.NONE, null, null);
+
+            bool asc = true;
+            snaps.sort_with_data (( a, b) => {
+	            return (asc)? strcmp (a.name, b.name) : strcmp (b.name, a.name);
+            });
+        } catch (GLib.Error e) {
+            new Alert("An error occured",e.message);
+        }
 
         return snaps;
     }
 
     public GLib.GenericArray<weak Snapd.Snap> getRefreshablePackages() {
+        GLib.GenericArray<weak Snapd.Snap> snaps = new GLib.GenericArray<weak Snapd.Snap>();
 
-        GLib.GenericArray<weak Snapd.Snap> snaps = client.find_refreshable_sync (null);
+        try {
+            snaps = client.find_refreshable_sync (null);
 
-        bool asc = true;
-	    snaps.sort_with_data (( a, b) => {
-		    return (asc)? strcmp (a.name, b.name) : strcmp (b.name, a.name);
-	    });
+            bool asc = true;
+	        snaps.sort_with_data (( a, b) => {
+		        return (asc)? strcmp (a.name, b.name) : strcmp (b.name, a.name);
+	        });
+        } catch (GLib.Error e) {
+            new Alert("An error occured",e.message);
+        }
 
         return snaps;
     }
 
     public Snapd.Snap getPackageByName(string searchWord = "") {
+        GLib.GenericArray<weak Snapd.Snap> snaps = new GLib.GenericArray<weak Snapd.Snap>();
 
         try{
-            GLib.GenericArray<weak Snapd.Snap> snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
-            return snaps[0];
-        } catch (Snapd.Error e) {
+            snaps = client.find_sync ( FindFlags.MATCH_NAME, searchWord, null, null);
+        } catch (GLib.Error e) {
             new Alert("There was an error spawning the process. Details", e.message);
         }
 
-        return null;
+        return snaps.length != 0 ? snaps[0] : null;
     }
 }
 }

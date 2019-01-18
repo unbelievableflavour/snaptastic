@@ -2,23 +2,14 @@ using Granite.Widgets;
 
 namespace Application {
 public class App:Granite.Application{
-   
+
     public static MainWindow window = null;
     public static string[] supported_mimetypes;
 
     private FileManager fileManager = FileManager.get_instance();
 
     construct {
-        flags |= ApplicationFlags.HANDLES_OPEN;
-        application_id = Constants.APPLICATION_ID;
-        program_name = Constants.APP_NAME;
-        app_years = Constants.APP_YEARS;
-        exec_name = Constants.EXEC_NAME;
-        app_launcher = Constants.DESKTOP_NAME;
-        build_version = Constants.VERSION;
-        app_icon = Constants.ICON;
-        main_url = Constants.MAIN_URL;
-        bug_url = Constants.BUG_URL;
+        program_name = Constants.APPLICATION_NAME;
 
         var app_info = new DesktopAppInfo (Constants.DESKTOP_NAME);
         try {

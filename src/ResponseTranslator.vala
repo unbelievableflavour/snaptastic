@@ -14,7 +14,7 @@ public class ResponseTranslator : Object{
             package.setChannel(Snap.get_channel());
             package.setVersion(Snap.get_version());
             package.setRevision(Snap.revision);
-            package.setDeveloper(Snap.get_developer());
+            package.setDeveloper(Snap.get_publisher_username());
             package.setSummary(Snap.summary);
             package.setDescription(Snap.description);
             package.setContact(Snap.contact);
@@ -43,7 +43,7 @@ public class ResponseTranslator : Object{
             package.setName(snap.name);
             package.setVersion(snap.get_version());
             package.setRevision(snap.revision);
-            package.setDeveloper(snap.get_developer());
+            package.setDeveloper(snap.get_publisher_username());
             package.setSummary(snap.summary);
             package.setDescription(snap.description);
             package.setContact(snap.contact);
@@ -67,7 +67,7 @@ public class ResponseTranslator : Object{
         package.setName(snap.name);
         package.setVersion(snap.get_version());
         package.setRevision(snap.revision);
-        package.setDeveloper(snap.get_developer());
+        package.setDeveloper(snap.get_publisher_username());
         package.setSummary(snap.summary);
         package.setDescription(snap.description);
         package.setContact(snap.contact);
