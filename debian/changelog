@@ -1,3 +1,14 @@
+com.github.bartzaalberg.snaptastic (0.7.1) UNSTABLE; urgency=high
+
+  * Fixed the icon not found crash
+  * Added screenshot for snaps
+  * Refactored the detail view
+  * Updated the screenshot for appcenter
+  * Fixed a lot of warnings
+  * Added OARS rating
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Tue, 22 Jan 2019 12:52:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.7.0) UNSTABLE; urgency=low
 
   * Icons finally work!
