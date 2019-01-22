@@ -7,7 +7,7 @@ public class FileManager : Object {
 
     FileManager() {
     }
- 
+
     public static FileManager get_instance() {
         if (instance == null) {
             instance = new FileManager();
@@ -21,6 +21,11 @@ public class FileManager : Object {
 
     public void setFile(File newFile){
         this.file = newFile;
+    }
+
+    public bool file_exists (string filePath) {
+        var file = File.new_for_path (filePath);
+        return file.query_exists ();
     }
 }
 }
