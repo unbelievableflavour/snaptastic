@@ -5,13 +5,16 @@ public class App:Granite.Application {
 
     public static MainWindow window = null;
     public static string[] supported_mimetypes;
+    public static GLib.Settings settings;
 
     private FileManager file_manager = FileManager.get_instance ();
+
 
     construct {
         flags |= ApplicationFlags.HANDLES_OPEN;
         application_id = Constants.APPLICATION_NAME;
         program_name = Constants.APPLICATION_NAME;
+        settings = new GLib.Settings (Constants.APPLICATION_NAME);
 
         var app_info = new DesktopAppInfo (Constants.DESKTOP_NAME);
         try {
@@ -45,8 +48,9 @@ public class App:Granite.Application {
     }
 
     public void new_window () {
+        var stack_manager = StackManager.get_instance ();
+
         if (window != null) {
-            var stack_manager = StackManager.get_instance ();
             if (stack_manager.get_stack ().get_visible_child_name () == "progress-view") {
                 window.present ();
                 return;
@@ -69,7 +73,30 @@ public class App:Granite.Application {
         );
 
         window = new MainWindow (this);
+        go_to_last_saved_position (window);
+        go_to_last_saved_size (window);
+
         window.show_all ();
+        stack_manager.get_stack ().visible_child_name = "welcome-view";
+    }
+
+    private void go_to_last_saved_position (MainWindow main_window) {
+        int window_x, window_y;
+        settings.get ("window-position", "(ii)", out window_x, out window_y);
+        if (window_x != -1 || window_y != -1) {
+            window.move (window_x, window_y);
+        }
+    }
+
+    private void go_to_last_saved_size (MainWindow main_window) {
+        var rect = Gtk.Allocation ();
+
+        settings.get ("window-size", "(ii)", out rect.width, out rect.height);
+        window.set_allocation (rect);
+
+        if (settings.get_boolean ("window-maximized")) {
+            window.maximize ();
+        }
     }
 }
 }
