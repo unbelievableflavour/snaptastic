@@ -1,0 +1,3 @@
+#!/bin/bash
+
+io.elementary.vala-lint -d src

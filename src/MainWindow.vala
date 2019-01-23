@@ -1,14 +1,14 @@
 using Granite.Widgets;
 
 namespace Application {
-public class MainWindow : Gtk.Window{
+public class MainWindow : Gtk.Window {
 
-    private StackManager stackManager = StackManager.get_instance();
-    private FileManager fileManager = FileManager.get_instance();
-    private HeaderBar headerBar = HeaderBar.get_instance();
-    private CommandHandler commandHandler = new CommandHandler();
-    private ResponseTranslator responseTranslator = new ResponseTranslator();
-    private SnapdURIHandler snapdURIHandler = new SnapdURIHandler();
+    private StackManager stack_manager = StackManager.get_instance ();
+    private FileManager file_manager = FileManager.get_instance ();
+    private HeaderBar header_bar = HeaderBar.get_instance ();
+    private CommandHandler command_handler = new CommandHandler ();
+    private ResponseTranslator response_translator = new ResponseTranslator ();
+    private SnapdURIHandler snapd_uri_handler = new SnapdURIHandler ();
 
     public MainWindow (Gtk.Application application) {
         Object (application: application,
@@ -18,14 +18,14 @@ public class MainWindow : Gtk.Window{
                 width_request: Constants.APPLICATION_WIDTH);
     }
 
-    public void recheck() {
-        if(fileManager.getFile() != null){
-            if (fileManager.getFile().has_uri_scheme ("snap")) {
-                installFromUrl();
+    public void recheck () {
+        if (file_manager.get_file () != null) {
+            if (file_manager.get_file ().has_uri_scheme ("snap")) {
+                install_from_url ();
             }
 
-            if (fileManager.getFile().has_uri_scheme ("file")) {
-                installFromFile();
+            if (file_manager.get_file ().has_uri_scheme ("file")) {
+                install_from_file ();
             }
         }
     }
@@ -35,64 +35,64 @@ public class MainWindow : Gtk.Window{
         style_context.add_class (Gtk.STYLE_CLASS_VIEW);
         style_context.add_class ("rounded");
 
-        set_titlebar (headerBar);
+        set_titlebar (header_bar);
 
-        stackManager.loadViews(this);
+        stack_manager.load_views (this);
 
-        stackManager.getStack().visible_child_name = "welcome-view";
-        recheck();
-        addShortcuts();
+        stack_manager.get_stack ().visible_child_name = "welcome-view";
+        recheck ();
+        add_shortcuts ();
     }
 
-    public void installFromUrl(){
-        var nameAndChannel = fileManager.getFile().get_uri().replace ("snap://", "");
+    public void install_from_url () {
+        var name_and_channel = file_manager.get_file ().get_uri ().replace ("snap://", "");
 
-        if (nameAndChannel.has_suffix ("/")) {
-            nameAndChannel = nameAndChannel.substring (0, nameAndChannel.last_index_of_char ('/'));
+        if (name_and_channel.has_suffix ("/")) {
+            name_and_channel = name_and_channel.substring (0, name_and_channel.last_index_of_char ('/'));
         }
 
-	    snapdURIHandler.setParametersFromURI(nameAndChannel);
+        snapd_uri_handler.set_parameters_from_uri (name_and_channel);
 
-        Package package = responseTranslator.getPackageByName(snapdURIHandler.getURIName());
+        Package package = response_translator.get_package_by_name (snapd_uri_handler.get_uri_name ());
 
-        if(package == null){
+        if (package == null) {
             return;
         }
 
-        if(snapdURIHandler.getURIChannel() != "") {
-            package.setVersion("");
-            package.setChannel(snapdURIHandler.getURIChannel());
+        if (snapd_uri_handler.get_uri_channel () != "") {
+            package.set_version ("");
+            package.set_channel (snapd_uri_handler.get_uri_channel ());
         }
 
-        stackManager.setDetailPackage(package);
-        stackManager.getStack().visible_child_name = "detail-view";
+        stack_manager.set_detail_package (package);
+        stack_manager.get_stack ().visible_child_name = "detail-view";
     }
 
-    public void installFromFile(){
-        string path = fileManager.getFile().get_uri().replace ("file://", "");
+    public void install_from_file () {
+        string path = file_manager.get_file ().get_uri ().replace ("file://", "");
 
-        string name = commandHandler.getPackageNameByFilePath(path);
-		var package = responseTranslator.getPackageByName(name);
+        string name = command_handler.get_package_name_by_file_path (path);
+        var package = response_translator.get_package_by_name (name);
 
-        if(package == null){
+        if (package == null) {
             return;
         }
 
-        stackManager.setDetailPackage(package);
-        stackManager.getStack().visible_child_name = "detail-view";
+        stack_manager.set_detail_package (package);
+        stack_manager.get_stack ().visible_child_name = "detail-view";
     }
 
-    private void addShortcuts(){
+    private void add_shortcuts () {
         key_press_event.connect ((e) => {
             switch (e.keyval) {
                 case Gdk.Key.u:
                   if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                    stackManager.getStack().visible_child_name = "list-view";
+                    stack_manager.get_stack ().visible_child_name = "list-view";
                   }
                   break;
                 case Gdk.Key.h:
                   if ((e.state & Gdk.ModifierType.CONTROL_MASK) != 0) {
-                    stackManager.getStack().visible_child_name = "welcome-view";
+                    stack_manager.get_stack ().visible_child_name = "welcome-view";
                   }
                   break;
                 case Gdk.Key.q:

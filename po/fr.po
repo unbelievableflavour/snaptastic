@@ -39,11 +39,11 @@ msgid "Browse to open a single snap file"
 msgstr "Parcourir pour ouvrir un fichier Snap unique"
 
 #: ../src/Views/ProgressView.vala:7
-msgid "Please Wait..."
+msgid "Please Wait"
 msgstr "Veuillez patienter..."
 
 #: ../src/Views/ProgressView.vala:7
-msgid "Operation is in progress..."
+msgid "Operation is in progress"
 msgstr "L'opération est en cours..."
 
 #: ../src/Views/DetailView.vala:4
