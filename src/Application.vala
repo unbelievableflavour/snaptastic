@@ -77,7 +77,6 @@ public class App:Granite.Application {
         go_to_last_saved_size (window);
 
         window.show_all ();
-        stack_manager.get_stack ().visible_child_name = "welcome-view";
     }
 
     private void go_to_last_saved_position (MainWindow main_window) {

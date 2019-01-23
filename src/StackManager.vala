@@ -34,10 +34,9 @@ public class StackManager : Object {
     public void load_views (Gtk.Window window) {
         detail_view = new DetailView ();
         main_window = window;
-
+        stack.add_named (new WelcomeView (), WELCOME_VIEW_ID);
         stack.add_named (new ListView (), LIST_VIEW_ID);
         stack.add_named (new NotFoundView (), NOT_FOUND_VIEW_ID);
-        stack.add_named (new WelcomeView (), WELCOME_VIEW_ID);
         stack.add_named (new ProgressView (), PROGRESS_VIEW_ID);
         stack.add_named (detail_view, DETAIL_VIEW_ID);
 
