@@ -3,64 +3,64 @@ using Snapd;
 namespace Application {
 public class App {
 
-    private static Client client; 
+    private static Client client;
 
-    public static int main(string[] args) {
+    public static int main (string[] args) {
 
-        client = new Snapd.Client();
+        client = new Snapd.Client ();
 
-        if (!client.connect_sync (null)){
-            stdout.printf("Could not connect to snapd");
+        if (!client.connect_sync (null)) {
+            stdout.printf ("Could not connect to snapd");
             return 0;
         }
 
         string option = args[1];
-        var snapdURIHandler = new SnapdURIHandler();
-        snapdURIHandler.setParametersFromURI(args[2]);
+        var snapd_uri_handler = new SnapdURIHandler ();
+        snapd_uri_handler.set_parameters_from_uri (args[2]);
 
-        if(option == "remove"){
-           deletePackage(snapdURIHandler.getURIName());
+        if (option == "remove") {
+           delete_package (snapd_uri_handler.get_uri_name ());
            return 0;
         }
 
-        if(option == "install"){
-           installPackage(snapdURIHandler.getURIName(), snapdURIHandler.getURIChannel());
+        if (option == "install") {
+           install_package (snapd_uri_handler.get_uri_name (), snapd_uri_handler.get_uri_channel ());
            return 0;
         }
 
-        if(option == "update"){
-           updatePackage(snapdURIHandler.getURIName());
+        if (option == "update") {
+           update_package (snapd_uri_handler.get_uri_name ());
            return 0;
         }
 
         return 0;
     }
 
-    public static void deletePackage(string name) {
-        try{
+    public static void delete_package (string name) {
+        try {
             client.remove_sync (name,null, null);
         } catch (SpawnError e) {
-            stdout.printf(e.message);
+            stdout.printf (e.message);
         }
     }
 
-    public static void installPackage(string name, string channel) {
-        try{
+    public static void install_package (string name, string channel) {
+        try {
             client.install2_sync (
                 InstallFlags.CLASSIC,
-                name, 
+                name,
                 channel != "" ? channel : null,
                 null, null, null);
         } catch (SpawnError e) {
-            stdout.printf(e.message);
+            stdout.printf (e.message);
         }
     }
 
-    public static void updatePackage(string name) {
-        try{
+    public static void update_package (string name) {
+        try {
             client.refresh_sync (name, null, null, null);
         } catch (SpawnError e) {
-            stdout.printf(e.message);
+            stdout.printf (e.message);
         }
     }
 }

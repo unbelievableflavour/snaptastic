@@ -2,79 +2,77 @@ using Granite.Widgets;
 
 namespace Application {
 public class HeaderBar : Gtk.HeaderBar {
-    
+
     static HeaderBar? instance;
 
-    private StackManager stackManager = StackManager.get_instance();
-    ListBox listBox = ListBox.get_instance();    
+    private StackManager stack_manager = StackManager.get_instance ();
+    ListBox list_box = ListBox.get_instance ();
     public Gtk.Button return_button = new Gtk.Button ();
-    private Granite.Widgets.ModeButton view_mode = new Granite.Widgets.ModeButton();
+    private Granite.Widgets.ModeButton view_mode = new Granite.Widgets.ModeButton ();
 
-    HeaderBar() {
+    HeaderBar () {
         Granite.Widgets.Utils.set_color_primary (this, Constants.BRAND_COLOR);
-        
-        generateViewMode();
-        generateReturnButton();
+
+        generate_view_mode ();
+        generate_return_button ();
 
         this.pack_start (return_button);
         this.show_close_button = true;
-        this.set_custom_title(view_mode);
+        this.set_custom_title (view_mode);
     }
- 
-    public static HeaderBar get_instance() {
+
+    public static HeaderBar get_instance () {
         if (instance == null) {
-            instance = new HeaderBar();
+            instance = new HeaderBar ();
         }
         return instance;
     }
 
-    private void generateViewMode(){
-	    //Create two labels. Assign names for a check later on.
-	    var label1 = new Gtk.Label("Home");
-        label1.get_style_context().add_class("view-mode-button");
-	    label1.name = "home";
-            
-	    var label2 = new Gtk.Label("Updates");
-        label2.get_style_context().add_class("view-mode-button");
-	    label2.name = "updates";
-        
-	    //Add each label to the Mode Button.
-	    view_mode.append(label1);
-	    view_mode.append(label2);
+    private void generate_view_mode () {
+        var label1 = new Gtk.Label ("Home");
+        label1.get_style_context ().add_class ("view-mode-button");
+        label1.name = "home";
+
+        var label2 = new Gtk.Label ("Updates");
+        label2.get_style_context ().add_class ("view-mode-button");
+        label2.name = "updates";
+
+        view_mode.append (label1);
+        view_mode.append (label2);
         view_mode.no_show_all = true;
         view_mode.visible = false;
         view_mode.margin = 1;
         view_mode.notify["selected"].connect (on_view_mode_changed);
     }
 
-    private void generateReturnButton(){
+    private void generate_return_button () {
         return_button.label = _("Back");
         return_button.no_show_all = true;
         return_button.visible = false;
         return_button.get_style_context ().add_class ("back-button");
         return_button.clicked.connect (() => {
-            stackManager.getStack().visible_child_name = "list-view";
+            stack_manager.get_stack ().visible_child_name = "list-view";
         });
     }
 
-    public void showViewMode(bool answer){
+    public void show_view_mode (bool answer) {
         view_mode.visible = answer;
     }
 
-    public void showReturnButton(bool answer){
+    public void show_return_button (bool answer) {
         return_button.visible = answer;
     }
 
-    public void setSelectedViewMode(int answer){
+    public void set_selected_view_mode (int answer) {
         view_mode.selected = answer;
     }
 
      private void on_view_mode_changed () {
-        if (view_mode.selected == 0){
-            stackManager.getStack().visible_child_name = "welcome-view";
-        }else{
-            stackManager.getStack().visible_child_name = "list-view";
-            listBox.getInstalledPackages();
+        if (view_mode.selected == 0) {
+            stack_manager.get_stack ().visible_child_name = "welcome-view";
+        }else {
+            stack_manager.get_stack ().visible_child_name = "list-view";
+            list_box.get_installed_packages ();
         }
     }
 }

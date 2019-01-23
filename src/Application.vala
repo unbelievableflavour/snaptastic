@@ -1,12 +1,12 @@
 using Granite.Widgets;
 
 namespace Application {
-public class App:Granite.Application{
+public class App:Granite.Application {
 
     public static MainWindow window = null;
     public static string[] supported_mimetypes;
 
-    private FileManager fileManager = FileManager.get_instance();
+    private FileManager file_manager = FileManager.get_instance ();
 
     construct {
         flags |= ApplicationFlags.HANDLES_OPEN;
@@ -31,9 +31,9 @@ public class App:Granite.Application{
             return;
         }
 
-        fileManager.setFile(file);
-        activate();
-	}
+        file_manager.set_file (file);
+        activate ();
+    }
 
     protected override void activate () {
         new_window ();
@@ -46,13 +46,13 @@ public class App:Granite.Application{
 
     public void new_window () {
         if (window != null) {
-            var stackManager = StackManager.get_instance();
-            if(stackManager.getStack().get_visible_child_name() == "progress-view"){
+            var stack_manager = StackManager.get_instance ();
+            if (stack_manager.get_stack ().get_visible_child_name () == "progress-view") {
                 window.present ();
                 return;
             }
 
-            window.recheck();
+            window.recheck ();
             window.present ();
             return;
         }
@@ -62,7 +62,11 @@ public class App:Granite.Application{
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/com/github/bartzaalberg/snaptastic/application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
 
         window = new MainWindow (this);
         window.show_all ();
