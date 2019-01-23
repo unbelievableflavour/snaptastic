@@ -46,6 +46,17 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="0.7.2" date="2019-01-23">
+       <description>
+           <p>Added screenshot</p>
+           <ul>
+                <li>Single-instancing now working</li>
+                <li>Improved project code quality</li>
+                <li>Remember size,position, and maximized</li>
+                <li>Fixed bug opening welcome view from web store</li>
+           </ul>
+       </description>
+   </release>
    <release version="0.7.1" date="2019-01-22">
        <description>
            <p>Added screenshot</p>

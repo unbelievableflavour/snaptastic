@@ -1,3 +1,12 @@
+com.github.bartzaalberg.snaptastic (0.7.2) UNSTABLE; urgency=low
+
+  * Single-instancing now working
+  * Improved project code quality
+  * Remember size,position, and maximized
+  * Fixed bug opening welcome view from web store
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Web, 23 Jan 2019 18:42:00 +0200
+
 com.github.bartzaalberg.snaptastic (0.7.1) UNSTABLE; urgency=high
 
   * Fixed the icon not found crash
