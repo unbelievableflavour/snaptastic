@@ -9,6 +9,8 @@ public class App:Granite.Application{
     private FileManager fileManager = FileManager.get_instance();
 
     construct {
+        flags |= ApplicationFlags.HANDLES_OPEN;
+        application_id = Constants.APPLICATION_NAME;
         program_name = Constants.APPLICATION_NAME;
 
         var app_info = new DesktopAppInfo (Constants.DESKTOP_NAME);
