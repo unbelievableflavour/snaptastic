@@ -45,6 +45,14 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="0.8.0" date="2019-01-27">
+       <description>
+           <p>Added metadata translation</p>
+           <ul>
+                <li>Added metadata translations</li>
+           </ul>
+       </description>
+   </release>
    <release version="0.7.2" date="2019-01-23">
        <description>
            <p>Added screenshot</p>
