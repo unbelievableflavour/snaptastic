@@ -9,7 +9,6 @@ public class App:Granite.Application {
 
     private FileManager file_manager = FileManager.get_instance ();
 
-
     construct {
         flags |= ApplicationFlags.HANDLES_OPEN;
         application_id = Constants.APPLICATION_NAME;

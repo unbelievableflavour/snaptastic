@@ -8,7 +8,7 @@ A snap manager for Elementary OS
 </p>
 
 <p align="center">
-    <img 
+    <img
     src="https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot.png" />
 </p>
 
@@ -29,7 +29,7 @@ These dependencies must be present before building
  - `libsnapd-glib-dev`
 
  You can install these on a Ubuntu-based system by executing this command:
- 
+
  `sudo apt install valac libgtk-3-dev libgranite-dev libsnapd-glib-dev`
 
 ### Building
@@ -42,6 +42,7 @@ ninja
 ### Installing
 `sudo ninja install`
 
+### Use snaps from browser
 Run the following command to use snaps from browsers
 `sudo update-desktop-database /usr/share/applications`
 

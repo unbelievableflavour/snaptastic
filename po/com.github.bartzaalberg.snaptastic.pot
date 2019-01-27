@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the com.github.bartzaalberg.snaptastic package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: com.github.bartzaalberg.snaptastic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-19 09:17+0100\n"
+"POT-Creation-Date: 2019-01-27 11:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,74 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/Components/HeaderBar.vala:51
-msgid "Back"
-msgstr ""
-
-#: ../src/Views/WelcomeView.vala:11
-msgid "Install Some Snaps"
-msgstr ""
-
-#: ../src/Views/WelcomeView.vala:11
-msgid "Click open to select a downloaded snap file"
-msgstr ""
-
-#: ../src/Views/WelcomeView.vala:12 ../src/ListBoxRow.vala:95
-msgid "Open"
-msgstr ""
-
-#: ../src/Views/WelcomeView.vala:12
-msgid "Browse to open a single snap file"
-msgstr ""
-
-#: ../src/Views/ProgressView.vala:7
-msgid "Please Wait"
-msgstr ""
-
-#: ../src/Views/ProgressView.vala:7
-msgid "Operation is in progress"
-msgstr ""
-
-#: ../src/Views/DetailView.vala:4
-msgid "Package Information"
-msgstr ""
-
-#: ../src/Views/DetailView.vala:5
-msgid "Developer"
-msgstr ""
-
-#: ../src/Views/NotFoundView.vala:7
-msgid "No snaps were found"
-msgstr ""
-
-#: ../src/Views/NotFoundView.vala:7
-msgid "Please install some"
-msgstr ""
-
-#: ../src/Dialogs/DeleteConfirm.vala:8
-msgid "Delete this application?"
-msgstr ""
-
-#: ../src/Dialogs/DeleteConfirm.vala:8
-msgid "Are you sure you want to delete this application?"
-msgstr ""
-
-#: ../src/ListBoxRow.vala:49
+#: src/ListBoxRow.vala:48
 msgid "Refresh"
 msgstr ""
 
-#: ../src/ListBoxRow.vala:51
+#: src/ListBoxRow.vala:50
 msgid "Update this to latest version"
 msgstr ""
 
-#: ../src/ListBoxRow.vala:65
+#: src/ListBoxRow.vala:64
 msgid "Uninstall"
 msgstr ""
 
-#: ../src/ListBoxRow.vala:67
+#: src/ListBoxRow.vala:66
 msgid "Uninstall this application"
 msgstr ""
 
-#: ../src/ListBoxRow.vala:79
+#: src/ListBoxRow.vala:80 src/ListBoxRow.vala:82
 msgid "Install"
 msgstr ""
 
-#: ../src/ListBoxRow.vala:81
+#: src/ListBoxRow.vala:86
 msgid "Install this application"
 msgstr ""
 
-#: ../src/ListBoxRow.vala:97
+#: src/ListBoxRow.vala:100 src/Views/WelcomeView.vala:12
+msgid "Open"
+msgstr ""
+
+#: src/ListBoxRow.vala:102
 msgid "Run the application"
+msgstr ""
+
+#: src/Dialogs/DeleteConfirm.vala:9
+msgid "Delete this application?"
+msgstr ""
+
+#: src/Dialogs/DeleteConfirm.vala:10
+msgid "Are you sure you want to delete this application?"
+msgstr ""
+
+#: src/Views/NotFoundView.vala:7
+msgid "No snaps were found"
+msgstr ""
+
+#: src/Views/NotFoundView.vala:7
+msgid "Please install some"
+msgstr ""
+
+#: src/Views/WelcomeView.vala:11
+msgid "Install Some Snaps"
+msgstr ""
+
+#: src/Views/WelcomeView.vala:11
+msgid "Click open to select a downloaded snap file"
+msgstr ""
+
+#: src/Views/WelcomeView.vala:12
+msgid "Browse to open a single snap file"
+msgstr ""
+
+#: src/Views/ProgressView.vala:7
+msgid "Please Wait"
+msgstr ""
+
+#: src/Views/ProgressView.vala:7
+msgid "Operation is in progress"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:49
+msgid "Back"
 msgstr ""

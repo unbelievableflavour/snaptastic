@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017 Your Name <you@email.com> -->
 <component type="desktop">
   <id>com.github.bartzaalberg.snaptastic</id>
   <metadata_license>CC0</metadata_license>
@@ -7,7 +6,7 @@
   <name>Snaptastic</name>
   <summary>A manager for snaps</summary>
   <description>
-    <p>Install your snaps, both downloaded and from online stores like snapcraft.io (right from the browser!). Update with one click in the app, and more! Do everything you need to do without the necessity of opening the terminal. </p>
+    <p>Install your snaps, both downloaded and from online stores like snapcraft.io (right from the browser!). Update with one click in the app, and more! Do everything you need to do without the necessity of opening the terminal.</p>
     <p>Features:</p>
      <ul>
        <li>Install snap files</li>
