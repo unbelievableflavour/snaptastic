@@ -1,0 +1,74 @@
+# French translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.bartzaalberg.alias package.
+# NathanBnm, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-24 19:02+0100\n"
+"PO-Revision-Date: 2019-01-27 18:30+0100\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:6
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:3
+msgid "Snaptastic"
+msgstr "Snaptastic"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:7
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:4
+msgid "A manager for snaps"
+msgstr "Un gestionnaire pour les snaps"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:9
+msgid ""
+"Install your snaps, both downloaded and from online stores like snapcraft.io "
+"(right from the browser!). Update with one click in the app, and more! Do everything"
+" you need to do without the necessity of opening the terminal."
+msgstr ""
+"Installez vos snaps, téléchargés ou provenant de boutiques en ligne comme snapcraft.io "
+"(directement depuis le navigateur !). Mise à jour en un seul clic dans l'application, et plus encore ! Faites tout "
+"ce que vous avez à faire sans avoir à ouvrir le terminal."
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:10
+msgid "Features:"
+msgstr "Fonctionnalités :"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:12
+msgid "Install snap files"
+msgstr "Installez des fichiers snap"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:13
+msgid "Update, remove, and view information about your installed snaps"
+msgstr "Mettez à jour, désinstallez et visualisez des informations sur vos snaps installés"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:14
+msgid "Search through your installed snaps"
+msgstr "Recherchez parmi vos snaps installés"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:15
+msgid "Install snaps from web a uri"
+msgstr "Installez des snaps depuis une adresse web"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:30
+msgid "Bart Zaalberg"
+msgstr "Bart Zaalberg"
+
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:6
+msgid "com.github.bartzaalberg.snaptastic"
+msgstr "com.github.bartzaalberg.snaptastic"
+
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:11
+msgid "GUI;Snaps;"
+msgstr "GUI;Snaps;"
+
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:17
+msgid "About Snaptastic"
+msgstr "À propos de Snaptastic"
