@@ -23,7 +23,7 @@ public class DetailViewBanner : ListBoxRow {
     public void reload_view (Package package) {
 
         IconHandler iconHandler = new IconHandler ();
-        iconHandler.set_icon_size (50);
+        iconHandler.set_icon_size (64);
         var icon = iconHandler.get_icon_from_string (package);
 
         var installed_packages = response_translator.get_installed_packages ();

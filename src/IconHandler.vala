@@ -49,7 +49,13 @@ public class IconHandler {
             possible_icon_paths.append_val (
                 "/snap/" + package.get_name () + "/current/" + package.get_name () +".png");
             possible_icon_paths.append_val (
+                "/snap/" + package.get_name () + "/current/usr/share/icons/hicolor/64x64/apps/"
+                + package.get_name () + ".png");
+            possible_icon_paths.append_val (
                 "/snap/" + package.get_name () + "/current/usr/share/icons/hicolor/48x48/apps/"
+                + package.get_name () + ".png");
+            possible_icon_paths.append_val (
+                "/snap/" + package.get_name () + "/current/usr/share/icons/hicolor/32x32/apps/"
                 + package.get_name () + ".png");
 
         for (int i = 0; i < possible_icon_paths.length ; i++) {

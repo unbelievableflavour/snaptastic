@@ -48,6 +48,15 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.0.0" date="2019-01-30">
+       <description>
+           <p>Added French metadata translation</p>
+           <ul>
+                <li>Added French metadata translations</li>
+                <li>Sharpened application icons</li>
+           </ul>
+       </description>
+   </release>
    <release version="0.8.0" date="2019-01-27">
        <description>
            <p>Added metadata translation</p>
