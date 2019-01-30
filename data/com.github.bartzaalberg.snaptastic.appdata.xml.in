@@ -15,6 +15,9 @@
        <li>Install snaps from web a uri</li>
     </ul>
   </description>
+  <provides>
+    <binary>com.github.bartzaalberg.snaptastic</binary>
+  </provides>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
