@@ -36,13 +36,13 @@ msgstr "Wachten A.u.b."
 msgid "Operation is in progress"
 msgstr "Handeling wordt momenteel verricht..."
 
-#: ../src/Views/DetailView.vala:4 
-msgid "Package Information" 
+#: ../src/Views/DetailView.vala:4
+msgid "Package Information"
 msgstr "Pakket informatie"
- 
-#: ../src/Views/DetailView.vala:5 
-msgid "Developer" 
-msgstr "Ontwikkelaar" 
+
+#: ../src/Views/DetailView.vala:5
+msgid "Developer"
+msgstr "Ontwikkelaar"
 
 #: ../src/Views/NotFoundView.vala:7
 msgid "No snaps were found"
@@ -62,7 +62,7 @@ msgstr "Weet u zeker dat u deze applicatie wilt verwijderen?"
 
 #: ../src/ListBoxRow.vala:55
 msgid "Update"
-msgstr "Updaten"
+msgstr "Update"
 
 #: ../src/ListBoxRow.vala:57
 msgid "Update this to latest version"
@@ -70,15 +70,15 @@ msgstr "Update deze applicatie naar de laatste versie"
 
 #: ../src/ListBoxRow.vala:71
 msgid "Uninstall"
-msgstr "Uninstalleren"
+msgstr "Deinstalleer"
 
 #: ../src/ListBoxRow.vala:73
 msgid "Uninstall this application"
-msgstr "Uninstalleer deze applicatie"
+msgstr "Deinstalleer deze applicatie"
 
 #: ../src/ListBoxRow.vala:85
 msgid "Install"
-msgstr "Installeren"
+msgstr "Installeer"
 
 #: ../src/ListBoxRow.vala:87
 msgid "Install this application"
@@ -86,4 +86,4 @@ msgstr "Installeer deze applicatie"
 
 #: ../src/ListBoxRow.vala:103
 msgid "Run the application"
-msgstr "Start de applicatie"
+msgstr "Open de applicatie"
