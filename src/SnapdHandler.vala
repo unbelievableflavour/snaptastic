@@ -63,5 +63,28 @@ public class SnapdHandler : Object {
 
         return snaps.length != 0 ? snaps[0] : null;
     }
+
+    public void update_installed_package_row (InstalledPackageRow installed_package_row) {
+        client.find_async.begin ( FindFlags.MATCH_NAME, installed_package_row.package.get_name (), null, (obj, res) => {
+                string std_out;
+                try {
+                    GLib.GenericArray<weak Snapd.Snap> snaps = client.find_async.end (res, out std_out);
+                    Snap snap = snaps[0];
+                    if (snap.get_icon () != "" && snap.get_icon () != null) {
+                        installed_package_row.package.set_icon (snap.get_icon ());
+                    }
+                    if ( snap.get_screenshots ().length != 0) {
+                        installed_package_row.package.set_screenshots (snap.get_screenshots ());
+                    }
+                    installed_package_row.load_package (installed_package_row.package);
+                } catch (Snapd.Error e) {
+                    stdout.printf ("An error occured in SnapdHandler: %s", e.message);
+                    return;
+                } catch (GLib.Error e) {
+                    stdout.printf ("An error occured in SnapdHandler: %s", e.message);
+                    return;
+                }
+        });
+    }
 }
 }
