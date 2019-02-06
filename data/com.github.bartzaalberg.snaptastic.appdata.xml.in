@@ -48,6 +48,15 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.0.1" date="2019-02-06">
+       <description>
+           <p>Improved performance</p>
+           <ul>
+                <li>Improved the performance of the list view</li>
+                <li>Fixed Dutch grammar issues</li>
+           </ul>
+       </description>
+   </release>
    <release version="1.0.0" date="2019-01-30">
        <description>
            <p>Added French metadata translation</p>

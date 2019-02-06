@@ -1,3 +1,10 @@
+com.github.bartzaalberg.snaptastic (1.0.1) STABLE; urgency=low
+
+  * Improved performance
+  * Fixed Dutch grammar issues
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Web, 06 Feb 2019 13:58:00 +0200
+
 com.github.bartzaalberg.snaptastic (1.0.0) STABLE; urgency=low
 
   * Added French metadata translation
