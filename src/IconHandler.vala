@@ -18,7 +18,7 @@ public class IconHandler {
                 file_photo = File.new_for_uri (package.get_icon ());
                 image = new Granite.AsyncImage (true, true);
                 image.get_style_context ().add_class ("backimg");
-                image.set_from_file_async.begin (file_photo, icon_size, icon_size, false);
+                image.set_from_file_async.begin (file_photo, icon_size, -1, true);
                 return image;
             }
 
