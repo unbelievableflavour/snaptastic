@@ -4,7 +4,7 @@ namespace Application {
 public class DetailViewBanner : ListBoxRow {
 
     private ResponseTranslator response_translator = new ResponseTranslator ();
-
+    public static GLib.Settings settings;
     Gtk.Box package_row;
 
     Gtk.Label summary_label;
@@ -21,7 +21,8 @@ public class DetailViewBanner : ListBoxRow {
     }
 
     public void reload_view (Package package) {
-
+        settings = new GLib.Settings (Constants.APPLICATION_NAME);
+        set_dark_mode (settings.get_boolean ("use-dark-theme"));
         IconHandler iconHandler = new IconHandler ();
         iconHandler.set_icon_size (64);
         var icon = iconHandler.get_icon_from_string (package);
@@ -81,6 +82,14 @@ public class DetailViewBanner : ListBoxRow {
         }
 
         add (package_row);
+    }
+
+    public void set_dark_mode (bool answer = true) {
+        if (answer) {
+           this.get_style_context ().add_class ("detail-view-banner-dark");
+        } else {
+           this.get_style_context ().remove_class ("detail-view-banner-dark");
+        }
     }
 }
 }

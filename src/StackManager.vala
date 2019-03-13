@@ -47,22 +47,26 @@ public class StackManager : Object {
                 header_bar.show_view_mode (true);
                 header_bar.set_selected_view_mode (0);
                 header_bar.show_return_button (false);
+                header_bar.show_dark_mode_button (true);
             }
 
             if (stack.get_visible_child_name () == DETAIL_VIEW_ID) {
                 header_bar.show_view_mode (false);
                 header_bar.show_return_button (true);
+                header_bar.show_dark_mode_button (false);
             }
 
             if (stack.get_visible_child_name () == PROGRESS_VIEW_ID) {
                 header_bar.show_view_mode (false);
                 header_bar.show_return_button (false);
+                header_bar.show_dark_mode_button (true);
             }
 
             if (stack.get_visible_child_name () == LIST_VIEW_ID) {
                 header_bar.show_view_mode (true);
                 header_bar.set_selected_view_mode (1);
                 header_bar.show_return_button (false);
+                header_bar.show_dark_mode_button (true);
             }
         });
 

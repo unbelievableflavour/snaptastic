@@ -19,6 +19,10 @@
     background-color: #F5F5F5;
 }
 
+.detail-view-banner-dark {
+    background-color: #363A3F;
+}
+
 .detail-view-banner-title {
     font-family: Ubuntu;
     font-size:30px;
