@@ -13,6 +13,7 @@
        <li>Update, remove, and view information about your installed snaps</li>
        <li>Search through your installed snaps</li>
        <li>Install snaps from web a uri</li>
+       <li>Choose between light and dark with dark mode</li>
     </ul>
   </description>
   <provides>
@@ -335,6 +336,12 @@
     </screenshot>
     <screenshot>
       <image>https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot3.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot4.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/bartzaalberg/snaptastic/master/screenshot5.png</image>
     </screenshot>
   </screenshots>
   <developer_name>Bart Zaalberg</developer_name>

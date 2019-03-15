@@ -57,6 +57,10 @@ msgstr "Recherchez parmi vos snaps installés"
 msgid "Install snaps from web a uri"
 msgstr "Installez des snaps depuis une adresse web"
 
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:16
+msgid "Choose between light and dark with dark mode"
+msgstr ""
+
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:30
 msgid "Bart Zaalberg"
 msgstr "Bart Zaalberg"
