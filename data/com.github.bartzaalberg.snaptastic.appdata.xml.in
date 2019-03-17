@@ -49,6 +49,15 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.1.0" date="2019-04-17">
+       <description>
+           <p>Added dark mode and tooltip shortcuts</p>
+           <ul>
+                <li>Added dark mode</li>
+                <li>Added shortcuts to the button labels</li>
+           </ul>
+       </description>
+   </release>
    <release version="1.0.1" date="2019-02-06">
        <description>
            <p>Improved performance</p>

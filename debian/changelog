@@ -1,3 +1,10 @@
+com.github.bartzaalberg.snaptastic (1.1.0) STABLE; urgency=low
+
+  * Added dark mode
+  * Added shortcuts to the button labels
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Sun, 17 Mar 2019 17:40:00 +0200
+
 com.github.bartzaalberg.snaptastic (1.0.1) STABLE; urgency=low
 
   * Improved performance
