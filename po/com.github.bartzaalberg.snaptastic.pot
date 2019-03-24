@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bartzaalberg.snaptastic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 11:42+0100\n"
+"POT-Creation-Date: 2019-03-24 17:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/ListBoxRow.vala:48
@@ -78,13 +78,37 @@ msgid "Browse to open a single snap file"
 msgstr ""
 
 #: src/Views/ProgressView.vala:7
-msgid "Please Wait"
+msgid "Please Wait…"
 msgstr ""
 
 #: src/Views/ProgressView.vala:7
-msgid "Operation is in progress"
+msgid "Operation is in progress…"
 msgstr ""
 
-#: src/Components/HeaderBar.vala:49
+#: src/Components/HeaderBar.vala:38
+msgid "Home"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:39
+msgid "Go to home"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:43
+msgid "Updates"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:44
+msgid "Go to installed applications"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:57
 msgid "Back"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:69
+msgid "Light mode"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:70
+msgid "Dark mode"
 msgstr ""

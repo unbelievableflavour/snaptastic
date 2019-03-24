@@ -1,99 +1,114 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# French translations for com.github.bartzaalberg.snaptastic package.
+# Copyright (C) 2019 THE com.github.bartzaalberg.snaptastic'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.bartzaalberg.snaptastic package.
+# NathanBnm, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: com.github.bartzaalberg.snaptastic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-19 09:17+0100\n"
-"PO-Revision-Date: 2018-10-27 14:08+0100\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2019-03-24 17:04+0100\n"
+"PO-Revision-Date: 2019-03-24 16:53+0100\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 
-#: ../src/Components/HeaderBar.vala:51
-msgid "Back"
-msgstr "Retour"
-
-#: ../src/Views/WelcomeView.vala:11
-msgid "Install Some Snaps"
-msgstr "Installer quelques Snaps"
-
-#: ../src/Views/WelcomeView.vala:11
-msgid "Click open to select a downloaded snap file"
-msgstr "Cliquez sur ouvrir pour sélectionner un fichier snap téléchargé"
-
-#: ../src/Views/WelcomeView.vala:12 ../src/ListBoxRow.vala:95
-msgid "Open"
-msgstr "Ouvrir"
-
-#: ../src/Views/WelcomeView.vala:12
-msgid "Browse to open a single snap file"
-msgstr "Parcourir pour ouvrir un fichier Snap unique"
-
-#: ../src/Views/ProgressView.vala:7
-msgid "Please Wait"
-msgstr "Veuillez patienter..."
-
-#: ../src/Views/ProgressView.vala:7
-msgid "Operation is in progress"
-msgstr "L'opération est en cours..."
-
-#: ../src/Views/DetailView.vala:4
-msgid "Package Information"
-msgstr "Information sur le forfait"
-
-#: ../src/Views/DetailView.vala:5
-msgid "Developer"
-msgstr "Développeur"
-
-#: ../src/Views/NotFoundView.vala:7
-msgid "No snaps were found"
-msgstr "Aucun snaps n'a été trouvé"
-
-#: ../src/Views/NotFoundView.vala:7
-msgid "Please install some"
-msgstr "S'il vous plaît installer quelques-uns"
-
-#: ../src/Dialogs/DeleteConfirm.vala:8
-msgid "Delete this application?"
-msgstr "Supprimer cette application?"
-
-#: ../src/Dialogs/DeleteConfirm.vala:8
-msgid "Are you sure you want to delete this application?"
-msgstr "Êtes-vous sûr de vouloir supprimer cette application?"
-
-#: ../src/ListBoxRow.vala:49
+#: src/ListBoxRow.vala:48
 msgid "Refresh"
-msgstr "Actualiser"
+msgstr "Mettre à jour"
 
-#: ../src/ListBoxRow.vala:51
+#: src/ListBoxRow.vala:50
 msgid "Update this to latest version"
-msgstr "Mettre à jour à la dernière version"
+msgstr "Mettre à jour vers la dernière version"
 
-#: ../src/ListBoxRow.vala:65
+#: src/ListBoxRow.vala:64
 msgid "Uninstall"
 msgstr "Désinstaller"
 
-#: ../src/ListBoxRow.vala:67
+#: src/ListBoxRow.vala:66
 msgid "Uninstall this application"
-msgstr "DésInstaller cette application"
+msgstr "Désinstaller cette application"
 
-#: ../src/ListBoxRow.vala:79
+#: src/ListBoxRow.vala:80 src/ListBoxRow.vala:82
 msgid "Install"
 msgstr "Installer"
 
-#: ../src/ListBoxRow.vala:81
+#: src/ListBoxRow.vala:86
 msgid "Install this application"
 msgstr "Installer cette application"
 
-#: ../src/ListBoxRow.vala:97
+#: src/ListBoxRow.vala:100 src/Views/WelcomeView.vala:12
+msgid "Open"
+msgstr "Ouvrir"
+
+#: src/ListBoxRow.vala:102
 msgid "Run the application"
 msgstr "Exécuter l'application"
+
+#: src/Dialogs/DeleteConfirm.vala:9
+msgid "Delete this application?"
+msgstr "Supprimer cette application ?"
+
+#: src/Dialogs/DeleteConfirm.vala:10
+msgid "Are you sure you want to delete this application?"
+msgstr "Êtes-vous sûr de vouloir supprimer cette application ?"
+
+#: src/Views/NotFoundView.vala:7
+msgid "No snaps were found"
+msgstr "Aucun snap n'a été trouvé"
+
+#: src/Views/NotFoundView.vala:7
+msgid "Please install some"
+msgstr "Veuillez en installer"
+
+#: src/Views/WelcomeView.vala:11
+msgid "Install Some Snaps"
+msgstr "Installer quelques Snaps"
+
+#: src/Views/WelcomeView.vala:11
+msgid "Click open to select a downloaded snap file"
+msgstr "Cliquez sur ouvrir pour sélectionner un fichier snap téléchargé"
+
+#: src/Views/WelcomeView.vala:12
+msgid "Browse to open a single snap file"
+msgstr "Parcourir pour ouvrir un fichier Snap unique"
+
+#: src/Views/ProgressView.vala:7
+msgid "Please Wait…"
+msgstr "Veuillez patienter…"
+
+#: src/Views/ProgressView.vala:7
+msgid "Operation is in progress…"
+msgstr "L'opération est en cours…"
+
+#: src/Components/HeaderBar.vala:38
+msgid "Home"
+msgstr "Accueil"
+
+#: src/Components/HeaderBar.vala:39
+msgid "Go to home"
+msgstr "Aller à l'accueil"
+
+#: src/Components/HeaderBar.vala:43
+msgid "Updates"
+msgstr "Mises à jour"
+
+#: src/Components/HeaderBar.vala:44
+msgid "Go to installed applications"
+msgstr "Aller aux applications installées"
+
+#: src/Components/HeaderBar.vala:57
+msgid "Back"
+msgstr "Retour"
+
+#: src/Components/HeaderBar.vala:69
+msgid "Light mode"
+msgstr "Thème clair"
+
+#: src/Components/HeaderBar.vala:70
+msgid "Dark mode"
+msgstr "Thème sombre"

@@ -35,12 +35,12 @@ public class HeaderBar : Gtk.HeaderBar {
     }
 
     private void generate_view_mode () {
-        var label1 = new Gtk.Label ("Home");
+        var label1 = new Gtk.Label (_("Home"));
         label1.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>H"}, _("Go to home"));
         label1.get_style_context ().add_class ("view-mode-button");
         label1.name = "home";
 
-        var label2 = new Gtk.Label ("Updates");
+        var label2 = new Gtk.Label (_("Updates"));
         label2.tooltip_markup = Granite.markup_accel_tooltip ({"<Ctrl>U"}, _("Go to installed applications"));
         label2.get_style_context ().add_class ("view-mode-button");
         label2.name = "updates";
