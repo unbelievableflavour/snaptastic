@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-24 19:02+0100\n"
+"POT-Creation-Date: 2019-03-24 17:33+0100\n"
 "PO-Revision-Date: 2019-01-27 18:30+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -19,23 +19,25 @@ msgstr ""
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:6
 #: data/com.github.bartzaalberg.snaptastic.desktop.in:3
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:4
 msgid "Snaptastic"
 msgstr "Snaptastic"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:7
-#: data/com.github.bartzaalberg.snaptastic.desktop.in:4
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:5
 msgid "A manager for snaps"
 msgstr "Un gestionnaire pour les snaps"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:9
 msgid ""
 "Install your snaps, both downloaded and from online stores like snapcraft.io "
-"(right from the browser!). Update with one click in the app, and more! Do everything"
-" you need to do without the necessity of opening the terminal."
+"(right from the browser!). Update with one click in the app, and more! Do "
+"everything you need to do without the necessity of opening the terminal."
 msgstr ""
-"Installez vos snaps, téléchargés ou provenant de boutiques en ligne comme snapcraft.io "
-"(directement depuis le navigateur !). Mise à jour en un seul clic dans l'application, et plus encore ! Faites tout "
-"ce que vous avez à faire sans avoir à ouvrir le terminal."
+"Installez vos snaps, téléchargés ou provenant de boutiques en ligne comme "
+"snapcraft.io (directement depuis le navigateur !). Mise à jour en un seul "
+"clic dans l'application, et plus encore ! Faites tout ce que vous avez à "
+"faire sans avoir à ouvrir le terminal."
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:10
 msgid "Features:"
@@ -47,7 +49,9 @@ msgstr "Installez des fichiers snap"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:13
 msgid "Update, remove, and view information about your installed snaps"
-msgstr "Mettez à jour, désinstallez et visualisez des informations sur vos snaps installés"
+msgstr ""
+"Mettez à jour, désinstallez et visualisez des informations sur vos snaps "
+"installés"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:14
 msgid "Search through your installed snaps"
@@ -59,20 +63,436 @@ msgstr "Installez des snaps depuis une adresse web"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:16
 msgid "Choose between light and dark with dark mode"
-msgstr ""
+msgstr "Choisissez entre le thème clair et le thème sombre"
 
-#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:30
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:54
+msgid "Added dark mode and tooltip shortcuts"
+msgstr "Ajout du thème sombre et des indications de raccourcis"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:56
+msgid "Added dark mode"
+msgstr "Ajout du thème sombre"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:57
+msgid "Added shortcuts to the button labels"
+msgstr "Ajout des raccourcis aux indicateurs des boutons"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:63
+msgid "Improved performance"
+msgstr "Amélioration des performances"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:65
+msgid "Improved the performance of the list view"
+msgstr "Amélioration des performances de la vue en liste"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:66
+msgid "Fixed Dutch grammar issues"
+msgstr "Correction de problème de grammaire en néerlandais"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:72
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:74
+msgid "Added French metadata translations"
+msgstr "Ajout des traductions en français des métadonnées"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:75
+msgid "Sharpened application icons"
+msgstr "Icônes de l'application affinées"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:81
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:83
+msgid "Added metadata translations"
+msgstr "Ajout des traductions des métadonnées"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:89
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:100
+msgid "Added screenshot"
+msgstr "Ajout d'une capture d'écran"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:91
+msgid "Single-instancing now working"
+msgstr "L'instance unique fonctionne désormais"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:92
+msgid "Improved project code quality"
+msgstr "Amélioration de la qualité du code du projet"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:93
+msgid "Remember size,position, and maximized"
+msgstr ""
+"L'application se souviens maintenant de la taille, de la position et de "
+"l'état maximisé de la fenêtre"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:94
+msgid "Fixed bug opening welcome view from web store"
+msgstr ""
+"Correction d'un bug d'ouverture de l'écran de bienvenue depuis le magasin en "
+"ligne"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:102
+msgid "Fixed the icon not found crash"
+msgstr "Correction du plantage à cause de l'icône non trouvée"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:103
+msgid "Added screenshot for snaps"
+msgstr "Ajout d'une capture d'écran pour les snaps"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:104
+msgid "Refactored the detail view"
+msgstr "Refonte de la vue détaillée"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:105
+msgid "Updated the screenshot for appcenter"
+msgstr "Mise à jour de la capture d'écran pour le Centre d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:106
+msgid "Fixed a lot of warnings"
+msgstr "Correction de nombreux avertissements"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:107
+msgid "Added OARS rating"
+msgstr "Ajout des classifications OARS"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:113
+msgid "Icons, single-instance, and translations fix"
+msgstr "Icônes, instance unique, et correction des traductions"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:115
+msgid "Icons finally work!"
+msgstr "Les icônes fonctionnent enfin !"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:116
+msgid "Application is now single-instance"
+msgstr "L'application est désormais une instance unique"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:117
+msgid "Translations are working again"
+msgstr "Les traductions fonctionnent de nouveau"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:123
+msgid ""
+"Fixed local snap installing, added channel support, added some shortcuts"
+msgstr ""
+"Correction de l'installation de snaps locaux, ajout du support des canaux, "
+"ajout de quelques raccourcis"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:125
+msgid "Fixed opening local snap files"
+msgstr "Correction de l'ouverture des fichiers snaps locaux"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:126
+msgid "Added ability to install from other channels"
+msgstr "Ajout de la possibilité d'installer à partir d'autres canaux"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:127
+msgid "Channels are now shown on list and detail pages"
+msgstr ""
+"Les canaux sont désormais affichés en dans la liste et sur la vue détaillée"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:128
+msgid "Added application shortcuts"
+msgstr "Ajout des raccourcis d'application"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:134
+msgid "Moved to meson, apps can be opened from snaptastic again"
+msgstr ""
+"Passage à meson, les applications peuvent de nouveau être ouvertes depuis "
+"snaptastic"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:136
+msgid "Moved to Meson"
+msgstr "Passage à meson"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:137
+msgid "Fixed the About link"
+msgstr "Correction du lien À propos"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:138
+msgid "Added French translation"
+msgstr "Ajout des traductions en français"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:139
+msgid "Corrected some spelling"
+msgstr "Corrections d'orthographe"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:140
+msgid "Fixed opening apps"
+msgstr "Correction de l'ouverture des applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:146
+msgid "Juno Fixes and more translations"
+msgstr "Corrections pour Juno et plus de traductions"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:148
+msgid "Added Catalan and spanish translations"
+msgstr "Ajout des traductions en catalan et en espagnol"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:149
+msgid "Aligned DetailViewBanner for Juno"
+msgstr "Alignement de DetailviewBanner pour Juno"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:155
+msgid "Houston CI"
+msgstr "Houston CI"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:157
+msgid "Added Houston Ci and necessary changes"
+msgstr "Ajout de Houston CI et des modifications nécessaires"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:163
+msgid "Japanese translation and Lithuanian translation fix"
+msgstr "Traduction en japonais et correction des traductions en lituanien"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:165
+msgid "Added Japanese translation"
+msgstr "Ajout des traductions en japonais"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:166
+msgid "Added a fix for the Lithuanian translation"
+msgstr "Ajout d'une correction pour les traductions en lituanien"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:172
+msgid "Dutch translation and navigation bugfix"
+msgstr "Traduction en néerlandais et correction de bugs de navigation"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:174
+msgid "Added dutch translation"
+msgstr "Ajout des traductions en néerlandais"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:175
+msgid "Added a fix for the navigation bug"
+msgstr "Ajout d'une correction pour le bug de navigation"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:181
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:191
+msgid "Moved to glib"
+msgstr "Passage à glib"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:183
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:193
+msgid "Added 'about snaptastic' action"
+msgstr "Ajout de l'action « À propos de Snaptastic »"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:184
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:194
+msgid "Moved from snap cli to snapd-glib"
+msgstr "Passage de nsap cli à snap-glib"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:185
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:195
+msgid "Added price for appcenter"
+msgstr "Ajout d'un prix pour le Centre d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:201
+msgid "Fixed some bugs, cleaned up some code"
+msgstr "Correction de certains bugs, nettoyage du code"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:203
+msgid "Removed option to select multiple snaps"
+msgstr "Suppresion de l'option de sélection de plusieurs snaps"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:204
+msgid "Fixed bug where sometimes wrong buttons would show up in header"
+msgstr ""
+"Correction d'un bug ou parfois les mauvais boutons s'affichaient dans la "
+"barre supérieure"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:205
+msgid "Cleaned up alot of code"
+msgstr "Nettoyage du code"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:206
+msgid "Updated language files"
+msgstr "Mise à jour des fichiers de langue"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:207
+msgid "Updated app description"
+msgstr "Mise à jour de la description de l'application"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:213
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:215
+msgid "Added view for not yet installed packages"
+msgstr "Ajout d'une vue pour les paquets pas encore installés"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:216
+msgid "Added extra screenshot for appcenter"
+msgstr ""
+"Ajout d'une capture d'écran supplémentaire pour le Centre d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:217
+msgid "Switched background-color and text color for appcenter"
+msgstr ""
+"Modification de la couleur d'arrière plan et de la couleur du texte pour le "
+"Centre d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:223
+msgid "List view overhaul"
+msgstr "Révision de la vue en liste"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:225
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:235
+msgid "Updated the detail view"
+msgstr "Mise à jour de la vue détaillée"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:226
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:236
+msgid "Removed the buttons from the list view"
+msgstr "Suppression des boutons de la vue en liste"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:227
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:238
+msgid "Removed delete and install button for the snap core"
+msgstr "Suppression du bouton supprimer et installer pour le noyau de snap"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:233
+msgid "List view overhaul, and a link to snapcraft"
+msgstr "Révision de la vue en liste, et lien vers snapcraft"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:237
+msgid "Added a link to snapcraft"
+msgstr "Ajout d'un lien vers snapcraft"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:244
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:254
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:264
+msgid "Install straight from snapcraft.io!"
+msgstr "Installez directement depuis snapcraft.io !"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:246
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:256
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:266
+msgid "Application will now open on snap:// links"
+msgstr "L'application ouvrira désormais les liens snap://"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:247
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:257
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:267
+msgid "You can now launch your apps from the installed view"
+msgstr ""
+"Vous pouvez désormais lancer vos applications depuis la vue des applications "
+"installées"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:248
+msgid "Fixed appdata file and changed a line for appcenter"
+msgstr ""
+"Correction du fichier appdata et modification d'une ligne pour le Centre "
+"d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:258
+msgid "Fixed appdata file"
+msgstr "Correction du fichier appdata"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:273
+msgid "The app is now Ubuntu styled"
+msgstr "L'application est désormais stylisée pour Ubuntu"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:275
+msgid "Made welcome text Title Case"
+msgstr "Texte de bienvenue avec majuscules"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:276
+msgid "Set rounded bottom corners on window"
+msgstr "Coins arrondis sur la fenêtre"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:277
+msgid "Added ubuntu styling through whole app"
+msgstr "Ajout du style d'Ubuntu à travers toute l'application"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:278
+msgid "Fixed some error typos"
+msgstr "Correction de quelques erreurs de typographie"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:279
+msgid "Fixed appcenter text color"
+msgstr "Correction de la couleur du texte dans le Centre d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:280
+msgid "Added application to system category for appcenter"
+msgstr "Ajout de l'application à la catégorie Système du Centre d'Applications"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:286
+msgid "A nicer not-found view!"
+msgstr "Une vue non trouvé plus sympa !"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:288
+msgid "Vertical aligned delete dialog buttons"
+msgstr "Boutons de boîte de dialogue alignés verticalement"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:289
+msgid "Added a nicer view for no results"
+msgstr "Ajout d'une vue plus sympa en cas de non résultat"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:295
+msgid "Modified alert dialog and added snapd as dependency"
+msgstr "Modification des boîtes de dialogue et ajout de snap en dépendance"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:297
+msgid "Changed alert cancel button to close button"
+msgstr ""
+"Modification du bouton annuler de la boîte de dialogue en bouton fermer"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:298
+msgid "alert is now positioned to center of app"
+msgstr ""
+"La boîte de dialogue est désormais positionnée au centre de l'application"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:299
+msgid "Application now depends on snapd"
+msgstr "L'application dépend maintenant de snapd"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:300
+msgid "Updated icons"
+msgstr "Mise à jour des icônes"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:306
+msgid "Fixed the appdata xml"
+msgstr "Correction du xml de appdata"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:308
+msgid "Fixed xml"
+msgstr "Correction du xml"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:314
+msgid "Removed alert and fixed polkit calls"
+msgstr "Supression de la boîte de dialogue et correction des appels à polkit"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:316
+msgid "Removed alert"
+msgstr "Supression de la boîte de dialogue"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:317
+msgid "Fixed polkit calls"
+msgstr "Correction des appels à polkit"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:323
+msgid "Updated readme and debian/control file"
+msgstr "Mise à jour des fichiers readme et debian/control"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:325
+msgid "Updated readme, removed lines which dont apply"
+msgstr ""
+"Mise à jour du fichier readme, supression des lignes qui ne s'appliquent plus"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:326
+msgid "Updated debian/control file"
+msgstr "Mise à jour du fichier debian/control"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:332
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:334
+msgid "First release"
+msgstr "Première version"
+
+#: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:356
 msgid "Bart Zaalberg"
 msgstr "Bart Zaalberg"
 
-#: data/com.github.bartzaalberg.snaptastic.desktop.in:6
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:8
 msgid "com.github.bartzaalberg.snaptastic"
 msgstr "com.github.bartzaalberg.snaptastic"
 
-#: data/com.github.bartzaalberg.snaptastic.desktop.in:11
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:13
 msgid "GUI;Snaps;"
-msgstr "GUI;Snaps;"
+msgstr "Interface graphique;Snaps;"
 
-#: data/com.github.bartzaalberg.snaptastic.desktop.in:17
+#: data/com.github.bartzaalberg.snaptastic.desktop.in:18
 msgid "About Snaptastic"
 msgstr "À propos de Snaptastic"
