@@ -1,99 +1,106 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Japanese translations for com.github.bartzaalberg.snaptastic package.
+# Copyright (C) 2019 THE com.github.bartzaalberg.snaptastic'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.bartzaalberg.snaptastic package.
+# Ryo Nakano <ryonakaknock@gmail.com>, 2019.
 #
-# Ryo Nakano <ryonakaknock@gmail.com>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: com.github.bartzaalberg.snaptastic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-19 09:17+0100\n"
-"PO-Revision-Date: 2018-05-16 19:09+0900\n"
+"POT-Creation-Date: 2019-03-24 16:59+0100\n"
+"PO-Revision-Date: 2019-03-24 16:53+0100\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <>\n"
+"Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 2.0\n"
 
-#: ../src/Components/HeaderBar.vala:51
-msgid "Back"
-msgstr "戻る"
-
-#: ../src/Views/WelcomeView.vala:11
-msgid "Install Some Snaps"
-msgstr "Snap ファイルをインストールしましょう"
-
-#: ../src/Views/WelcomeView.vala:11
-msgid "Click open to select a downloaded snap file"
-msgstr "[開く] をクリックしてダウンロードした Snap ファイルを選択してください"
-
-#: ../src/Views/WelcomeView.vala:12 ../src/ListBoxRow.vala:95
-msgid "Open"
-msgstr "開く"
-
-#: ../src/Views/WelcomeView.vala:12
-msgid "Browse to open a single snap file"
-msgstr "ブラウズして Snap ファイルを一つ開きます"
-
-#: ../src/Views/ProgressView.vala:7
-msgid "Please Wait"
-msgstr "お待ちください…"
-
-#: ../src/Views/ProgressView.vala:7
-msgid "Operation is in progress"
-msgstr "処理が進行しています…"
-
-#: ../src/Views/DetailView.vala:4
-msgid "Package Information"
-msgstr "パッケージの情報"
-
-#: ../src/Views/DetailView.vala:5
-msgid "Developer"
-msgstr "開発者"
-
-#: ../src/Views/NotFoundView.vala:7
-msgid "No snaps were found"
-msgstr "Snap ファイルが見つかりません"
-
-#: ../src/Views/NotFoundView.vala:7
-msgid "Please install some"
-msgstr "何かインストールしてください"
-
-#: ../src/Dialogs/DeleteConfirm.vala:8
-msgid "Delete this application?"
-msgstr "このアプリケーションを削除しますか？"
-
-#: ../src/Dialogs/DeleteConfirm.vala:8
-msgid "Are you sure you want to delete this application?"
-msgstr "このアプリケーションを削除してもよろしいですか？"
-
-#: ../src/ListBoxRow.vala:49
+#: src/ListBoxRow.vala:48
 msgid "Refresh"
 msgstr "更新"
 
-#: ../src/ListBoxRow.vala:51
+#: src/ListBoxRow.vala:50
 msgid "Update this to latest version"
 msgstr "最新のバージョンにアップデートします"
 
-#: ../src/ListBoxRow.vala:65
+#: src/ListBoxRow.vala:64
 msgid "Uninstall"
 msgstr "アンインストール"
 
-#: ../src/ListBoxRow.vala:67
+#: src/ListBoxRow.vala:66
 msgid "Uninstall this application"
 msgstr "このアプリケーションをアンインストールします"
 
-#: ../src/ListBoxRow.vala:79
+#: src/ListBoxRow.vala:80 src/ListBoxRow.vala:82
 msgid "Install"
 msgstr "インストール"
 
-#: ../src/ListBoxRow.vala:81
+#: src/ListBoxRow.vala:86
 msgid "Install this application"
 msgstr "このアプリケーションをインストールします"
 
-#: ../src/ListBoxRow.vala:97
+#: src/ListBoxRow.vala:100 src/Views/WelcomeView.vala:12
+msgid "Open"
+msgstr "開く"
+
+#: src/ListBoxRow.vala:102
 msgid "Run the application"
 msgstr "アプリケーションを実行します"
 
+#: src/Dialogs/DeleteConfirm.vala:9
+msgid "Delete this application?"
+msgstr "このアプリケーションを削除しますか？"
+
+#: src/Dialogs/DeleteConfirm.vala:10
+msgid "Are you sure you want to delete this application?"
+msgstr "このアプリケーションを削除してもよろしいですか？"
+
+#: src/Views/NotFoundView.vala:7
+msgid "No snaps were found"
+msgstr "Snap ファイルが見つかりません"
+
+#: src/Views/NotFoundView.vala:7
+msgid "Please install some"
+msgstr "何かインストールしてください"
+
+#: src/Views/WelcomeView.vala:11
+msgid "Install Some Snaps"
+msgstr "Snap ファイルをインストールしましょう"
+
+#: src/Views/WelcomeView.vala:11
+msgid "Click open to select a downloaded snap file"
+msgstr "[開く] をクリックしてダウンロードした Snap ファイルを選択してください"
+
+#: src/Views/WelcomeView.vala:12
+msgid "Browse to open a single snap file"
+msgstr "ブラウズして Snap ファイルを一つ開きます"
+
+#: src/Views/ProgressView.vala:7
+msgid "Please Wait"
+msgstr "お待ちください…"
+
+#: src/Views/ProgressView.vala:7
+msgid "Operation is in progress"
+msgstr "処理が進行しています…"
+
+#: src/Components/HeaderBar.vala:39
+msgid "Go to home"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:44
+msgid "Go to installed applications"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:57
+msgid "Back"
+msgstr "戻る"
+
+#: src/Components/HeaderBar.vala:69
+msgid "Light mode"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:70
+msgid "Dark mode"
+msgstr ""

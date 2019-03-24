@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bartzaalberg.snaptastic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-27 11:42+0100\n"
+"POT-Creation-Date: 2019-03-24 16:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,6 +85,22 @@ msgstr ""
 msgid "Operation is in progress"
 msgstr ""
 
-#: src/Components/HeaderBar.vala:49
+#: src/Components/HeaderBar.vala:39
+msgid "Go to home"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:44
+msgid "Go to installed applications"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:57
 msgid "Back"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:69
+msgid "Light mode"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:70
+msgid "Dark mode"
 msgstr ""
