@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bartzaalberg.snaptastic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-24 16:59+0100\n"
+"POT-Creation-Date: 2019-03-24 17:04+0100\n"
 "PO-Revision-Date: 2019-03-24 16:53+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -79,15 +79,23 @@ msgid "Browse to open a single snap file"
 msgstr "Naršykite, norėdami atverti atskirą snap failą"
 
 #: src/Views/ProgressView.vala:7
-msgid "Please Wait"
-msgstr "Prašome palaukti..."
+msgid "Please Wait…"
+msgstr "Prašome palaukti…"
 
 #: src/Views/ProgressView.vala:7
-msgid "Operation is in progress"
-msgstr "Operacija eigoje..."
+msgid "Operation is in progress…"
+msgstr "Operacija eigoje…"
+
+#: src/Components/HeaderBar.vala:38
+msgid "Home"
+msgstr ""
 
 #: src/Components/HeaderBar.vala:39
 msgid "Go to home"
+msgstr ""
+
+#: src/Components/HeaderBar.vala:43
+msgid "Updates"
 msgstr ""
 
 #: src/Components/HeaderBar.vala:44
