@@ -48,3 +48,12 @@ Run the following command to use snaps from browsers
 
 ### Recompile the schema after installation
 `sudo glib-compile-schemas /usr/share/glib-2.0/schemas`
+
+## FAQ
+
+### Snaptastic wont handle snap URLS
+
+On Firefox you sometimes have to set the Application manually.
+
+* Go to about:preferences#general
+* Under applications search for snap and set the dropdown to 'Use Snaptastic'
