@@ -1,12 +1,23 @@
+# Russian translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-27 01:37+0400\n"
-"Language: nl\n"
+"PO-Revision-Date: 2019-06-27 02:09+0400\n"
+"Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
+"Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:6
 #: data/com.github.bartzaalberg.snaptastic.desktop.in:3
@@ -17,7 +28,7 @@ msgstr "Snaptastic"
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:7
 #: data/com.github.bartzaalberg.snaptastic.desktop.in:5
 msgid "A manager for snaps"
-msgstr "Een beheerder voor snaps"
+msgstr "Управление snap-пакетами"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:9
 msgid ""
@@ -25,33 +36,30 @@ msgid ""
 "(right from the browser!). Update with one click in the app, and more! Do "
 "everything you need to do without the necessity of opening the terminal."
 msgstr ""
-"Installeer je snaps, gedownload en uit online stores zoals snapcraft.io "
-"(vanuit de browser!). Update met 1 klik in de app, en meer! Doe alleswat je "
-"wilt zonder zonder de terminal te hoeven gebuiken."
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:10
 msgid "Features:"
-msgstr "Kenmerken:"
+msgstr "Особенности: "
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:12
 msgid "Install snap files"
-msgstr "Installeer snap bestanden"
+msgstr "Установка snap-пакетов"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:13
 msgid "Update, remove, and view information about your installed snaps"
-msgstr "Update, verwijder, en bekijk informatie over alle geinstalleerde snaps"
+msgstr "Обновление, удаление и просмотр сведений об установленных ыnap-пакетах"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:14
 msgid "Search through your installed snaps"
-msgstr "Zoek door je geinstalleerde snaps"
+msgstr "Поиск установленных snap-пакетов"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:15
 msgid "Install snaps from web a uri"
-msgstr "Installeer snaps van web uri"
+msgstr "Установка snap-пакетов из интернета"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:16
 msgid "Choose between light and dark with dark mode"
-msgstr "Kies tussen licht en donker met donkere modus"
+msgstr "Выбор между светлым и тёмным режимом"
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:54
 msgid "Added dark mode and tooltip shortcuts"
@@ -248,9 +256,8 @@ msgstr ""
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:183
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:193
-#, fuzzy
 msgid "Added 'about snaptastic' action"
-msgstr "Over Snaptastic"
+msgstr ""
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:184
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:194
@@ -329,9 +336,8 @@ msgstr ""
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:244
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:254
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:264
-#, fuzzy
 msgid "Install straight from snapcraft.io!"
-msgstr "Installeer snaps van web uri"
+msgstr ""
 
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:246
 #: data/com.github.bartzaalberg.snaptastic.appdata.xml.in:256
@@ -456,7 +462,7 @@ msgstr "Bart Zaalberg"
 
 #: data/com.github.bartzaalberg.snaptastic.desktop.in:8
 msgid "com.github.bartzaalberg.snaptastic"
-msgstr "com.github.bartzaalberg.snaptastic"
+msgstr ""
 
 #: data/com.github.bartzaalberg.snaptastic.desktop.in:13
 msgid "GUI;Snaps;"
@@ -464,4 +470,4 @@ msgstr "GUI;Snaps;"
 
 #: data/com.github.bartzaalberg.snaptastic.desktop.in:18
 msgid "About Snaptastic"
-msgstr "Over Snaptastic"
+msgstr "О программе"
