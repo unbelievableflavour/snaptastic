@@ -1,3 +1,12 @@
+com.github.bartzaalberg.snaptastic (1.2.0) STABLE; urgency=low
+
+  * Updated French translation
+  * Added Russian translation
+  * Updated Japanese translation
+  * Added Turkish translation
+
+ -- Bart Zaalberg <bartzaalberg@gmail.com>  Mon, 01 Jul 2019 20:04:00 +0200
+
 com.github.bartzaalberg.snaptastic (1.1.0) STABLE; urgency=low
 
   * Added dark mode

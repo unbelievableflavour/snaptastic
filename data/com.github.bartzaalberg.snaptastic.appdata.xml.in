@@ -49,6 +49,17 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.2.0" date="2019-07-01">
+       <description>
+           <p>Added and updated translations</p>
+           <ul>
+                <li>Updated French translation</li>
+                <li>Added Russian translation</li>
+                <li>Updated Japanese translation</li>
+                <li>Added Turkish translation</li>
+           </ul>
+       </description>
+   </release>
    <release version="1.1.0" date="2019-04-17">
        <description>
            <p>Added dark mode and tooltip shortcuts</p>
