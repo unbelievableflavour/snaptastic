@@ -3,7 +3,7 @@
 language: node_js
 
 node_js:
-  - 10/*
+  - 10.17.0
 
 sudo: required
 
@@ -22,3 +22,6 @@ install:
 
 script:
   - houston ci
+    --type system-app
+    --name-domain com.github.bartzaalberg.snaptastic
+    --name-human Snaptastic
