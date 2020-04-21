@@ -49,6 +49,14 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+   <release version="1.2.1" date="2020-04-21">
+       <description>
+           <p>Fixed the wrong Dutch translations.</p>
+           <ul>
+                <li>Reverted Dutch translations</li>
+           </ul>
+       </description>
+   </release>
    <release version="1.2.0" date="2019-07-01">
        <description>
            <p>Added and updated translations</p>
