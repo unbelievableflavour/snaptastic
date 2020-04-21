@@ -19,96 +19,96 @@ msgstr ""
 
 #: src/ListBoxRow.vala:48
 msgid "Refresh"
-msgstr "Įkelti iš naujo"
+msgstr "Verversen"
 
 #: src/ListBoxRow.vala:50
 msgid "Update this to latest version"
-msgstr "Atnaujinti į naujausią versiją"
+msgstr "Update deze applicatie naar de laatste versie"
 
 #: src/ListBoxRow.vala:64
 msgid "Uninstall"
-msgstr "Šalinti"
+msgstr "Deinstalleer"
 
 #: src/ListBoxRow.vala:66
 msgid "Uninstall this application"
-msgstr "Pašalinti šią programą"
+msgstr "Deinstalleer deze applicatie"
 
 #: src/ListBoxRow.vala:80 src/ListBoxRow.vala:82
 msgid "Install"
-msgstr "Įdiegti"
+msgstr "Installeren"
 
 #: src/ListBoxRow.vala:86
 msgid "Install this application"
-msgstr "Įdiegti šią programą"
+msgstr "Installeer deze applicatie"
 
 #: src/ListBoxRow.vala:100 src/Views/WelcomeView.vala:12
 msgid "Open"
-msgstr "Atverti"
+msgstr "Openen"
 
 #: src/ListBoxRow.vala:102
 msgid "Run the application"
-msgstr "Paleisti programą"
+msgstr "Open de applicatie"
 
 #: src/Dialogs/DeleteConfirm.vala:9
 msgid "Delete this application?"
-msgstr "Ištrinti šią programą?"
+msgstr "Verwijder deze applicatie?"
 
 #: src/Dialogs/DeleteConfirm.vala:10
 msgid "Are you sure you want to delete this application?"
-msgstr "Ar tikrai norite ištrinti šią programą?"
+msgstr "Weet u zeker dat u deze applicatie wilt verwijderen?"
 
 #: src/Views/NotFoundView.vala:7
 msgid "No snaps were found"
-msgstr "Nebuvo rasta jokių snap paketų"
+msgstr "Er zijn geen snaps gevonden"
 
 #: src/Views/NotFoundView.vala:7
 msgid "Please install some"
-msgstr "Prašome įdiegti bent vieną"
+msgstr "Installeer er eens wat"
 
 #: src/Views/WelcomeView.vala:11
 msgid "Install Some Snaps"
-msgstr "Įdiegti snap paketus"
+msgstr "Installeer Snaps"
 
 #: src/Views/WelcomeView.vala:11
 msgid "Click open to select a downloaded snap file"
-msgstr "Norėdami pasirinkti atsisiųsta snap failą, spustelėkite \"Atverti\""
+msgstr "Klik open om een gedownloade snap te selecteren"
 
 #: src/Views/WelcomeView.vala:12
 msgid "Browse to open a single snap file"
-msgstr "Naršykite, norėdami atverti atskirą snap failą"
+msgstr "Bladeren om een snap te selecteren"
 
 #: src/Views/ProgressView.vala:7
 msgid "Please Wait…"
-msgstr "Prašome palaukti…"
+msgstr "Even geduld…"
 
 #: src/Views/ProgressView.vala:7
 msgid "Operation is in progress…"
-msgstr "Operacija eigoje…"
+msgstr "Handeling wordt momenteel verricht…"
 
 #: src/Components/HeaderBar.vala:38
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: src/Components/HeaderBar.vala:39
 msgid "Go to home"
-msgstr ""
+msgstr "Ga terug naar home"
 
 #: src/Components/HeaderBar.vala:43
 msgid "Updates"
-msgstr ""
+msgstr "Updates"
 
 #: src/Components/HeaderBar.vala:44
 msgid "Go to installed applications"
-msgstr ""
+msgstr "Ga naar geinstalleerde applicaties"
 
 #: src/Components/HeaderBar.vala:57
 msgid "Back"
-msgstr "Atgal"
+msgstr "Terug"
 
 #: src/Components/HeaderBar.vala:69
 msgid "Light mode"
-msgstr ""
+msgstr "Lichte modus"
 
 #: src/Components/HeaderBar.vala:70
 msgid "Dark mode"
-msgstr ""
+msgstr "Donkere modus"
